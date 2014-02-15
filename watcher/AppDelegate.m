@@ -58,8 +58,16 @@
 }
 
 -(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    [[UIApplication sharedApplication]setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    if ([self iOS_7]){
+       [[UIApplication sharedApplication]setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    }
     return YES;
+}
+
+-(BOOL)iOS_7 {
+    NSString *osVersion = @"7.0";
+    NSString *currOsVersion = [[UIDevice currentDevice] systemVersion];
+    return [currOsVersion compare:osVersion options:NSNumericSearch] == NSOrderedDescending;
 }
 
 @end
