@@ -96,6 +96,15 @@
     }
 }
 
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated{
+    [super setEditing:editing animated:animated];
+    if (editing==NO){
+        _addButton.enabled=YES;
+    } else {
+        _addButton.enabled=NO;
+    }
+}
+
 
 
 -(void)loadSubList{

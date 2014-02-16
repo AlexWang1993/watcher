@@ -21,6 +21,8 @@
 
 @property (strong,nonatomic) NSMutableArray *changedList;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
+
 -(void)addSection:(NSDictionary *)section;
 
 -(NSMutableArray* )generateShortList;
