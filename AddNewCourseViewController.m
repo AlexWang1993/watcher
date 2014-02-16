@@ -151,7 +151,7 @@
     NSError *error=nil;
     NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
     NSDictionary *results=[NSJSONSerialization
-                           JSONObjectWithData:JSONData options:NSJSONReadingMutableContainers error:&error];
+                           JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&error];
     _sectionList=[results objectForKey:@"data"];
     [_sectionPicker reloadAllComponents];
     
@@ -164,7 +164,7 @@
     NSData *JSONData = [NSData dataWithContentsOfURL:url
                                              options:NSDataReadingMappedIfSafe error:&error];
     NSDictionary *results= [NSJSONSerialization
-                            JSONObjectWithData:JSONData options: NSJSONReadingAllowFragments error:&error];
+                            JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments  error:&error];
     NSArray *data=[results objectForKey:@"data"];
     for ( NSDictionary *sec in data){
         [_subjectList addObject:[sec objectForKey:@"subject"]];

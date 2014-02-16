@@ -23,4 +23,6 @@
 
 -(void)addSection:(NSDictionary *)section;
 
+-(NSMutableArray* )generateShortList;
+
 @end

@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 
+#import "TableViewController.h"
+
 @implementation AppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -16,6 +19,10 @@
  //   UIColor *background = [[UIColor alloc] initWithPatternImage:imageNamed:@"<#string#>"];
 //    self.window.backgroundColor = background;
     // Override point for customization after application launch.
+    NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
+    if ([userDefaults objectForKey:@"watcher_watchlist"]){
+        _shortList=[userDefaults objectForKey:@"watcher_watchlist"];
+    }
     return YES;
 }
 							
@@ -29,7 +36,17 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    //UIViewController* rootview=self.window.rootViewController;
+    TableViewController *mainController=[((UINavigationController *) self.window.rootViewController).viewControllers objectAtIndex:0];
+    /*for (id obj in [mainController.watchList objectAtIndex:0]){
+        NSLog(@"%@",NSStringFromClass([obj  class]));
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:mainController.watchList] forKey:@"watcher_watchlist"];*/
+    [[NSUserDefaults standardUserDefaults]setObject:[mainController generateShortList] forKey:@"watcher_watchlist"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+
 }
+
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
@@ -44,7 +61,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    //[[NSUserDefaults standardUserDefaults] setObject:(id) forKey:(NSString *)
+
 }
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{

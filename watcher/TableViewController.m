@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "AddNewCourseViewController.h"
 #import "SectionDetailsViewController.h"
+#import "AppDelegate.h"
 @interface TableViewController ()
 @end
 
@@ -28,7 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _watchList=[[NSMutableArray alloc]init];
+    AppDelegate *appDelegate=((AppDelegate *)[[UIApplication sharedApplication] delegate]);
+    if (appDelegate.shortList){
+        _watchList=[self generateWatchList:appDelegate.shortList];
+    } else {
+        _watchList=[[NSMutableArray alloc]init];
+    }
     _subjectList=[[NSMutableArray alloc]init];
     [self loadSubList];
     // Uncomment the following line to preserve selection between presentations.
@@ -202,6 +208,30 @@
     return NO;
 }
 
+/*interclass API method*/
+-(NSMutableArray* )generateShortList{
+    NSMutableArray *shortList=[[NSMutableArray alloc] init];
+    for (NSDictionary *sec in _watchList){
+        NSMutableDictionary *shortDescription=[[NSMutableDictionary alloc]init];
+        [shortDescription setObject:[sec objectForKey:@"subject"] forKey:@"subject"];
+        [shortDescription setObject:[sec objectForKey:@"catalog_number"] forKey:@"catalog_number"];
+        [shortDescription setObject:[sec objectForKey:@"section"] forKey:@"section"];
+        [shortList addObject:[NSDictionary dictionaryWithDictionary:shortDescription]];
+    }
+    return shortList;
+}
+-(NSMutableArray* )generateWatchList:(NSArray *)shortList{
+    NSMutableArray *watchList=[[NSMutableArray alloc]init];
+    for (NSDictionary *sec in shortList){
+        NSDictionary *fullDescription=[self loadSectionForSubject:[sec objectForKey:@"subject"] Number:[sec objectForKey:@"catalog_number"] Section:[sec objectForKey:@"section"]];
+        [watchList addObject:fullDescription];
+    }
+    return watchList;
+}
+/*interclass API method ENDS*/
+
 @end
+
+
 
 
