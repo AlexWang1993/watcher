@@ -23,6 +23,8 @@
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
+-(BOOL)refreshWatchList;
+
 -(void)addSection:(NSDictionary *)section;
 
 -(NSMutableArray* )generateShortList;

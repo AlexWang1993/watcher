@@ -12,7 +12,10 @@
 
 @implementation AppDelegate
 
-
+-(TableViewController *)getRootViewController{
+    return [((UINavigationController *) self.window.rootViewController).viewControllers objectAtIndex:0];
+    
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
    // UIImage *image =
@@ -37,7 +40,7 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     //UIViewController* rootview=self.window.rootViewController;
-    TableViewController *mainController=[((UINavigationController *) self.window.rootViewController).viewControllers objectAtIndex:0];
+    TableViewController *mainController=[self getRootViewController];
     /*for (id obj in [mainController.watchList objectAtIndex:0]){
         NSLog(@"%@",NSStringFromClass([obj  class]));
     }
@@ -65,10 +68,26 @@
 }
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    TableViewController *mainController=[self getRootViewController];
+    
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     NSDate *now=[NSDate date];
     localNotification.fireDate = now;
-    localNotification.alertBody=@"HOHOHOHO";
+    if ([mainController refreshWatchList]){
+        NSString *message;
+        if (mainController.changedList.count>1){
+            message=@"The following sections are now open:\n";
+        } else {
+            message=@"The following section is now open:\n";
+        }
+        for (NSString *shortDesciption in mainController.changedList){
+            message=[message stringByAppendingString:shortDesciption];
+            message=[message stringByAppendingString:@"\n"];
+        }
+        localNotification.alertBody=message;
+    } else {
+        localNotification.alertBody=@"Nothing has changed";
+    }
     localNotification.soundName=UILocalNotificationDefaultSoundName;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     completionHandler(UIBackgroundFetchResultNewData);

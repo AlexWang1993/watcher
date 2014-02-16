@@ -138,17 +138,18 @@
 }
 
 -(BOOL)refreshWatchList{
-    _changedList=[[NSMutableArray init] alloc];
+    BOOL flag=NO;
+    _changedList=[[NSMutableArray alloc] init];
     for (int i=0;i<_watchList.count;i++){
         BOOL fullBefore=[self isFullForSectionNumber:i];
         NSDictionary *section=[_watchList objectAtIndex:i];
         [_watchList replaceObjectAtIndex:i withObject:[self loadSectionForSubject:[section objectForKey:@"subject"] Number:[section objectForKey:@"catalog_number"] Section:[section objectForKey:@"section"]]];
         if ((fullBefore)&&(![self isFullForSectionNumber:i])){
             [_changedList addObject:[NSString stringWithFormat:@"%@ %@  %@",[section objectForKey:@"subject"],[section objectForKey:@"catalog_number"],[section objectForKey:@"section"]]];
-            return YES;
+            flag=YES;
         }
     }
-    return NO;
+    return flag;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
