@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40ACE9818B184F300059AA1 /* light blue wallpaper hd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A40ACE9718B184F300059AA1 /* light blue wallpaper hd.jpg */; };
+		A40ACE9A18B1892D00059AA1 /* Button-Add-2-512.png in Resources */ = {isa = PBXBuildFile; fileRef = A40ACE9918B1892D00059AA1 /* Button-Add-2-512.png */; };
 		A4AC064518AEE94100012FE5 /* background pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4AC064418AEE94100012FE5 /* background pic.jpg */; };
 		E85FCBB3189C26470085F929 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB2189C26470085F929 /* Foundation.framework */; };
 		E85FCBB5189C26470085F929 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB4189C26470085F929 /* CoreGraphics.framework */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A40ACE9718B184F300059AA1 /* light blue wallpaper hd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "light blue wallpaper hd.jpg"; sourceTree = SOURCE_ROOT; };
+		A40ACE9918B1892D00059AA1 /* Button-Add-2-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button-Add-2-512.png"; path = "../../../../../Downloads/Button-Add-2-512.png"; sourceTree = "<group>"; };
 		A4AC064418AEE94100012FE5 /* background pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background pic.jpg"; sourceTree = SOURCE_ROOT; };
 		E85FCBAF189C26470085F929 /* watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85FCBB2189C26470085F929 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,7 +144,9 @@
 				E85FCBCA189C26470085F929 /* Images.xcassets */,
 				E85FCBB9189C26470085F929 /* Supporting Files */,
 				E8AB719718A82904007F3773 /* staticData.h */,
+				A40ACE9918B1892D00059AA1 /* Button-Add-2-512.png */,
 				E8AB719818A82904007F3773 /* staticData.m */,
+				A40ACE9718B184F300059AA1 /* light blue wallpaper hd.jpg */,
 			);
 			path = watcher;
 			sourceTree = "<group>";
@@ -259,9 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E85FCBCB189C26470085F929 /* Images.xcassets in Resources */,
+				A40ACE9818B184F300059AA1 /* light blue wallpaper hd.jpg in Resources */,
 				A4AC064518AEE94100012FE5 /* background pic.jpg in Resources */,
 				E85FCBBD189C26470085F929 /* InfoPlist.strings in Resources */,
 				E85FCBC6189C26470085F929 /* Main.storyboard in Resources */,
+				A40ACE9A18B1892D00059AA1 /* Button-Add-2-512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
