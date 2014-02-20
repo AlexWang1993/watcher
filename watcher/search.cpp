@@ -5,7 +5,7 @@
 //  Created by Helen Jiang on 2/19/2014.
 //  Copyright (c) 2014 Alex Wang. All rights reserved.
 //
-
+/*
 #include "search.h"
 
 #include <iostream>
@@ -30,3 +30,4 @@ int searchFile (string keyword){
         }
     return rating;
 }
+*/

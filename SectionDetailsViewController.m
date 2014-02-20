@@ -50,11 +50,12 @@
     [super viewDidLoad];
     self.subjectLabel.text=[NSString stringWithFormat:@"%@ %@",[self.info objectForKey:@"subject"],[self.info objectForKey:@"catalog_number"]];
     self.sectionLabel.text=[self.info objectForKey:@"section"];
-//ignore these please
 
-  //  self.professorLabel.text=[[[self.info objectForKey:@"classes"] objectAtIndex:1] objectForKey:@"instructors"];
-  //  self.professorLabel.text= [[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"];
+   self.professorLabel.text= [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0];
+    self.timeLabel.text=[[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"dates"]   objectForKey:@"start_time"] objectAtIndex:0];
    
+    
+    
     
     
     
