@@ -52,33 +52,14 @@
     self.sectionLabel.text=[self.info objectForKey:@"section"];
 
    self.professorLabel.text= [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0];
-    self.timeLabel.text=[[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"dates"]   objectForKey:@"start_time"] objectAtIndex:0];
-   
     
-    
-    
-    
-    
- //   NSDictionary *classes = [self.info objectForKey:@"classes"];
-  //   NSArray *instructors = [classes objectForKey:@"instructors"];
-    
- //   UIAlertView *a =[[UIAlertView alloc] initWithTitle:nil message:[instructors objectAtIndex:0] delegate:nil cancelButtonTitle:@"back" otherButtonTitles:nil];
-  //  [a show];
-    
-    //    NSDictionary *dates = [classes objectForKey:@"dates"];
-    
-  //  self.professorLabel=[instructors objectAtIndex:0];
-    
-    
-//    self.timeLabel.text= [dates objectForKey:@""];
-   
-    
-    
-    
+    self.locationLabel.text=[NSString stringWithFormat:@"Location:%@%@",
+                             [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"building"],
+                             [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"room"]
+                             ];
     
     
     self.titleLabel.text=[self.info objectForKey:@"title"];
-    self.locationLabel.text=[self.info objectForKey:@"campus"];
     self.capacityLabel.text=[NSString stringWithFormat:@"Enrollment Capacity: %@", [self.info objectForKey:@"enrollment_capacity"]];
     self.totalEnrolledLabel.text=[NSString stringWithFormat:@"Total Enrolled: %@", [self.info objectForKey:@"enrollment_total"]];
 	// Do any additional setup after loading the view.
