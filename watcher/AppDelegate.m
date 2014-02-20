@@ -10,6 +10,8 @@
 
 #import "TableViewController.h"
 
+#import "Appirater.h"
+
 @implementation AppDelegate
 
 -(TableViewController *)getRootViewController{
@@ -25,6 +27,9 @@
     NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
     if ([userDefaults objectForKey:@"watcher_watchlist"]){
         _shortList=[userDefaults objectForKey:@"watcher_watchlist"];
+    
+        [Appirater appLaunched];
+    
     }
     return YES;
 }

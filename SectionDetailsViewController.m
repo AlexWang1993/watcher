@@ -62,6 +62,7 @@
     self.titleLabel.text=[self.info objectForKey:@"title"];
     self.capacityLabel.text=[NSString stringWithFormat:@"Enrollment Capacity: %@", [self.info objectForKey:@"enrollment_capacity"]];
     self.totalEnrolledLabel.text=[NSString stringWithFormat:@"Total Enrolled: %@", [self.info objectForKey:@"enrollment_total"]];
+    self.timeLabel.text=[NSString stringWithFormat:@"%@ - %@",[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
 	// Do any additional setup after loading the view.
 }
 
