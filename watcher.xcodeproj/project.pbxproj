@@ -9,7 +9,14 @@
 /* Begin PBXBuildFile section */
 		A40ACE9818B184F300059AA1 /* light blue wallpaper hd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A40ACE9718B184F300059AA1 /* light blue wallpaper hd.jpg */; };
 		A40ACE9A18B1892D00059AA1 /* Button-Add-2-512.png in Resources */ = {isa = PBXBuildFile; fileRef = A40ACE9918B1892D00059AA1 /* Button-Add-2-512.png */; };
+		A415D35718B582B50046682F /* search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A415D35518B582B50046682F /* search.cpp */; };
 		A4AC064518AEE94100012FE5 /* background pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4AC064418AEE94100012FE5 /* background pic.jpg */; };
+		A4F5E27118B5578600147B04 /* waterloo_prof.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26B18B5578600147B04 /* waterloo_prof.txt */; };
+		A4F5E27218B5578600147B04 /* ut_mgmt.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26C18B5578600147B04 /* ut_mgmt.txt */; };
+		A4F5E27318B5578600147B04 /* utm.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26D18B5578600147B04 /* utm.txt */; };
+		A4F5E27418B5578600147B04 /* ut.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26E18B5578600147B04 /* ut.txt */; };
+		A4F5E27518B5578600147B04 /* utsg.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26F18B5578600147B04 /* utsg.txt */; };
+		A4F5E27618B5578600147B04 /* utsc.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E27018B5578600147B04 /* utsc.txt */; };
 		E85FCBB3189C26470085F929 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB2189C26470085F929 /* Foundation.framework */; };
 		E85FCBB5189C26470085F929 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB4189C26470085F929 /* CoreGraphics.framework */; };
 		E85FCBB7189C26470085F929 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB6189C26470085F929 /* UIKit.framework */; };
@@ -43,7 +50,15 @@
 /* Begin PBXFileReference section */
 		A40ACE9718B184F300059AA1 /* light blue wallpaper hd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "light blue wallpaper hd.jpg"; sourceTree = SOURCE_ROOT; };
 		A40ACE9918B1892D00059AA1 /* Button-Add-2-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button-Add-2-512.png"; path = "../../../../../Downloads/Button-Add-2-512.png"; sourceTree = "<group>"; };
+		A415D35518B582B50046682F /* search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = search.cpp; sourceTree = "<group>"; };
+		A415D35618B582B50046682F /* search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search.h; sourceTree = "<group>"; };
 		A4AC064418AEE94100012FE5 /* background pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background pic.jpg"; sourceTree = SOURCE_ROOT; };
+		A4F5E26B18B5578600147B04 /* waterloo_prof.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = waterloo_prof.txt; sourceTree = "<group>"; };
+		A4F5E26C18B5578600147B04 /* ut_mgmt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ut_mgmt.txt; sourceTree = "<group>"; };
+		A4F5E26D18B5578600147B04 /* utm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utm.txt; sourceTree = "<group>"; };
+		A4F5E26E18B5578600147B04 /* ut.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ut.txt; sourceTree = "<group>"; };
+		A4F5E26F18B5578600147B04 /* utsg.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utsg.txt; sourceTree = "<group>"; };
+		A4F5E27018B5578600147B04 /* utsc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utsc.txt; sourceTree = "<group>"; };
 		E85FCBAF189C26470085F929 /* watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85FCBB2189C26470085F929 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E85FCBB4189C26470085F929 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,6 +112,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4F5E26A18B5578600147B04 /* ratemyprof */ = {
+			isa = PBXGroup;
+			children = (
+				A4F5E26B18B5578600147B04 /* waterloo_prof.txt */,
+				A4F5E26C18B5578600147B04 /* ut_mgmt.txt */,
+				A4F5E26D18B5578600147B04 /* utm.txt */,
+				A4F5E26E18B5578600147B04 /* ut.txt */,
+				A4F5E26F18B5578600147B04 /* utsg.txt */,
+				A4F5E27018B5578600147B04 /* utsc.txt */,
+			);
+			path = ratemyprof;
+			sourceTree = SOURCE_ROOT;
+		};
 		E85FCBA6189C26470085F929 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +164,8 @@
 				E8AB719518A7F4BF007F3773 /* AddNewCourseViewController.m */,
 				E8E2EE6D189C3C970080DDCB /* AddTableViewController.h */,
 				E8E2EE6E189C3C970080DDCB /* AddTableViewController.m */,
+				A415D35518B582B50046682F /* search.cpp */,
+				A415D35618B582B50046682F /* search.h */,
 				E85FCBC1189C26470085F929 /* AppDelegate.h */,
 				E85FCBE7189C26C30085F929 /* TableViewController.h */,
 				E85FCBE8189C26C30085F929 /* TableViewController.m */,
@@ -143,8 +173,8 @@
 				E85FCBC4189C26470085F929 /* Main.storyboard */,
 				E85FCBCA189C26470085F929 /* Images.xcassets */,
 				E85FCBB9189C26470085F929 /* Supporting Files */,
-				E8AB719718A82904007F3773 /* staticData.h */,
 				A40ACE9918B1892D00059AA1 /* Button-Add-2-512.png */,
+				E8AB719718A82904007F3773 /* staticData.h */,
 				E8AB719818A82904007F3773 /* staticData.m */,
 				A40ACE9718B184F300059AA1 /* light blue wallpaper hd.jpg */,
 			);
@@ -154,6 +184,7 @@
 		E85FCBB9189C26470085F929 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A4F5E26A18B5578600147B04 /* ratemyprof */,
 				A4AC064418AEE94100012FE5 /* background pic.jpg */,
 				E85FCBBA189C26470085F929 /* watcher-Info.plist */,
 				E85FCBBB189C26470085F929 /* InfoPlist.strings */,
@@ -264,11 +295,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4F5E27618B5578600147B04 /* utsc.txt in Resources */,
 				E85FCBCB189C26470085F929 /* Images.xcassets in Resources */,
 				A40ACE9818B184F300059AA1 /* light blue wallpaper hd.jpg in Resources */,
+				A4F5E27518B5578600147B04 /* utsg.txt in Resources */,
+				A4F5E27218B5578600147B04 /* ut_mgmt.txt in Resources */,
+				A4F5E27318B5578600147B04 /* utm.txt in Resources */,
 				A4AC064518AEE94100012FE5 /* background pic.jpg in Resources */,
 				E85FCBBD189C26470085F929 /* InfoPlist.strings in Resources */,
+				A4F5E27118B5578600147B04 /* waterloo_prof.txt in Resources */,
 				E85FCBC6189C26470085F929 /* Main.storyboard in Resources */,
+				A4F5E27418B5578600147B04 /* ut.txt in Resources */,
 				A40ACE9A18B1892D00059AA1 /* Button-Add-2-512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E85FCBC3189C26470085F929 /* AppDelegate.m in Sources */,
+				A415D35718B582B50046682F /* search.cpp in Sources */,
 				E85FCBE9189C26C30085F929 /* TableViewController.m in Sources */,
 				E8AB71A218A9F380007F3773 /* SectionDetailsViewController.m in Sources */,
 				E8AB719618A7F4BF007F3773 /* AddNewCourseViewController.m in Sources */,

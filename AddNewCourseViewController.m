@@ -24,6 +24,7 @@
 
 @synthesize sectionPicker=_sectionPicker;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -147,7 +148,7 @@
 
 /* loadAPI stuff*/
 -(void)loadSectionsSubject:(NSString *)subject Number:(NSString *)number{
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@", subject, number, apiKey]];
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@", subject, number, unlimitedAPIKey]];
     NSError *error=nil;
     NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
     NSDictionary *results=[NSJSONSerialization
@@ -159,7 +160,7 @@
 
 
 -(void)loadSubList{
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@", apiKey]];
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@", unlimitedAPIKey]];
     NSError *error=nil;
     NSData *JSONData = [NSData dataWithContentsOfURL:url
                                              options:NSDataReadingMappedIfSafe error:&error];

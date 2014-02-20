@@ -1,0 +1,77 @@
+Name:Afeche, Phillipe||Dept:Business||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:isHot
+Name:Aharonson, Barak||Dept:Business||Aver:Average Quality||Rate:5||Avg:3.4||Easy:2.2||Hot:isHot
+Name:Ambrose, John||Dept:Business||Aver:Good Quality||Rate:1||Avg:5.0||Easy:1.0||Hot:notHot
+Name:Amburgey, Terry||Dept:Business||Aver:Good Quality||Rate:2||Avg:3.5||Easy:4.0||Hot:notHot
+Name:Amernic, Joel||Dept:Accounting||Aver:Good Quality||Rate:5||Avg:4.4||Easy:2.6||Hot:notHot
+Name:Armstrong, Ann||Dept:Management||Aver:Good Quality||Rate:3||Avg:4.2||Easy:3.3||Hot:notHot
+Name:Baum, Joel||Dept:Business||Aver:Poor Quality||Rate:2||Avg:1.8||Easy:2.0||Hot:notHot
+Name:Bertrand, Brent||Dept:Accounting||Aver:Good Quality||Rate:9||Avg:4.0||Easy:2.5||Hot:notHot
+Name:Blum, Bernardo||Dept:Economics||Aver:Average Quality||Rate:4||Avg:3.0||Easy:3.2||Hot:notHot
+Name:Borkovski, Ron||Dept:Marketing||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:notHot
+Name:Brean, Donald||Dept:Finance||Aver:Good Quality||Rate:10||Avg:4.3||Easy:2.3||Hot:isHot
+Name:Btou, Daniel||Dept:Business||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Calder, Brendan||Dept:Management||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Chan, Eugene||Dept:Management||Aver:Average Quality||Rate:2||Avg:2.8||Easy:2.5||Hot:isHot
+Name:Chiu, Sam||Dept:Management||Aver:Good Quality||Rate:2||Avg:4.0||Easy:3.5||Hot:notHot
+Name:Corts, Kenneth S.||Dept:Economics||Aver:Average Quality||Rate:9||Avg:3.2||Easy:2.0||Hot:notHot
+Name:Cote, Stephane||Dept:Management||Aver:Good Quality||Rate:2||Avg:4.2||Easy:4.5||Hot:notHot
+Name:Dobson, Wendy||Dept:Business||Aver:Average Quality||Rate:2||Avg:2.8||Easy:3.0||Hot:notHot
+Name:Doidge, Craig||Dept:Finance||Aver:Poor Quality||Rate:5||Avg:1.6||Easy:1.0||Hot:isHot
+Name:Duan, Jinchuan||Dept:Finance||Aver:Poor Quality||Rate:5||Avg:1.7||Easy:1.6||Hot:notHot
+Name:Dungan, Peter||Dept:Economics||Aver:Good Quality||Rate:8||Avg:4.6||Easy:3.9||Hot:notHot
+Name:Dunn, David||Dept:Marketing||Aver:Poor Quality||Rate:2||Avg:1.8||Easy:3.0||Hot:notHot
+Name:Dunne, David||Dept:Marketing||Aver:Average Quality||Rate:6||Avg:2.8||Easy:3.5||Hot:notHot
+Name:Elitzur, Ramy||Dept:Accounting||Aver:Average Quality||Rate:20||Avg:3.3||Easy:3.0||Hot:notHot
+Name:Feldman, Mary Ann||Dept:Business||Aver:Poor Quality||Rate:2||Avg:1.5||Easy:3.5||Hot:notHot
+Name:Fleischer, Ann||Dept:Business||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Fraser, Heather||Dept:Business||Aver:Good Quality||Rate:1||Avg:4.0||Easy:3.0||Hot:isHot
+Name:Gibson, Lib||Dept:Business||Aver:Good Quality||Rate:2||Avg:4.8||Easy:3.5||Hot:isHot
+Name:Golden, Brian||Dept:Business||Aver:Average Quality||Rate:6||Avg:3.3||Easy:3.5||Hot:isHot
+Name:Goldfarb, Avi||Dept:Marketing||Aver:Good Quality||Rate:8||Avg:4.4||Easy:3.4||Hot:isHot
+Name:Goldreich, David||Dept:Finance||Aver:Good Quality||Rate:6||Avg:4.5||Easy:3.5||Hot:notHot
+Name:Grennan, Matt||Dept:Management||Aver:Good Quality||Rate:11||Avg:4.5||Easy:3.1||Hot:isHot
+Name:Harvey, Lisa||Dept:Accounting||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:notHot
+Name:Honickman, Howard||Dept:Management||Aver:Poor Quality||Rate:5||Avg:1.5||Easy:1.6||Hot:notHot
+Name:Hyatt, Doug||Dept:Economics||Aver:Good Quality||Rate:3||Avg:5.0||Easy:4.0||Hot:notHot
+Name:Irwin, Heather-Anne||Dept:Finance||Aver:Good Quality||Rate:4||Avg:4.0||Easy:4.2||Hot:notHot
+Name:Khan, Michael||Dept:Accounting||Aver:Poor Quality||Rate:8||Avg:1.9||Easy:2.2||Hot:notHot
+Name:Kirzner, Eric||Dept:Finance||Aver:Average Quality||Rate:2||Avg:3.0||Easy:3.5||Hot:notHot
+Name:Krass, Dmitry||Dept:Mathematics||Aver:Average Quality||Rate:8||Avg:3.0||Easy:2.6||Hot:notHot
+Name:Lederman, Mara||Dept:Management||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Lee, Bailey||Dept:Management||Aver:Average Quality||Rate:2||Avg:3.2||Easy:3.0||Hot:notHot
+Name:Lee, Byung Soo||Dept:Economics||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Losell, Donna||Dept:Accounting||Aver:Average Quality||Rate:8||Avg:2.8||Easy:3.2||Hot:notHot
+Name:MacKay, Alexandra||Dept:Finance||Aver:Good Quality||Rate:11||Avg:4.5||Easy:3.5||Hot:notHot
+Name:Mahrt-Smith, Jan||Dept:Finance||Aver:Good Quality||Rate:9||Avg:4.8||Easy:2.8||Hot:isHot
+Name:Mak, Kevin||Dept:Finance||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Martin, Joseph||Dept:History||Aver:Good Quality||Rate:3||Avg:3.8||Easy:4.0||Hot:notHot
+Name:Martin, Roger||Dept:Management||Aver:Good Quality||Rate:1||Avg:4.0||Easy:3.0||Hot:notHot
+Name:Mazar, Nina||Dept:Marketing||Aver:Average Quality||Rate:1||Avg:3.0||Easy:4.0||Hot:isHot
+Name:McCurdy, Tom||Dept:Finance||Aver:Good Quality||Rate:3||Avg:4.3||Easy:3.3||Hot:notHot
+Name:McGahan, Anita||Dept:Management||Aver:Good Quality||Rate:9||Avg:3.6||Easy:3.2||Hot:notHot
+Name:Mehta, Nitin||Dept:Marketing||Aver:Good Quality||Rate:8||Avg:4.9||Easy:3.4||Hot:notHot
+Name:Menzefricke, Ulrich||Dept:Business||Aver:Good Quality||Rate:7||Avg:4.7||Easy:3.0||Hot:notHot
+Name:Milner, Joseph||Dept:Management||Aver:Good Quality||Rate:15||Avg:3.6||Easy:2.6||Hot:notHot
+Name:Moldoveanu, Mihnea||Dept:Business||Aver:Average Quality||Rate:2||Avg:3.0||Easy:1.5||Hot:notHot
+Name:Nevard, Ryan||Dept:Management||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:isHot
+Name:Oesch, John||Dept:Management||Aver:Poor Quality||Rate:19||Avg:2.4||Easy:3.1||Hot:notHot
+Name:Oxley, Joanne||Dept:Business||Aver:Average Quality||Rate:8||Avg:3.1||Easy:2.0||Hot:notHot
+Name:Palancz, Eszter||Dept:Accounting||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Patrick, John||Dept:Languages||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Pitariu, Adrian||Dept:Management||Aver:Poor Quality||Rate:3||Avg:1.3||Easy:3.0||Hot:notHot
+Name:Powers, R||Dept:Ethics||Aver:Good Quality||Rate:6||Avg:4.1||Easy:3.7||Hot:notHot
+Name:Reed, Connie||Dept:Accounting||Aver:Poor Quality||Rate:6||Avg:1.6||Easy:2.0||Hot:notHot
+Name:Richards, Dan||Dept:Marketing||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:notHot
+Name:Rowley, Tim||Dept:Business||Aver:Poor Quality||Rate:3||Avg:2.0||Easy:2.3||Hot:notHot
+Name:Rutherford, Scott||Dept:Business||Aver:Good Quality||Rate:1||Avg:5.0||Easy:1.0||Hot:isHot
+Name:Shear, Dan||Dept:Not Specified||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Skurnik, Ian||Dept:Management||Aver:Good Quality||Rate:1||Avg:5.0||Easy:5.0||Hot:notHot
+Name:Soman, Dilip||Dept:Marketing||Aver:Good Quality||Rate:15||Avg:4.1||Easy:3.3||Hot:notHot
+Name:Stojanovic, Dragan||Dept:Accounting||Aver:Good Quality||Rate:11||Avg:4.4||Easy:2.8||Hot:isHot
+Name:Tang, Simon||Dept:Accounting||Aver:Good Quality||Rate:1||Avg:4.0||Easy:4.0||Hot:isHot
+Name:Tombak, Mihkel||Dept:Economics||Aver:Poor Quality||Rate:3||Avg:1.5||Easy:3.7||Hot:notHot
+Name:Weber, Mark||Dept:Social Science||Aver:Good Quality||Rate:3||Avg:4.8||Easy:3.3||Hot:isHot
+Name:Whyte, Glen||Dept:Business||Aver:Good Quality||Rate:3||Avg:4.8||Easy:3.0||Hot:isHot
+Name:Wojnicki, Andrea||Dept:Marketing||Aver:Poor Quality||Rate:2||Avg:1.2||Easy:3.0||Hot:isHot
+Name:Womack, Kent||Dept:Business||Aver:Poor Quality||Rate:3||Avg:2.3||Easy:1.7||Hot:notHot
+Name:Zuliani,||Dept:Accounting||Aver:Average Quality||Rate:16||Avg:3.1||Easy:2.3||Hot:notHot

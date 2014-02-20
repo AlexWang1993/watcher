@@ -1,0 +1,80 @@
+Name:Allen, Grant||Dept:Engineering||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:isHot
+Name:Anstey, Kyle||Dept:Philosophy||Aver:Poor Quality||Rate:1||Avg:1.0||Easy:1.0||Hot:notHot
+Name:Armas, Ramiro||Dept:Languages||Aver:Average Quality||Rate:2||Avg:3.0||Easy:4.0||Hot:notHot
+Name:Armstrong, Stephen||Dept:Engineering||Aver:Good Quality||Rate:1||Avg:4.5||Easy:3.0||Hot:isHot
+Name:Batty, Helen||Dept:Medicine||Aver:Good Quality||Rate:1||Avg:5.0||Easy:4.0||Hot:notHot
+Name:Bear, Christine||Dept:Biochemistry||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Benson, Peter||Dept:Law||Aver:Good Quality||Rate:2||Avg:5.0||Easy:3.5||Hot:isHot
+Name:Berger, Stuart||Dept:Biology||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:isHot
+Name:Bessler, Paul||Dept:Languages||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:notHot
+Name:Betz, Vaughn||Dept:Engineering||Aver:Good Quality||Rate:4||Avg:5.0||Easy:4.5||Hot:isHot
+Name:Binnick, R.||Dept:Languages||Aver:Good Quality||Rate:1||Avg:5.0||Easy:2.0||Hot:notHot
+Name:Boran, Erol||Dept:Literature||Aver:Good Quality||Rate:5||Avg:4.5||Easy:4.0||Hot:isHot
+Name:Brenda, Andrews||Dept:Biology||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Briskin, David||Dept:Music||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Bruder, Alan||Dept:Law||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Bucerius, Sandra||Dept:Criminal Justice||Aver:Good Quality||Rate:2||Avg:5.0||Easy:3.0||Hot:isHot
+Name:Callon, Callie||Dept:Religion||Aver:Good Quality||Rate:2||Avg:5.0||Easy:3.5||Hot:isHot
+Name:Chakrabartty, Avi||Dept:Biology||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Chin, Carol||Dept:History||Aver:Good Quality||Rate:3||Avg:5.0||Easy:2.7||Hot:notHot
+Name:Christopoulos, John||Dept:Humanities||Aver:Good Quality||Rate:7||Avg:4.9||Easy:3.0||Hot:isHot
+Name:Circi, Baha||Dept:Economics||Aver:Good Quality||Rate:2||Avg:4.8||Easy:4.0||Hot:isHot
+Name:Cook, Trevor||Dept:English||Aver:Good Quality||Rate:1||Avg:4.5||Easy:4.0||Hot:notHot
+Name:Cott, Cheryl||Dept:Health Science||Aver:Poor Quality||Rate:1||Avg:1.0||Easy:2.0||Hot:notHot
+Name:Coulagouri, Claudio||Dept:Sociology||Aver:Good Quality||Rate:4||Avg:5.0||Easy:4.0||Hot:isHot
+Name:Dasgupta, Kunal||Dept:Economics||Aver:Good Quality||Rate:1||Avg:4.5||Easy:3.0||Hot:notHot
+Name:De Bourbon, Bryan||Dept:Computer Science||Aver:Good Quality||Rate:1||Avg:5.0||Easy:5.0||Hot:notHot
+Name:De Kerckhove, Derrick||Dept:Languages||Aver:Good Quality||Rate:1||Avg:5.0||Easy:5.0||Hot:notHot
+Name:Dionsio, Max||Dept:Information Science||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Dolderman, Dan||Dept:Psychology||Aver:Good Quality||Rate:2||Avg:5.0||Easy:4.0||Hot:isHot
+Name:Evans, Greg||Dept:Engineering||Aver:Good Quality||Rate:3||Avg:4.0||Easy:3.7||Hot:isHot
+Name:Freitas, Kripa||Dept:Economics||Aver:Average Quality||Rate:1||Avg:3.0||Easy:2.0||Hot:notHot
+Name:Fujii, Lee Ann||Dept:Political Science||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Galvao-Sousa, Bernardo||Dept:Mathematics||Aver:Good Quality||Rate:6||Avg:4.2||Easy:3.5||Hot:isHot
+Name:Georgis, Dina||Dept:Women's Studies||Aver:Good Quality||Rate:1||Avg:5.0||Easy:2.0||Hot:isHot
+Name:Goldstein, David||Dept:Psychology||Aver:Good Quality||Rate:2||Avg:4.8||Easy:4.0||Hot:notHot
+Name:Gries, Paul||Dept:Computer Science||Aver:Good Quality||Rate:1||Avg:5.0||Easy:5.0||Hot:isHot
+Name:Griffiths, Leonard||Dept:Law||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Hathaway, Mark D||Dept:Not Specified||Aver:Good Quality||Rate:3||Avg:3.5||Easy:2.7||Hot:notHot
+Name:Huggins, William||Dept:Business||Aver:Good Quality||Rate:13||Avg:4.2||Easy:3.0||Hot:isHot
+Name:Hussain, Syed A||Dept:Religion||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:isHot
+Name:Iwama, Michael||Dept:Medicine||Aver:Good Quality||Rate:8||Avg:4.9||Easy:3.2||Hot:isHot
+Name:Keelan, Jenn||Dept:Not Specified||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Kochan, Angela||Dept:Health Science||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:isHot
+Name:Kuzmenko, Larysa||Dept:Music||Aver:Good Quality||Rate:3||Avg:4.0||Easy:4.0||Hot:notHot
+Name:Lawrence, Geoff||Dept:Education||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Legge, E||Dept:Art History||Aver:Good Quality||Rate:1||Avg:5.0||Easy:4.0||Hot:isHot
+Name:Magee, John||Dept:Classics||Aver:Good Quality||Rate:2||Avg:5.0||Easy:3.0||Hot:notHot
+Name:Manbachi, Amir||Dept:Engineering||Aver:Good Quality||Rate:8||Avg:4.4||Easy:3.2||Hot:isHot
+Name:Mota Prado, Mariana||Dept:Law||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:isHot
+Name:Mount, Nick||Dept:English||Aver:Good Quality||Rate:17||Avg:4.8||Easy:2.9||Hot:isHot
+Name:Norman, Jon||Dept:Engineering||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Osiel, Steven||Dept:Business||Aver:Poor Quality||Rate:1||Avg:1.0||Easy:1.0||Hot:notHot
+Name:Palomares, Claudio||Dept:Languages||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:isHot
+Name:Parker, Mary Ann||Dept:Music||Aver:Poor Quality||Rate:1||Avg:1.5||Easy:1.0||Hot:notHot
+Name:Perelman, Sev||Dept:Medicine||Aver:Good Quality||Rate:3||Avg:4.7||Easy:2.7||Hot:isHot
+Name:Placienza, Gabriel||Dept:Engineering||Aver:Poor Quality||Rate:2||Avg:1.0||Easy:3.0||Hot:notHot
+Name:Poon, Joyce||Dept:Engineering||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Pranjivan, Vince||Dept:Accounting||Aver:Poor Quality||Rate:5||Avg:2.2||Easy:2.6||Hot:notHot
+Name:Repp, Charles||Dept:Philosophy||Aver:Good Quality||Rate:1||Avg:4.0||Easy:4.0||Hot:isHot
+Name:Roach, Kent||Dept:Law||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:isHot
+Name:Rosella, Laura||Dept:Statistics||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:isHot
+Name:Saini, Michael||Dept:Social Work||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Schellenberg, Susanna||Dept:Philosophy||Aver:Good Quality||Rate:2||Avg:5.0||Easy:1.5||Hot:isHot
+Name:Seelig, Rachel||Dept:Literature||Aver:Poor Quality||Rate:1||Avg:1.0||Easy:2.0||Hot:notHot
+Name:Shakourifar, Mohammad||Dept:Computer Science||Aver:Good Quality||Rate:2||Avg:5.0||Easy:5.0||Hot:isHot
+Name:Sommerville, Brookes||Dept:Philosophy||Aver:Good Quality||Rate:5||Avg:4.5||Easy:3.2||Hot:isHot
+Name:Soper-Jones, Ella||Dept:English||Aver:Good Quality||Rate:2||Avg:5.0||Easy:4.0||Hot:isHot
+Name:Spencer, Barrett||Dept:Biology||Aver:Good Quality||Rate:1||Avg:4.0||Easy:3.0||Hot:notHot
+Name:Tan, Peter||Dept:Engineering||Aver:Good Quality||Rate:1||Avg:5.0||Easy:5.0||Hot:isHot
+Name:Thompson, Kyle||Dept:Mathematics||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Tousson, Rawya||Dept:Languages||Aver:Good Quality||Rate:1||Avg:5.0||Easy:4.0||Hot:notHot
+Name:Vanbeek, Liam||Dept:History||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Vernon, Thom||Dept:Writing||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:notHot
+Name:Vicente, Kim||Dept:Engineering||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Voltan, Kathy||Dept:Humanities||Aver:Good Quality||Rate:2||Avg:5.0||Easy:4.0||Hot:isHot
+Name:Warnica, David||Dept:Engineering||Aver:||Rate:0||Avg:&nbsp;||Easy:&nbsp;||Hot:notHot
+Name:Wolff, Jane||Dept:Architecture||Aver:Good Quality||Rate:1||Avg:4.0||Easy:3.0||Hot:notHot
+Name:Wolfson,||Dept:Economics||Aver:Good Quality||Rate:3||Avg:4.7||Easy:2.3||Hot:notHot
+Name:Youngson, Charlotte||Dept:Biology||Aver:Good Quality||Rate:2||Avg:5.0||Easy:3.0||Hot:isHot
+Name:Zargham, Meysam||Dept:Engineering||Aver:Good Quality||Rate:1||Avg:5.0||Easy:3.0||Hot:isHot

@@ -25,5 +25,6 @@
 
 @property (strong,nonatomic) NSArray *sectionList;
 
+
 @property (weak,nonatomic) TableViewController *parent;
 @end

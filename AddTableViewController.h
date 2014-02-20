@@ -7,8 +7,8 @@
 //
 
 
-static NSString *apiKey=@"e2b51117475b5dd304155b436fe6787b";
-
+//static NSString *apiKey=@"e2b51117475b5dd304155b436fe6787b";
+#import "staticData.h"
 #import <UIKit/UIKit.h>
 
 @interface AddTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>

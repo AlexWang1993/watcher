@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TableViewController.h"
+//#import "staticData.h"
 
 @interface SectionDetailsViewController : UIViewController
 
@@ -16,7 +18,16 @@
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *capacityLabel;
+@property (strong, nonatomic) IBOutlet UILabel *totalEnrolledLabel;
+
+
+
 
 @property (strong,nonatomic) NSDictionary *info;
+
+//@property(strong,nonatomic) NSArray *descriptionList;
+
 
 @end
