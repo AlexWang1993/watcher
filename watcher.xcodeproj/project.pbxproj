@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A40ACE9818B184F300059AA1 /* light blue wallpaper hd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A40ACE9718B184F300059AA1 /* light blue wallpaper hd.jpg */; };
-		A415D35718B582B50046682F /* search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A415D35518B582B50046682F /* search.cpp */; };
 		A415D38118B5B1790046682F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A415D35918B5B1790046682F /* .gitignore */; };
 		A415D38218B5B1790046682F /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = A415D35B18B5B1790046682F /* Appirater.m */; };
 		A415D38318B5B1790046682F /* Appirater.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A415D35C18B5B1790046682F /* Appirater.podspec */; };
 		A415D38418B5B1790046682F /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A415D35E18B5B1790046682F /* AppiraterLocalizable.strings */; };
 		A415D38518B5B1790046682F /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = A415D36118B5B1790046682F /* CHANGELOG.md */; };
 		A415D38618B5B1790046682F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A415D37618B5B1790046682F /* README.md */; };
+		A433FB5318B944D000A6738B /* testfile.txt in Resources */ = {isa = PBXBuildFile; fileRef = A433FB5218B944D000A6738B /* testfile.txt */; };
 		A4AC064518AEE94100012FE5 /* background pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4AC064418AEE94100012FE5 /* background pic.jpg */; };
 		A4F5E27118B5578600147B04 /* waterloo_prof.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26B18B5578600147B04 /* waterloo_prof.txt */; };
 		A4F5E27218B5578600147B04 /* ut_mgmt.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26C18B5578600147B04 /* ut_mgmt.txt */; };
@@ -54,8 +54,6 @@
 
 /* Begin PBXFileReference section */
 		A40ACE9718B184F300059AA1 /* light blue wallpaper hd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "light blue wallpaper hd.jpg"; sourceTree = SOURCE_ROOT; };
-		A415D35518B582B50046682F /* search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = search.cpp; sourceTree = "<group>"; };
-		A415D35618B582B50046682F /* search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search.h; sourceTree = "<group>"; };
 		A415D35918B5B1790046682F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A415D35A18B5B1790046682F /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
 		A415D35B18B5B1790046682F /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
@@ -95,6 +93,7 @@
 		A415D37E18B5B1790046682F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		A415D37F18B5B1790046682F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
 		A415D38018B5B1790046682F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
+		A433FB5218B944D000A6738B /* testfile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testfile.txt; sourceTree = "<group>"; };
 		A4AC064418AEE94100012FE5 /* background pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background pic.jpg"; sourceTree = SOURCE_ROOT; };
 		A4F5E26B18B5578600147B04 /* waterloo_prof.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = waterloo_prof.txt; sourceTree = "<group>"; };
 		A4F5E26C18B5578600147B04 /* ut_mgmt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ut_mgmt.txt; sourceTree = "<group>"; };
@@ -174,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F5E26B18B5578600147B04 /* waterloo_prof.txt */,
+				A433FB5218B944D000A6738B /* testfile.txt */,
 				A4F5E26C18B5578600147B04 /* ut_mgmt.txt */,
 				A4F5E26D18B5578600147B04 /* utm.txt */,
 				A4F5E26E18B5578600147B04 /* ut.txt */,
@@ -223,8 +223,6 @@
 				E8AB719518A7F4BF007F3773 /* AddNewCourseViewController.m */,
 				E8E2EE6D189C3C970080DDCB /* AddTableViewController.h */,
 				E8E2EE6E189C3C970080DDCB /* AddTableViewController.m */,
-				A415D35518B582B50046682F /* search.cpp */,
-				A415D35618B582B50046682F /* search.h */,
 				E85FCBC1189C26470085F929 /* AppDelegate.h */,
 				E85FCBE7189C26C30085F929 /* TableViewController.h */,
 				E85FCBE8189C26C30085F929 /* TableViewController.m */,
@@ -387,6 +385,7 @@
 				A4F5E27618B5578600147B04 /* utsc.txt in Resources */,
 				E85FCBCB189C26470085F929 /* Images.xcassets in Resources */,
 				A40ACE9818B184F300059AA1 /* light blue wallpaper hd.jpg in Resources */,
+				A433FB5318B944D000A6738B /* testfile.txt in Resources */,
 				A415D38518B5B1790046682F /* CHANGELOG.md in Resources */,
 				A4F5E27518B5578600147B04 /* utsg.txt in Resources */,
 				A4F5E27218B5578600147B04 /* ut_mgmt.txt in Resources */,
@@ -420,7 +419,6 @@
 			files = (
 				A415D38218B5B1790046682F /* Appirater.m in Sources */,
 				E85FCBC3189C26470085F929 /* AppDelegate.m in Sources */,
-				A415D35718B582B50046682F /* search.cpp in Sources */,
 				E85FCBE9189C26C30085F929 /* TableViewController.m in Sources */,
 				E8AB71A218A9F380007F3773 /* SectionDetailsViewController.m in Sources */,
 				E8AB719618A7F4BF007F3773 /* AddNewCourseViewController.m in Sources */,

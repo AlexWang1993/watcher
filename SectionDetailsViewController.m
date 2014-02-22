@@ -28,23 +28,6 @@
 }
 
 
-
-/*load api stuff
-
-
--(void)loadDetails{
-    NSString *subject = [self.info objectForKey:@"subject"];
-    NSString *number = [self.info objectForKey:@"catalog_number"];
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@",subject, number,unlimitedAPIKey]];
-    NSError *error=nil;
-    NSData *JSONData = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
-    NSDictionary *results = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&error];
-    NSArray *data = [results objectForKey:@"enrollment_capacity"];
-    for (NSDictionary *sec in data) {
-        <#statements#>
-    }
-} */
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -63,17 +46,69 @@
     self.capacityLabel.text=[NSString stringWithFormat:@"Enrollment Capacity: %@", [self.info objectForKey:@"enrollment_capacity"]];
     self.totalEnrolledLabel.text=[NSString stringWithFormat:@"Total Enrolled: %@", [self.info objectForKey:@"enrollment_total"]];
     self.timeLabel.text=[NSString stringWithFormat:@"%@ - %@",[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
-	// Do any additional setup after loading the view.
+    
+    
+    
+    //rate my prof starts
+    
+    NSString *profName= [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0];
+    
+    NSString *waterlooProf = @"/Users/helenjiang/Documents/gitWatcher/watcher_clone_saturday/watcher/ratemyprof/waterloo_prof.txt";
+    NSString *fileContentsString = [NSString stringWithContentsOfFile:waterlooProf encoding:NSUTF8StringEncoding error:nil];
+    if (fileContentsString==nil) {
+        self.descriptionLabel.text=@"Error reading file";
+    }
+    NSRange result = [fileContentsString rangeOfString:profName options:NSLiteralSearch];
+    if (result.location == NSNotFound) {
+        self.descriptionLabel.text = @"Not on rate my prof";
+    }
+    else  {
+        NSRange lineRange = [fileContentsString lineRangeForRange:result];
+        NSString *line = [fileContentsString substringWithRange:lineRange];
+        
+        //get substring for avg rate and easiness
+        
+        NSRange avgRateRange = [line rangeOfString:@"Avg" options:NSLiteralSearch];
+        NSRange easinessRange = [line rangeOfString:@"Easy" options:NSLiteralSearch];
+        avgRateRange.location = avgRateRange.location+4;
+        easinessRange.location = easinessRange.location+5;
+        easinessRange.length = 3;
+        NSString *avgRate = [line substringWithRange:avgRateRange];
+        NSString *easiness = [line substringWithRange:easinessRange];
+        if ([avgRate isEqualToString:@"&nb"]) {
+            avgRate = @"N/A";
+        }
+        if ([easiness isEqualToString:@"&nb"]){
+            easiness =@"N/A";
+        }
+        self.descriptionLabel.text =[NSString stringWithFormat:@"Information from RateMyProf Website:\nAverage Rating:%@\nEasiness:%@",avgRate,easiness];
+    }
+    
+    
+    
+    
+    //for simple testing
+    /*
+    NSString *profName = @"Jiang, Helena";
+    NSString *waterlooProf=@"/Users/helenjiang/Documents/gitWatcher/watcher_clone_saturday/watcher/ratemyprof/testfile.txt";
+    NSString *fileContentsString = [NSString stringWithContentsOfFile:waterlooProf encoding:NSUTF8StringEncoding error:nil];
+    if (fileContentsString==nil) {
+        self.descriptionLabel.text=@"Error reading file";
+    }
+       NSRange result = [fileContentsString rangeOfString:profName];
+ //   NSRange result = [fileContentsString rangeOfString:profName options:NSLiteralSearch];
+    if (result.location == NSNotFound) {
+        self.descriptionLabel.text = @"Not on rate my prof";
+    }
+    else  {
+        NSRange lineRange = [fileContentsString lineRangeForRange:result];
+        int location = (int) result.location;
+        int length = (int) result.length;
+        NSString *line = [fileContentsString substringWithRange:lineRange];
+        self.descriptionLabel.text = line;}
+*/
 }
 
-/*- (void)searchRateMyProf(NSString keyword){
-    NSString *waterlooProf = @"waterloo_prof.txt";
-    NSFileHandle *fin;
-    NSData *buffer;
-    //open it for reading
-    fin = [NSFileHandle fileHandleForReadingAtPath:waterlooProf];
-    
-}*/
 
 
 - (void)didReceiveMemoryWarning
