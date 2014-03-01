@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *capacityLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalEnrolledLabel;
 
+@property (strong, nonatomic) IBOutlet UITextView *descriptionText;
 
 
 

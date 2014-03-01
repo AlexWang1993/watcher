@@ -53,7 +53,7 @@
     
     NSString *profName= [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0];
     
-    NSString *waterlooProf = @"/Users/helenjiang/Documents/gitWatcher/watcher_clone_saturday/watcher/ratemyprof/waterloo_prof.txt";
+    NSString *waterlooProf = @"Users/alexwang/Documents/tests/watcherhelen/watcher/ratemyprof/waterloo_prof.txt";
     NSString *fileContentsString = [NSString stringWithContentsOfFile:waterlooProf encoding:NSUTF8StringEncoding error:nil];
     if (fileContentsString==nil) {
         self.descriptionLabel.text=@"Error reading file";
@@ -81,7 +81,8 @@
         if ([easiness isEqualToString:@"&nb"]){
             easiness =@"N/A";
         }
-        self.descriptionLabel.text =[NSString stringWithFormat:@"Information from RateMyProf Website:\nAverage Rating:%@\nEasiness:%@",avgRate,easiness];
+        self.descriptionLabel.text =[NSString stringWithFormat:@"%@ %@",avgRate,easiness];
+        self.descriptionText.text=[NSString stringWithFormat:@"the information from ratemyprof is %@ %@",avgRate,easiness];
     }
     
     
