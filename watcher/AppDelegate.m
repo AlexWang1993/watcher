@@ -15,7 +15,7 @@
 @implementation AppDelegate
 
 -(TableViewController *)getRootViewController{
-    return [((UINavigationController *) self.window.rootViewController).viewControllers objectAtIndex:0];
+    return [((UINavigationController *) [((UITabBarController *)self.window.rootViewController).viewControllers objectAtIndex:0]).viewControllers objectAtIndex:0];
     
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

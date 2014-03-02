@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="YK8-Mm-cKE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="CKd-Ly-fYs">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -10,7 +10,7 @@
             <objects>
                 <tableViewController id="GvW-ZU-7aL" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BmI-DY-LkJ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light blue wallpaper hd.jpg" id="Tpw-En-RWX">
@@ -73,7 +73,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1g-XI-JTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="-293"/>
+            <point key="canvasLocation" x="1738" y="-293"/>
         </scene>
         <!--Add Table View Controller - Add Course to Add-->
         <scene sceneID="hOC-U4-J28">
@@ -131,7 +131,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1592" y="266"/>
+            <point key="canvasLocation" x="2118" y="266"/>
         </scene>
         <!--Add New Course View Controller - Add New Course-->
         <scene sceneID="WBn-Dj-p0z">
@@ -142,7 +142,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pvg-OM-QT9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oL7-4A-bEc">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="light blue wallpaper hd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fDT-z3-zYT">
@@ -180,7 +180,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="bottom" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWN-3N-b39">
-                                <rect key="frame" x="0.0" y="228" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="228" width="320" height="180"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.69999999999999996"/>
                             </pickerView>
@@ -258,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYk-XM-XYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043" y="-295"/>
+            <point key="canvasLocation" x="2569" y="-295"/>
         </scene>
         <!--Section Details View Controller - Section Details-->
         <scene sceneID="Hmv-jb-v8P">
@@ -269,11 +269,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ogH-QN-7dh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Eo-Se-LH2">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light blue wallpaper hd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ch2-wX-5Ub">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eg.cs115" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxb-V0-U05" userLabel="Subject">
@@ -413,12 +413,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8A-lE-OHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2430" y="-295"/>
+            <point key="canvasLocation" x="2956" y="-295"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - HEHE-->
         <scene sceneID="t7p-Sa-bvh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YK8-Mm-cKE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="HEHE" id="Usm-XI-tF5"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="RMn-Rs-K4q"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gID-4I-t3Z">
@@ -432,6 +433,44 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0U5-Fo-s2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1212" y="-293"/>
+        </scene>
+        <!--View Controller - Item-->
+        <scene sceneID="8yJ-Su-57s">
+            <objects>
+                <viewController id="af4-Xg-Svy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1RX-8B-lYV"/>
+                        <viewControllerLayoutGuide type="bottom" id="xJC-Vv-apB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lr6-Tx-7Of">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="QnN-4m-1Ez"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pM-eN-dOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="378"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="h3w-ru-U9Z">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="CKd-Ly-fYs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="hnB-fs-AVy">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="YK8-Mm-cKE" kind="relationship" relationship="viewControllers" id="Fpr-i7-cut"/>
+                        <segue destination="af4-Xg-Svy" kind="relationship" relationship="viewControllers" id="deX-Qp-aBt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXI-xE-l0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="686" y="-293"/>
         </scene>
     </scenes>
@@ -444,6 +483,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="49S-wQ-5tP"/>
+        <segue reference="UpB-2a-Idd"/>
     </inferredMetricsTieBreakers>
 </document>
