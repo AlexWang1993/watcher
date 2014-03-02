@@ -21,9 +21,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *capacityLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalEnrolledLabel;
-
-@property (strong, nonatomic) IBOutlet UITextView *descriptionText;
-
+@property (strong, nonatomic) IBOutlet UILabel *avgRateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *easinessLabel;
 
 
 @property (strong,nonatomic) NSDictionary *info;

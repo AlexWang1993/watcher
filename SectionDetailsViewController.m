@@ -45,7 +45,10 @@
     self.titleLabel.text=[self.info objectForKey:@"title"];
     self.capacityLabel.text=[NSString stringWithFormat:@"Enrollment Capacity: %@", [self.info objectForKey:@"enrollment_capacity"]];
     self.totalEnrolledLabel.text=[NSString stringWithFormat:@"Total Enrolled: %@", [self.info objectForKey:@"enrollment_total"]];
-    self.timeLabel.text=[NSString stringWithFormat:@"%@ - %@",[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
+    self.timeLabel.text=[NSString stringWithFormat:@"%@ %@ - %@",
+                         [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],
+                         [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],
+                         [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
     
     
     
@@ -81,33 +84,16 @@
         if ([easiness isEqualToString:@"&nb"]){
             easiness =@"N/A";
         }
+<<<<<<< HEAD
         self.descriptionLabel.text =[NSString stringWithFormat:@"%@ %@",avgRate,easiness];
         self.descriptionText.text=[NSString stringWithFormat:@"the information from ratemyprof is %@ %@",avgRate,easiness];
+=======
+        self.descriptionLabel.text =[NSString stringWithFormat:@"Information from RateMyProf:"];
+        self.avgRateLabel.text = [NSString stringWithFormat:@"Average Rating:%@",avgRate];
+        self.easinessLabel.text=[NSString stringWithFormat:@"Easiness:%@",easiness];
+>>>>>>> 483db513a0923673de01506eb0d623db24b61ac7
     }
     
-    
-    
-    
-    //for simple testing
-    /*
-    NSString *profName = @"Jiang, Helena";
-    NSString *waterlooProf=@"/Users/helenjiang/Documents/gitWatcher/watcher_clone_saturday/watcher/ratemyprof/testfile.txt";
-    NSString *fileContentsString = [NSString stringWithContentsOfFile:waterlooProf encoding:NSUTF8StringEncoding error:nil];
-    if (fileContentsString==nil) {
-        self.descriptionLabel.text=@"Error reading file";
-    }
-       NSRange result = [fileContentsString rangeOfString:profName];
- //   NSRange result = [fileContentsString rangeOfString:profName options:NSLiteralSearch];
-    if (result.location == NSNotFound) {
-        self.descriptionLabel.text = @"Not on rate my prof";
-    }
-    else  {
-        NSRange lineRange = [fileContentsString lineRangeForRange:result];
-        int location = (int) result.location;
-        int length = (int) result.length;
-        NSString *line = [fileContentsString substringWithRange:lineRange];
-        self.descriptionLabel.text = line;}
-*/
 }
 
 
