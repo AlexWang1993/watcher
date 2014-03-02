@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="YK8-Mm-cKE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="YK8-Mm-cKE">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -149,13 +149,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="598"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ou5-r9-L7T">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ou5-r9-L7T">
                                 <rect key="frame" x="214" y="39" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="bug-FF-tpc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-Pr-ZAT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-Pr-ZAT">
                                 <rect key="frame" x="214" y="85" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -164,13 +167,13 @@
                                     <action selector="editingDidEnd:" destination="dDV-EK-CRX" eventType="editingDidEnd" id="c0j-Ie-gDJ"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Subject e.g. CS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4q-zX-i7G">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject e.g. CS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4q-zX-i7G">
                                 <rect key="frame" x="35" y="43" width="121" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Number e.g. 115" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIH-0A-HSK">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Number e.g. 115" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIH-0A-HSK">
                                 <rect key="frame" x="35" y="89" width="155" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -220,6 +223,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ou5-r9-L7T" secondAttribute="trailing" constant="35" id="0hJ-aj-ALm"/>
+                            <constraint firstItem="rb0-Pr-ZAT" firstAttribute="top" secondItem="Ou5-r9-L7T" secondAttribute="bottom" constant="16" id="BV9-pt-E9D"/>
                             <constraint firstItem="gWN-3N-b39" firstAttribute="top" secondItem="VsL-Z6-8gZ" secondAttribute="bottom" constant="-43" id="D0U-sT-fur"/>
                             <constraint firstItem="gWN-3N-b39" firstAttribute="top" secondItem="yyt-Ct-bWp" secondAttribute="bottom" constant="195" id="F7Y-iK-48a"/>
                             <constraint firstItem="Ou5-r9-L7T" firstAttribute="leading" secondItem="d4q-zX-i7G" secondAttribute="trailing" constant="58" id="Fn7-mG-50h"/>
@@ -228,13 +233,16 @@
                             <constraint firstAttribute="trailing" secondItem="GKb-B4-wL5" secondAttribute="trailing" constant="7" id="Omr-pg-vWm"/>
                             <constraint firstItem="VsL-Z6-8gZ" firstAttribute="top" secondItem="yyt-Ct-bWp" secondAttribute="bottom" constant="120" id="Pyi-dU-hyE"/>
                             <constraint firstItem="pvg-OM-QT9" firstAttribute="top" secondItem="gdc-9t-IpN" secondAttribute="bottom" constant="10" id="Vex-gg-6CY"/>
-                            <constraint firstItem="rb0-Pr-ZAT" firstAttribute="bottom" secondItem="JIH-0A-HSK" secondAttribute="bottom" constant="5" id="Ynx-ZG-7s8"/>
-                            <constraint firstItem="rb0-Pr-ZAT" firstAttribute="leading" secondItem="JIH-0A-HSK" secondAttribute="trailing" constant="24" id="hHF-4E-VAi"/>
+                            <constraint firstItem="rb0-Pr-ZAT" firstAttribute="baseline" secondItem="JIH-0A-HSK" secondAttribute="baseline" id="dEV-3J-hTw"/>
+                            <constraint firstItem="rb0-Pr-ZAT" firstAttribute="leading" secondItem="JIH-0A-HSK" secondAttribute="trailing" constant="24" id="h0c-j2-0Bc"/>
+                            <constraint firstItem="rb0-Pr-ZAT" firstAttribute="trailing" secondItem="Ou5-r9-L7T" secondAttribute="trailing" id="i0f-nd-Ivy"/>
+                            <constraint firstItem="VsL-Z6-8gZ" firstAttribute="top" secondItem="rb0-Pr-ZAT" secondAttribute="bottom" constant="5" id="iL8-36-8V8"/>
                             <constraint firstItem="gdc-9t-IpN" firstAttribute="height" secondItem="GKb-B4-wL5" secondAttribute="height" id="igo-xN-mvZ"/>
                             <constraint firstItem="pvg-OM-QT9" firstAttribute="top" secondItem="GKb-B4-wL5" secondAttribute="bottom" constant="10" id="qGP-W4-NUI"/>
                             <constraint firstItem="GKb-B4-wL5" firstAttribute="top" secondItem="gWN-3N-b39" secondAttribute="bottom" constant="20" id="sma-Mg-g8d"/>
                             <constraint firstItem="d4q-zX-i7G" firstAttribute="top" secondItem="yyt-Ct-bWp" secondAttribute="bottom" constant="43" id="uW1-89-Mn9"/>
                             <constraint firstItem="gdc-9t-IpN" firstAttribute="leading" secondItem="oL7-4A-bEc" secondAttribute="leading" constant="9" id="xS3-3U-yxU"/>
+                            <constraint firstItem="rb0-Pr-ZAT" firstAttribute="leading" secondItem="Ou5-r9-L7T" secondAttribute="leading" id="xgU-0K-ZFX"/>
                             <constraint firstItem="GKb-B4-wL5" firstAttribute="leading" secondItem="gdc-9t-IpN" secondAttribute="trailing" constant="29" id="ztd-Ti-FtS"/>
                         </constraints>
                     </view>

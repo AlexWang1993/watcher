@@ -84,14 +84,9 @@
         if ([easiness isEqualToString:@"&nb"]){
             easiness =@"N/A";
         }
-<<<<<<< HEAD
-        self.descriptionLabel.text =[NSString stringWithFormat:@"%@ %@",avgRate,easiness];
-        self.descriptionText.text=[NSString stringWithFormat:@"the information from ratemyprof is %@ %@",avgRate,easiness];
-=======
         self.descriptionLabel.text =[NSString stringWithFormat:@"Information from RateMyProf:"];
         self.avgRateLabel.text = [NSString stringWithFormat:@"Average Rating:%@",avgRate];
         self.easinessLabel.text=[NSString stringWithFormat:@"Easiness:%@",easiness];
->>>>>>> 483db513a0923673de01506eb0d623db24b61ac7
     }
     
 }
