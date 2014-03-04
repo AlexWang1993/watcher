@@ -15,6 +15,14 @@
 		A415D38518B5B1790046682F /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = A415D36118B5B1790046682F /* CHANGELOG.md */; };
 		A415D38618B5B1790046682F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A415D37618B5B1790046682F /* README.md */; };
 		A433FB5318B944D000A6738B /* testfile.txt in Resources */ = {isa = PBXBuildFile; fileRef = A433FB5218B944D000A6738B /* testfile.txt */; };
+		A497397918C3D4FC008D4D67 /* profDetailViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A497397818C3D4FC008D4D67 /* profDetailViewViewController.m */; };
+		A497397C18C3D7EC008D4D67 /* profSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = A497397B18C3D7EC008D4D67 /* profSearchView.m */; };
+		A497398618C42F41008D4D67 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = A497398518C42F41008D4D67 /* search.png */; };
+		A497399518C4579F008D4D67 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A497399418C4579F008D4D67 /* SettingViewController.m */; };
+		A49739B418C51A9B008D4D67 /* background3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A49739B318C51A9B008D4D67 /* background3.jpg */; };
+		A49739B618C51AA4008D4D67 /* background4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A49739B518C51AA4008D4D67 /* background4.jpg */; };
+		A49739B818C51AAC008D4D67 /* background2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A49739B718C51AAC008D4D67 /* background2.jpg */; };
+		A49739BA18C557BA008D4D67 /* hotness.png in Resources */ = {isa = PBXBuildFile; fileRef = A49739B918C557BA008D4D67 /* hotness.png */; };
 		A4AC064518AEE94100012FE5 /* background pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4AC064418AEE94100012FE5 /* background pic.jpg */; };
 		A4F5E27118B5578600147B04 /* waterloo_prof.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26B18B5578600147B04 /* waterloo_prof.txt */; };
 		A4F5E27218B5578600147B04 /* ut_mgmt.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26C18B5578600147B04 /* ut_mgmt.txt */; };
@@ -94,6 +102,17 @@
 		A415D37F18B5B1790046682F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
 		A415D38018B5B1790046682F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
 		A433FB5218B944D000A6738B /* testfile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testfile.txt; sourceTree = "<group>"; };
+		A497397718C3D4FC008D4D67 /* profDetailViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profDetailViewViewController.h; sourceTree = "<group>"; };
+		A497397818C3D4FC008D4D67 /* profDetailViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profDetailViewViewController.m; sourceTree = "<group>"; };
+		A497397A18C3D7EC008D4D67 /* profSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profSearchView.h; sourceTree = "<group>"; };
+		A497397B18C3D7EC008D4D67 /* profSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profSearchView.m; sourceTree = "<group>"; };
+		A497398518C42F41008D4D67 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		A497399318C4579F008D4D67 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		A497399418C4579F008D4D67 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		A49739B318C51A9B008D4D67 /* background3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background3.jpg; sourceTree = "<group>"; };
+		A49739B518C51AA4008D4D67 /* background4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background4.jpg; sourceTree = "<group>"; };
+		A49739B718C51AAC008D4D67 /* background2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background2.jpg; sourceTree = "<group>"; };
+		A49739B918C557BA008D4D67 /* hotness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotness.png; sourceTree = "<group>"; };
 		A4AC064418AEE94100012FE5 /* background pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background pic.jpg"; sourceTree = SOURCE_ROOT; };
 		A4F5E26B18B5578600147B04 /* waterloo_prof.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = waterloo_prof.txt; sourceTree = "<group>"; };
 		A4F5E26C18B5578600147B04 /* ut_mgmt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ut_mgmt.txt; sourceTree = "<group>"; };
@@ -169,10 +188,35 @@
 			path = appirater;
 			sourceTree = SOURCE_ROOT;
 		};
+		A497398C18C43458008D4D67 /* searchProf and setting */ = {
+			isa = PBXGroup;
+			children = (
+				A497397A18C3D7EC008D4D67 /* profSearchView.h */,
+				A497397B18C3D7EC008D4D67 /* profSearchView.m */,
+				A497397718C3D4FC008D4D67 /* profDetailViewViewController.h */,
+				A497397818C3D4FC008D4D67 /* profDetailViewViewController.m */,
+				A497399318C4579F008D4D67 /* SettingViewController.h */,
+				A497399418C4579F008D4D67 /* SettingViewController.m */,
+			);
+			name = "searchProf and setting";
+			sourceTree = "<group>";
+		};
+		A49739B218C51A7A008D4D67 /* background pics */ = {
+			isa = PBXGroup;
+			children = (
+				A49739B718C51AAC008D4D67 /* background2.jpg */,
+				A49739B518C51AA4008D4D67 /* background4.jpg */,
+				A49739B318C51A9B008D4D67 /* background3.jpg */,
+				A4AC064418AEE94100012FE5 /* background pic.jpg */,
+			);
+			name = "background pics";
+			sourceTree = "<group>";
+		};
 		A4F5E26A18B5578600147B04 /* ratemyprof */ = {
 			isa = PBXGroup;
 			children = (
 				A4F5E26B18B5578600147B04 /* waterloo_prof.txt */,
+				A49739B918C557BA008D4D67 /* hotness.png */,
 				A433FB5218B944D000A6738B /* testfile.txt */,
 				A4F5E26C18B5578600147B04 /* ut_mgmt.txt */,
 				A4F5E26D18B5578600147B04 /* utm.txt */,
@@ -216,6 +260,7 @@
 		E85FCBB8189C26470085F929 /* watcher */ = {
 			isa = PBXGroup;
 			children = (
+				A497398C18C43458008D4D67 /* searchProf and setting */,
 				A415D35818B5B1790046682F /* appirater */,
 				E8AB71A018A9F380007F3773 /* SectionDetailsViewController.h */,
 				E8AB71A118A9F380007F3773 /* SectionDetailsViewController.m */,
@@ -240,8 +285,9 @@
 		E85FCBB9189C26470085F929 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A49739B218C51A7A008D4D67 /* background pics */,
 				A4F5E26A18B5578600147B04 /* ratemyprof */,
-				A4AC064418AEE94100012FE5 /* background pic.jpg */,
+				A497398518C42F41008D4D67 /* search.png */,
 				E85FCBBA189C26470085F929 /* watcher-Info.plist */,
 				E85FCBBB189C26470085F929 /* InfoPlist.strings */,
 				E85FCBBE189C26470085F929 /* main.m */,
@@ -383,18 +429,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4F5E27618B5578600147B04 /* utsc.txt in Resources */,
+				A497398618C42F41008D4D67 /* search.png in Resources */,
 				E85FCBCB189C26470085F929 /* Images.xcassets in Resources */,
 				A40ACE9818B184F300059AA1 /* light blue wallpaper hd.jpg in Resources */,
 				A433FB5318B944D000A6738B /* testfile.txt in Resources */,
 				A415D38518B5B1790046682F /* CHANGELOG.md in Resources */,
 				A4F5E27518B5578600147B04 /* utsg.txt in Resources */,
 				A4F5E27218B5578600147B04 /* ut_mgmt.txt in Resources */,
+				A49739B418C51A9B008D4D67 /* background3.jpg in Resources */,
 				A4F5E27318B5578600147B04 /* utm.txt in Resources */,
+				A49739B618C51AA4008D4D67 /* background4.jpg in Resources */,
 				A4AC064518AEE94100012FE5 /* background pic.jpg in Resources */,
+				A49739BA18C557BA008D4D67 /* hotness.png in Resources */,
 				E85FCBBD189C26470085F929 /* InfoPlist.strings in Resources */,
 				A415D38418B5B1790046682F /* AppiraterLocalizable.strings in Resources */,
 				A4F5E27118B5578600147B04 /* waterloo_prof.txt in Resources */,
 				A415D38618B5B1790046682F /* README.md in Resources */,
+				A49739B818C51AAC008D4D67 /* background2.jpg in Resources */,
 				E85FCBC6189C26470085F929 /* Main.storyboard in Resources */,
 				A4F5E27418B5578600147B04 /* ut.txt in Resources */,
 				A415D38318B5B1790046682F /* Appirater.podspec in Resources */,
@@ -418,6 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A415D38218B5B1790046682F /* Appirater.m in Sources */,
+				A497397C18C3D7EC008D4D67 /* profSearchView.m in Sources */,
 				E85FCBC3189C26470085F929 /* AppDelegate.m in Sources */,
 				E85FCBE9189C26C30085F929 /* TableViewController.m in Sources */,
 				E8AB71A218A9F380007F3773 /* SectionDetailsViewController.m in Sources */,
@@ -425,6 +477,8 @@
 				E8AB719918A82904007F3773 /* staticData.m in Sources */,
 				E85FCBBF189C26470085F929 /* main.m in Sources */,
 				E8E2EE6F189C3C970080DDCB /* AddTableViewController.m in Sources */,
+				A497399518C4579F008D4D67 /* SettingViewController.m in Sources */,
+				A497397918C3D4FC008D4D67 /* profDetailViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

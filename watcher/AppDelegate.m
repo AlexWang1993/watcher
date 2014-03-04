@@ -12,6 +12,8 @@
 
 #import "Appirater.h"
 
+#import "profSearchView.h"
+
 @implementation AppDelegate
 
 -(TableViewController *)getRootViewController{
