@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "profDetailViewViewController.h"
+
 
 
 @interface profSearchView : UIViewController

@@ -56,7 +56,8 @@
     
     NSString *profName= [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0];
     
-    NSString *waterlooProf = @"Users/alexwang/Documents/tests/watcherhelen/watcher/ratemyprof/waterloo_prof.txt";
+    NSString *waterlooProf = [[NSBundle mainBundle] pathForResource:@"waterloo_prof" ofType:@"txt"]
+    ;
     NSString *fileContentsString = [NSString stringWithContentsOfFile:waterlooProf encoding:NSUTF8StringEncoding error:nil];
     if (fileContentsString==nil) {
         self.descriptionLabel.text=@"Error reading file";

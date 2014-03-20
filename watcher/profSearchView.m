@@ -7,6 +7,7 @@
 //
 
 #import "profSearchView.h"
+#import "profDetailViewViewController.h"
 
 @interface profSearchView ()
 
@@ -40,6 +41,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"searchProf"]){
         profDetailViewViewController *detail=[segue destinationViewController];
+        [profDetailViewViewController class];
         NSString *name = [NSString stringWithFormat:@"%@,%@",_profLastName.text,_profFirstName.text];
         detail.profName = name;
     }

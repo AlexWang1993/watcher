@@ -31,7 +31,8 @@
     self.NameLabel.text = _profName;
     
     
-    NSString *waterlooProf = @"/Users/helenjiang/Documents/gitWatcher/watcher_tabbar/watcher/ratemyprof/waterloo_prof.txt";
+    NSString *waterlooProf = [[NSBundle mainBundle] pathForResource:@"waterloo_prof" ofType:@"txt"];
+    NSLog(waterlooProf);
     NSString *fileContentsString = [NSString stringWithContentsOfFile:waterlooProf encoding:NSUTF8StringEncoding error:nil];
     if (fileContentsString==nil) {
         self.departmentLabel.text=@"Error reading file";
