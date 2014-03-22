@@ -34,7 +34,7 @@
     self.subjectLabel.text=[NSString stringWithFormat:@"%@ %@",[self.info objectForKey:@"subject"],[self.info objectForKey:@"catalog_number"]];
     self.sectionLabel.text=[self.info objectForKey:@"section"];
 
-   self.professorLabel.text= [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0];
+    self.professorLabel.text= ([[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] count]>0)?[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0]:NULL;
     
     self.locationLabel.text=[NSString stringWithFormat:@"Location:%@%@",
                              [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"building"],
@@ -53,7 +53,12 @@
     
     
     //rate my prof starts
-    
+    if (!self.professorLabel.text) {
+        self.descriptionLabel.hidden=true;
+        self.avgRateLabel.hidden=true;
+        self.easinessLabel.hidden=true;
+        return ;
+    }
     NSString *profName= [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0];
     
     NSString *waterlooProf = [[NSBundle mainBundle] pathForResource:@"waterloo_prof" ofType:@"txt"]
@@ -88,6 +93,9 @@
         self.descriptionLabel.text =[NSString stringWithFormat:@"Information from RateMyProf:"];
         self.avgRateLabel.text = [NSString stringWithFormat:@"Average Rating:%@",avgRate];
         self.easinessLabel.text=[NSString stringWithFormat:@"Easiness:%@",easiness];
+        self.descriptionLabel.hidden=false;
+        self.avgRateLabel.hidden=false;
+        self.easinessLabel.hidden=false;
     }
     
 }

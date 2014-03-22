@@ -47,6 +47,8 @@
 		E8AB719618A7F4BF007F3773 /* AddNewCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AB719518A7F4BF007F3773 /* AddNewCourseViewController.m */; };
 		E8AB719918A82904007F3773 /* staticData.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AB719818A82904007F3773 /* staticData.m */; };
 		E8AB71A218A9F380007F3773 /* SectionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AB71A118A9F380007F3773 /* SectionDetailsViewController.m */; };
+		E8AC2EA918DE1E55002E9D5E /* NSString+Levenshtein.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AC2EA818DE1E55002E9D5E /* NSString+Levenshtein.m */; };
+		E8AC2EAB18DE28A9002E9D5E /* prof_name.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8AC2EAA18DE28A9002E9D5E /* prof_name.txt */; };
 		E8E2EE6F189C3C970080DDCB /* AddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E2EE6E189C3C970080DDCB /* AddTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +147,9 @@
 		E8AB719818A82904007F3773 /* staticData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = staticData.m; sourceTree = "<group>"; };
 		E8AB71A018A9F380007F3773 /* SectionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionDetailsViewController.h; path = ../SectionDetailsViewController.h; sourceTree = "<group>"; };
 		E8AB71A118A9F380007F3773 /* SectionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SectionDetailsViewController.m; path = ../SectionDetailsViewController.m; sourceTree = "<group>"; };
+		E8AC2EA718DE1E55002E9D5E /* NSString+Levenshtein.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Levenshtein.h"; sourceTree = "<group>"; };
+		E8AC2EA818DE1E55002E9D5E /* NSString+Levenshtein.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Levenshtein.m"; sourceTree = "<group>"; };
+		E8AC2EAA18DE28A9002E9D5E /* prof_name.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = prof_name.txt; sourceTree = "<group>"; };
 		E8E2EE6D189C3C970080DDCB /* AddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddTableViewController.h; path = ../AddTableViewController.h; sourceTree = "<group>"; };
 		E8E2EE6E189C3C970080DDCB /* AddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddTableViewController.m; path = ../AddTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				A497397A18C3D7EC008D4D67 /* profSearchView.h */,
+				E8AC2EA718DE1E55002E9D5E /* NSString+Levenshtein.h */,
+				E8AC2EA818DE1E55002E9D5E /* NSString+Levenshtein.m */,
 				A497397B18C3D7EC008D4D67 /* profSearchView.m */,
 				A497397718C3D4FC008D4D67 /* profDetailViewViewController.h */,
 				A497397818C3D4FC008D4D67 /* profDetailViewViewController.m */,
@@ -230,6 +237,7 @@
 		E85FCBA6189C26470085F929 = {
 			isa = PBXGroup;
 			children = (
+				E8AC2EAA18DE28A9002E9D5E /* prof_name.txt */,
 				E85FCBB8189C26470085F929 /* watcher */,
 				E85FCBD7189C26470085F929 /* watcherTests */,
 				E85FCBB1189C26470085F929 /* Frameworks */,
@@ -428,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8AC2EAB18DE28A9002E9D5E /* prof_name.txt in Resources */,
 				A4F5E27618B5578600147B04 /* utsc.txt in Resources */,
 				A497398618C42F41008D4D67 /* search.png in Resources */,
 				E85FCBCB189C26470085F929 /* Images.xcassets in Resources */,
@@ -477,6 +486,7 @@
 				E8AB719918A82904007F3773 /* staticData.m in Sources */,
 				E85FCBBF189C26470085F929 /* main.m in Sources */,
 				E8E2EE6F189C3C970080DDCB /* AddTableViewController.m in Sources */,
+				E8AC2EA918DE1E55002E9D5E /* NSString+Levenshtein.m in Sources */,
 				A497399518C4579F008D4D67 /* SettingViewController.m in Sources */,
 				A497397918C3D4FC008D4D67 /* profDetailViewViewController.m in Sources */,
 			);

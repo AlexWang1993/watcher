@@ -118,6 +118,9 @@
     NSString *message;
     if ([_sectionList count]==0){
         message=@"Please search your course first";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"Back" otherButtonTitles:nil];
+        [alert show];
+        return;
     }
     [_parent addSection:[_sectionList objectAtIndex:[_sectionPicker selectedRowInComponent:0]]];
     message = @"Done";
