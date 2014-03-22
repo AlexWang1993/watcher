@@ -39,7 +39,7 @@
 }
 
 - (BOOL)containsLastName:(NSString *)lName FirstName:(NSString *)fName{
-    return [_profNameList containsObject:[NSString stringWithFormat:@"%@, %@",lName,fName]];
+    return [_profNameList containsObject:[NSString stringWithFormat:@"%@,%@",lName,fName]];
 }
 
 - (void)setLabelTags:(NSArray*)myLabels{
@@ -67,7 +67,7 @@
     [self performSegueWithIdentifier:@"goToProf" sender:singleTap.view];
 }
 - (void)giveRecommendation{
-    NSString *profName=[NSString stringWithFormat:@"%@, %@",self.profLastName.text,self.profFirstName.text];
+    NSString *profName=[NSString stringWithFormat:@"%@,%@",self.profLastName.text,self.profFirstName.text];
     _sortedArray=[_profNameList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSInteger dis1=[(NSString*)obj1 compareWithWord:profName matchGain:3 missingCost:1];
         NSInteger dis2=[(NSString*)obj2 compareWithWord:profName matchGain:3 missingCost:1];
