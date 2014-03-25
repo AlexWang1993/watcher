@@ -433,7 +433,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySk-Hl-MEg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySk-Hl-MEg">
                                 <rect key="frame" x="20" y="22" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -442,7 +442,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ima-rg-DgN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ima-rg-DgN">
                                 <rect key="frame" x="20" y="72" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -539,8 +539,8 @@
                     <navigationItem key="navigationItem" title="Search Professor" id="1zt-RY-LjD"/>
                     <connections>
                         <outlet property="info" destination="aGW-Cc-nNs" id="HFF-uF-b1o"/>
-                        <outlet property="profFirstName" destination="Ima-rg-DgN" id="Olj-dm-JXF"/>
-                        <outlet property="profLastName" destination="ySk-Hl-MEg" id="kBW-AQ-DE8"/>
+                        <outlet property="profFirstName" destination="ySk-Hl-MEg" id="hFL-JQ-rX9"/>
+                        <outlet property="profLastName" destination="Ima-rg-DgN" id="zMm-9W-aJR"/>
                         <outlet property="recommend1" destination="1gs-3B-CSB" id="OEE-Fb-S1z"/>
                         <outlet property="recommend2" destination="X7n-cC-Wf6" id="uoN-mM-TqC"/>
                         <outlet property="recommend3" destination="sGA-OG-4bW" id="QBv-S2-5ta"/>
