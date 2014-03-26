@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
     AppDelegate *appDelegate=((AppDelegate *)[[UIApplication sharedApplication] delegate]);
     if (appDelegate.shortList){
         _watchList=[self generateWatchList:appDelegate.shortList];
