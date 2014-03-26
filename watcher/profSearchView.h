@@ -26,6 +26,7 @@
 @property (strong, nonatomic) NSArray *myLabels;
 @property (strong, nonatomic) IBOutlet UILabel *info;
 
+extern NSString *backgroundSelected;
 @property (strong, nonatomic) NSArray *sortedArray;
 
 @end

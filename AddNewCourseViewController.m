@@ -52,7 +52,7 @@
 	// Do any additional setup after loading the view.
     // Custom initialization
     //_sectionPicker=[[UIPickerView alloc] init];
-    
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
     _sectionPicker.delegate=self;
     _sectionPicker.dataSource=self;
     //_sectionPicker.hidden=true;
