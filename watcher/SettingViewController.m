@@ -8,6 +8,8 @@
 
 #import "SettingViewController.h"
 
+
+
 @interface SettingViewController ()
 
 @end
@@ -30,6 +32,7 @@
     _imageList = [[NSArray alloc] initWithObjects:@"default theme",@"dark blue",@"light green",@"happy orange", nil];
     _backgroundPicker.delegate = self;
     _backgroundPicker.dataSource  = self;
+    _setting=[Setting sharedInstance];
 }
 
 - (void)didReceiveMemoryWarning
