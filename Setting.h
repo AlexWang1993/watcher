@@ -10,9 +10,11 @@
 
 @interface Setting : NSObject
 
-@property (strong,atomic) NSString* backGroundImage;
-
-@property  BOOL notificationEnabled;
+/*Keys:                             Type:
+watcherNotificationEnabled          bool
+watcherBackgroundImage              String
+*/
+@property (strong,atomic) NSDictionary *settings;
 
 + (Setting *)sharedInstance;
 

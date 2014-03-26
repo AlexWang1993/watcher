@@ -16,6 +16,9 @@
 
 @implementation AppDelegate
 
+-(Setting *)getSetting{
+    return [Setting sharedInstance];
+}
 -(TableViewController *)getRootViewController{
     return [((UINavigationController *) [((UITabBarController *)self.window.rootViewController).viewControllers objectAtIndex:0]).viewControllers objectAtIndex:0];
     
@@ -33,6 +36,7 @@
         [Appirater appLaunched];
     
     }
+    [Setting sharedInstance].settings=[userDefaults objectForKey:@"watcherSettings"];
     return YES;
 }
 							
@@ -54,6 +58,8 @@
     [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:mainController.watchList] forKey:@"watcher_watchlist"];*/
     [[NSUserDefaults standardUserDefaults]setObject:[mainController generateShortList] forKey:@"watcher_watchlist"];
     [[NSUserDefaults standardUserDefaults]synchronize];
+    NSDictionary* setting=[Setting sharedInstance].settings;
+    [[NSUserDefaults standardUserDefaults]setObject:setting forKey:@"watcherSettings"];
 
 }
 
@@ -77,11 +83,15 @@
 }
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    if (![[NSUserDefaults standardUserDefaults]objectForKey:@"watcherNotificationEnabled"]){
+        return;
+    }
     TableViewController *mainController=[self getRootViewController];
     
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     NSDate *now=[NSDate date];
     localNotification.fireDate = now;
+    
     if ([mainController refreshWatchList]){
         NSString *message;
         if (mainController.changedList.count>1){
