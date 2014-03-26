@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Setting.h"
+
 @interface SettingViewController : UIViewController
 
+@property  Setting* setting;
 @end

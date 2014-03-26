@@ -8,6 +8,8 @@
 
 #import "SettingViewController.h"
 
+
+
 @interface SettingViewController ()
 
 @end
@@ -27,6 +29,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    _setting=[Setting sharedInstance];
 }
 
 - (void)didReceiveMemoryWarning
