@@ -36,7 +36,10 @@
         [Appirater appLaunched];
     
     }
-    [Setting sharedInstance].settings=[userDefaults objectForKey:@"watcherSettings"];
+    [Setting sharedInstance].settings=[[NSMutableDictionary alloc] initWithDictionary:[userDefaults objectForKey:@"watcherSettings"]];
+    if ([Setting sharedInstance].settings==nil){
+        [Setting sharedInstance].settings=[[NSMutableDictionary alloc]init];
+    }
     return YES;
 }
 							
@@ -58,7 +61,8 @@
     [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:mainController.watchList] forKey:@"watcher_watchlist"];*/
     [[NSUserDefaults standardUserDefaults]setObject:[mainController generateShortList] forKey:@"watcher_watchlist"];
     [[NSUserDefaults standardUserDefaults]synchronize];
-    NSDictionary* setting=[Setting sharedInstance].settings;
+    Setting *setting1=[Setting sharedInstance];
+    NSMutableDictionary* setting=setting1.settings;
     [[NSUserDefaults standardUserDefaults]setObject:setting forKey:@"watcherSettings"];
 
 }
@@ -83,7 +87,8 @@
 }
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-    if (![[NSUserDefaults standardUserDefaults]objectForKey:@"watcherNotificationEnabled"]){
+    [Setting sharedInstance].settings=[[NSMutableDictionary alloc] initWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"watcherSettings"]];
+    if ([[[Setting sharedInstance].settings objectForKey:@"notificationEnabled"] isEqualToValue:@NO]){
         return;
     }
     TableViewController *mainController=[self getRootViewController];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CKd-Ly-fYs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CKd-Ly-fYs">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -737,6 +737,7 @@
                     <tabBarItem key="tabBarItem" systemItem="more" id="VDC-MN-KwX"/>
                     <connections>
                         <outlet property="backgroundPicker" destination="k7m-jh-Wdc" id="PKo-0d-Lzo"/>
+                        <outlet property="notificationSwitch" destination="N8O-y1-xNW" id="jqs-zW-6qs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edw-Kv-i0s" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -33,8 +33,24 @@
     _backgroundPicker.delegate = self;
     _backgroundPicker.dataSource  = self;
     _setting=[Setting sharedInstance];
+    if (([[_setting.settings objectForKey:@"notificationEnabled"] isEqualToValue:@YES])||(![[_setting.settings allKeys]containsObject:@"notificationEnabled"])){
+        [_setting.settings setObject:@YES forKey:@"notificationEnabled"];
+        [_notificationSwitch setOn:YES];
+    } else {
+        [_notificationSwitch setOn:NO];
+    }
+    [_notificationSwitch addTarget:self action:@selector(notificationStateChanged:) forControlEvents:UIControlEventValueChanged];
+    
 }
 
+- (void)notificationStateChanged:(id)sender
+{
+    if([_notificationSwitch isOn]){
+        [_setting.settings setObject:@YES forKey:@"notificationEnabled"];
+    } else {
+        [_setting.settings setObject:@NO forKey:@"notificationEnabled"];
+    }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

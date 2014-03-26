@@ -14,7 +14,7 @@
 watcherNotificationEnabled          bool
 watcherBackgroundImage              String
 */
-@property (strong,atomic) NSDictionary *settings;
+@property (strong,atomic) NSMutableDictionary *settings;
 
 + (Setting *)sharedInstance;
 
