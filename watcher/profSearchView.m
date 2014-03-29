@@ -132,7 +132,13 @@
     [self changeLabelState:YES Labels:_myLabels];
     [self setLabelTags:_myLabels];
     [self addGestureRecognizer:_myLabels];
+    _setting=[Setting sharedInstance];
+
 	// Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
 }
 
 - (void)didReceiveMemoryWarning

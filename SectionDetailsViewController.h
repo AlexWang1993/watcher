@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TableViewController.h"
 //#import "staticData.h"
+#import "Setting.h"
 
 @interface SectionDetailsViewController : UIViewController
 
@@ -24,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *avgRateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *easinessLabel;
 
+@property  Setting* setting;
 
 @property (strong,nonatomic) NSDictionary *info;
 

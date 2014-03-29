@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "staticData.h"
-
+#import "Setting.h"
 
 @interface TableViewController : UITableViewController
 
@@ -22,6 +22,8 @@
 @property (strong,nonatomic) NSMutableArray *changedList;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
+
+@property  Setting* setting;
 
 -(BOOL)refreshWatchList;
 

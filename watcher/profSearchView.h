@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-
+#import "Setting.h"
 
 @interface profSearchView : UIViewController
 
@@ -25,6 +25,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *recommend5;
 @property (strong, nonatomic) NSArray *myLabels;
 @property (strong, nonatomic) IBOutlet UILabel *info;
+
+
+@property  Setting* setting;
+
 
 extern NSString *backgroundSelected;
 @property (strong, nonatomic) NSArray *sortedArray;

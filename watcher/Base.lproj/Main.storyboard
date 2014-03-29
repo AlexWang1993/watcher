@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CKd-Ly-fYs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CKd-Ly-fYs">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -13,10 +13,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light blue wallpaper hd.jpg" id="Tpw-En-RWX">
-                            <rect key="frame" x="0.0" y="130" width="320" height="507"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="TyP-hj-Nba" detailTextLabel="xwm-ZZ-cTY" style="IBUITableViewCellStyleValue1" id="kpb-NL-T7R">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
@@ -130,10 +126,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="light blue wallpaper hd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fDT-z3-zYT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="598"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ou5-r9-L7T">
                                 <rect key="frame" x="214" y="103" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -258,11 +250,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light blue wallpaper hd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ch2-wX-5Ub">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.1398393007" green="0.1396123923" blue="0.14357591710000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eg.cs115" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxb-V0-U05" userLabel="Subject">
                                 <rect key="frame" x="-5" y="68" width="320" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -353,12 +340,9 @@
                             <constraint firstItem="dns-Bi-aBu" firstAttribute="top" secondItem="cSh-Ir-JhX" secondAttribute="bottom" constant="24" id="4hx-4q-SUP"/>
                             <constraint firstItem="kxb-V0-U05" firstAttribute="top" secondItem="Xdc-B4-8Zs" secondAttribute="bottom" constant="4" id="7Rh-b3-YsB"/>
                             <constraint firstItem="9fp-KA-9dm" firstAttribute="leading" secondItem="e0G-09-qob" secondAttribute="leading" id="8vx-zh-qsx"/>
-                            <constraint firstItem="Ch2-wX-5Ub" firstAttribute="leading" secondItem="cSh-Ir-JhX" secondAttribute="leading" id="8wQ-IJ-duk"/>
                             <constraint firstItem="e0G-09-qob" firstAttribute="top" secondItem="dns-Bi-aBu" secondAttribute="bottom" constant="20" id="96I-OW-J4W"/>
                             <constraint firstItem="cSh-Ir-JhX" firstAttribute="leading" secondItem="6Eo-Se-LH2" secondAttribute="leading" id="9of-JA-Teb"/>
-                            <constraint firstAttribute="trailing" secondItem="Ch2-wX-5Ub" secondAttribute="trailing" id="AgL-Yd-lCr"/>
                             <constraint firstItem="7vP-Gv-n7a" firstAttribute="top" secondItem="14M-cy-NKu" secondAttribute="bottom" constant="27" id="Br1-i0-kAF"/>
-                            <constraint firstAttribute="bottom" secondItem="Ch2-wX-5Ub" secondAttribute="bottom" id="GhI-9e-R82"/>
                             <constraint firstItem="9fp-KA-9dm" firstAttribute="leading" secondItem="AmO-WJ-cBa" secondAttribute="leading" id="Lhy-SB-e7y"/>
                             <constraint firstItem="Hvy-ab-CvI" firstAttribute="leading" secondItem="6Eo-Se-LH2" secondAttribute="leading" constant="53" id="MaH-wV-UlF"/>
                             <constraint firstItem="duf-QL-Iaz" firstAttribute="top" secondItem="kxb-V0-U05" secondAttribute="bottom" constant="46" id="NX5-1I-whC"/>
@@ -369,7 +353,6 @@
                             <constraint firstItem="AmO-WJ-cBa" firstAttribute="top" secondItem="9fp-KA-9dm" secondAttribute="bottom" constant="8" symbolic="YES" id="Z6l-MY-rk8"/>
                             <constraint firstItem="dns-Bi-aBu" firstAttribute="leading" secondItem="6Eo-Se-LH2" secondAttribute="leading" constant="32" id="aNb-YN-SN6"/>
                             <constraint firstAttribute="trailing" secondItem="dns-Bi-aBu" secondAttribute="trailing" constant="-38" id="aTW-zb-FDA"/>
-                            <constraint firstItem="Ch2-wX-5Ub" firstAttribute="top" secondItem="6Eo-Se-LH2" secondAttribute="top" id="aVW-lG-tR7"/>
                             <constraint firstItem="9fp-KA-9dm" firstAttribute="top" secondItem="e0G-09-qob" secondAttribute="bottom" constant="8" symbolic="YES" id="am2-Th-86H"/>
                             <constraint firstItem="bFN-l0-yfk" firstAttribute="height" secondItem="7vP-Gv-n7a" secondAttribute="height" id="cVU-vQ-nKF"/>
                             <constraint firstItem="dns-Bi-aBu" firstAttribute="top" secondItem="duf-QL-Iaz" secondAttribute="bottom" constant="18" id="eNY-jR-4W2"/>
@@ -802,7 +785,6 @@
     </scenes>
     <resources>
         <image name="hotness.png" width="47" height="42"/>
-        <image name="light blue wallpaper hd.jpg" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -811,6 +793,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="L8Y-PV-Tke"/>
-        <segue reference="nsy-oG-s1W"/>
+        <segue reference="49S-wQ-5tP"/>
     </inferredMetricsTieBreakers>
 </document>

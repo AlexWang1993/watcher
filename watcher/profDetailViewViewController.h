@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "profSearchView.h"
-
+#import "Setting.h"
 @interface profDetailViewViewController : UIViewController
 
 
@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *hotnessLabel;
 
+@property  Setting* setting;
 
 @property (weak,nonatomic) NSString *profName;
 

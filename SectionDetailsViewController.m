@@ -31,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _setting=[Setting sharedInstance];
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
     self.subjectLabel.text=[NSString stringWithFormat:@"%@ %@",[self.info objectForKey:@"subject"],[self.info objectForKey:@"catalog_number"]];
     self.sectionLabel.text=[self.info objectForKey:@"section"];
@@ -101,6 +102,9 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
+}
 
 
 - (void)didReceiveMemoryWarning

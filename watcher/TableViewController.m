@@ -30,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
     AppDelegate *appDelegate=((AppDelegate *)[[UIApplication sharedApplication] delegate]);
     if (appDelegate.shortList){
         _watchList=[self generateWatchList:appDelegate.shortList];
@@ -41,12 +40,18 @@
     [self loadSubList];
     self.navigationItem.rightBarButtonItem=self.addButton;
     self.navigationItem.leftBarButtonItem=self.editButtonItem;
+    _setting=[Setting sharedInstance];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
