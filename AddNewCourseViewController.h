@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *addButton;
 
 @property (strong,nonatomic) NSArray *sectionList;
+@property  Setting* setting;
 
 
 @property (weak,nonatomic) TableViewController *parent;

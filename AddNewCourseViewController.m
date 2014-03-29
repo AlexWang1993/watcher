@@ -65,8 +65,12 @@
     _sectionList=[[NSArray alloc] init];
     //_subjectList=[[NSMutableArray alloc]init];
     //_message=[[UILabel alloc]init];
+    _setting=[Setting sharedInstance];
+
     
-    
+}
+-(void)viewWillAppear:(BOOL)animated{
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
 }
 
 - (void)didReceiveMemoryWarning

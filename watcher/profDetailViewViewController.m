@@ -92,7 +92,7 @@
         if ([easiness isEqualToString:@"&nb"]){
             easiness =@"N/A";
         }
-        self.ratingLabel.text = [NSString stringWithFormat:@"Average Rating:%@",avgRate];
+        self.ratingLabel.text = [NSString stringWithFormat:@"Rating:%@",avgRate];
         self.easinessLabel.text=[NSString stringWithFormat:@"Easiness:%@",easiness];
     }
 
