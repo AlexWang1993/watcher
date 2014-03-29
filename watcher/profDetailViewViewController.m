@@ -73,7 +73,7 @@
         NSRange qualityRange = [line rangeOfString:@"Aver" options:NSLiteralSearch];
         departmentRange.length = qualityRange.location - departmentRange.location - 2;
         NSString *department = [line substringWithRange:departmentRange];
-        self.departmentLabel.text = department;
+        self.departmentLabel.text =[NSString stringWithFormat:@"Department:%@", department];
         
         NSRange RatorRange = [line rangeOfString:@"Rate" options:NSLiteralSearch];
         qualityRange.location = qualityRange.location+5;

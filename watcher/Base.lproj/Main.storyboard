@@ -568,8 +568,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtE-VC-cbS">
-                                <rect key="frame" x="20" y="262" width="110" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rating" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtE-VC-cbS">
+                                <rect key="frame" x="20" y="188" width="280" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="DIk-Ta-aR4"/>
@@ -578,8 +578,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easiness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ne-qi-9qI">
-                                <rect key="frame" x="20" y="347" width="137" height="76"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Easiness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ne-qi-9qI">
+                                <rect key="frame" x="20" y="222" width="280" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="137" id="dAZ-PD-vft"/>
@@ -588,7 +588,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quality" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPU-gU-l7p" userLabel="Label - Quality">
-                                <rect key="frame" x="20" y="174" width="320" height="21"/>
+                                <rect key="frame" x="20" y="154" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7fW-DP-jIt"/>
@@ -596,42 +596,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hotness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-R4-4Ow" userLabel="Label - Hotness">
-                                <rect key="frame" x="20" y="463" width="61" height="30"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="hotness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-R4-4Ow" userLabel="Label - Hotness">
+                                <rect key="frame" x="20" y="292" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotness.png" translatesAutoresizingMaskIntoConstraints="NO" id="ete-fZ-3d0">
-                                <rect key="frame" x="89" y="457" width="31" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="31" id="RR2-wC-OAY"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GtE-VC-cbS" firstAttribute="top" secondItem="JPU-gU-l7p" secondAttribute="bottom" constant="67" id="1vJ-1T-22s"/>
-                            <constraint firstItem="ete-fZ-3d0" firstAttribute="leading" secondItem="DxK-R4-4Ow" secondAttribute="trailing" constant="8" symbolic="YES" id="20g-U6-jAN"/>
+                            <constraint firstItem="DxK-R4-4Ow" firstAttribute="top" secondItem="9ne-qi-9qI" secondAttribute="bottom" constant="16" id="6cC-7o-oHT"/>
                             <constraint firstItem="M8A-Tk-Ylk" firstAttribute="leading" secondItem="7Xj-jr-h2M" secondAttribute="leading" id="BPp-kz-Fv1"/>
                             <constraint firstItem="JPU-gU-l7p" firstAttribute="trailing" secondItem="M8A-Tk-Ylk" secondAttribute="trailing" id="Dll-Bg-ykP"/>
-                            <constraint firstItem="dlU-N4-uHb" firstAttribute="top" secondItem="DxK-R4-4Ow" secondAttribute="bottom" constant="26" id="HiK-yU-6a3"/>
-                            <constraint firstItem="9ne-qi-9qI" firstAttribute="top" secondItem="GtE-VC-cbS" secondAttribute="bottom" constant="64" id="JAa-J9-uaa"/>
                             <constraint firstAttribute="trailing" secondItem="7Xj-jr-h2M" secondAttribute="trailing" constant="-25" id="MxL-AI-mVa"/>
                             <constraint firstItem="7Xj-jr-h2M" firstAttribute="leading" secondItem="JPU-gU-l7p" secondAttribute="leading" id="NJF-DH-KmY"/>
                             <constraint firstItem="M8A-Tk-Ylk" firstAttribute="top" secondItem="MZ1-Qo-NIE" secondAttribute="bottom" constant="16" id="NOi-OS-bNA"/>
-                            <constraint firstItem="ete-fZ-3d0" firstAttribute="centerY" secondItem="DxK-R4-4Ow" secondAttribute="centerY" id="Q2y-4K-ioS"/>
                             <constraint firstItem="JPU-gU-l7p" firstAttribute="leading" secondItem="GtE-VC-cbS" secondAttribute="leading" id="Thp-b0-6hz"/>
                             <constraint firstItem="M8A-Tk-Ylk" firstAttribute="leading" secondItem="odh-F7-P8Y" secondAttribute="leading" constant="20" symbolic="YES" id="ZpI-rE-2rE"/>
                             <constraint firstItem="7Xj-jr-h2M" firstAttribute="top" secondItem="M8A-Tk-Ylk" secondAttribute="bottom" constant="16" id="a8N-bR-jjV"/>
+                            <constraint firstItem="GtE-VC-cbS" firstAttribute="top" secondItem="JPU-gU-l7p" secondAttribute="bottom" constant="16" id="a9j-ow-EeV"/>
                             <constraint firstItem="GtE-VC-cbS" firstAttribute="leading" secondItem="9ne-qi-9qI" secondAttribute="leading" id="hDK-Ky-EfP"/>
-                            <constraint firstItem="JPU-gU-l7p" firstAttribute="top" secondItem="7Xj-jr-h2M" secondAttribute="bottom" constant="36" id="hJD-ok-bEt"/>
-                            <constraint firstAttribute="bottom" secondItem="ete-fZ-3d0" secondAttribute="bottom" constant="20" symbolic="YES" id="m0n-pf-TLT"/>
+                            <constraint firstItem="JPU-gU-l7p" firstAttribute="top" secondItem="7Xj-jr-h2M" secondAttribute="bottom" constant="16" id="hJD-ok-bEt"/>
                             <constraint firstAttribute="trailing" secondItem="M8A-Tk-Ylk" secondAttribute="trailing" constant="-20" id="ntZ-v3-XgF"/>
+                            <constraint firstItem="GtE-VC-cbS" firstAttribute="height" secondItem="9ne-qi-9qI" secondAttribute="height" id="o0H-yw-RoK"/>
                             <constraint firstItem="9ne-qi-9qI" firstAttribute="leading" secondItem="DxK-R4-4Ow" secondAttribute="leading" id="u7g-Yr-0Rx"/>
-                            <constraint firstItem="ete-fZ-3d0" firstAttribute="top" secondItem="9ne-qi-9qI" secondAttribute="bottom" constant="34" id="ve8-pn-Fof"/>
+                            <constraint firstItem="9ne-qi-9qI" firstAttribute="top" secondItem="GtE-VC-cbS" secondAttribute="bottom" constant="16" id="xLE-Id-Dhe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="0GA-Hc-Ms3"/>
@@ -783,9 +773,6 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="hotness.png" width="47" height="42"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
