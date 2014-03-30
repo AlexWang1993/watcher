@@ -40,6 +40,9 @@
     if ([Setting sharedInstance].settings==nil){
         [Setting sharedInstance].settings=[[NSMutableDictionary alloc]init];
     }
+    if ([[Setting sharedInstance].settings objectForKey:@"backgroundImage"]==nil){
+        [[Setting sharedInstance].settings setObject:@"light blue wallpaper hd.jpg" forKey:@"backgroundImage"];
+    }
     return YES;
 }
 							
