@@ -115,7 +115,7 @@
 
 
 -(void)loadSubList{
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@", apiKey]];
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=1145", apiKey]];
     NSError *error=nil;
     NSData *JSONData = [NSData dataWithContentsOfURL:url
                                              options:NSDataReadingMappedIfSafe error:&error];
@@ -128,7 +128,7 @@
 }
 
 -(NSDictionary *)loadSectionForSubject:(NSString *)subject Number:(NSString *)number Section:(NSString *)section{
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@", subject, number, apiKey]];
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", subject, number, apiKey]];
     //for debugging
     //NSURL *url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Users/alexwang/Documents/ClassWatcher/testjson/%@/%@/schedule.json",subject,number]];
     //

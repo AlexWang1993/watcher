@@ -155,7 +155,7 @@
 
 /* loadAPI stuff*/
 -(void)loadSectionsSubject:(NSString *)subject Number:(NSString *)number{
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@", subject, number, unlimitedAPIKey]];
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", subject, number, unlimitedAPIKey]];
     NSError *error=nil;
     NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
     NSDictionary *results=[NSJSONSerialization
@@ -167,7 +167,7 @@
 
 
 -(void)loadSubList{
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@", unlimitedAPIKey]];
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=1145", unlimitedAPIKey]];
     NSError *error=nil;
     NSData *JSONData = [NSData dataWithContentsOfURL:url
                                              options:NSDataReadingMappedIfSafe error:&error];
