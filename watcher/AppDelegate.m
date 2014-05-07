@@ -112,11 +112,11 @@
             message=[message stringByAppendingString:@"\n"];
         }
         localNotification.alertBody=message;
+        localNotification.soundName=UILocalNotificationDefaultSoundName;
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     } else {
-        localNotification.alertBody=@"Nothing has changed";
+        //localNotification.alertBody=@"Nothing has changed";
     }
-    localNotification.soundName=UILocalNotificationDefaultSoundName;
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
