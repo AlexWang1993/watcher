@@ -110,4 +110,12 @@
         self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background4.jpg"]];}
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"about"]) {
+        UIViewController *about = [segue destinationViewController];
+    }
+}
+
+
+
 @end

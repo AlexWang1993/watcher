@@ -11,7 +11,7 @@
 
 @interface SettingViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource,UIPickerViewAccessibilityDelegate>
 
-
+@property (strong, nonatomic) IBOutlet UIButton *about;
 
 @property (strong,nonatomic) NSArray *imageList;
 @property (strong,nonatomic) IBOutlet UIPickerView *backgroundPicker;

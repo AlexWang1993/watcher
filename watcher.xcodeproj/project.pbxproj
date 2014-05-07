@@ -45,6 +45,7 @@
 		A45009C9191916AA006B249C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45009B9191916AA006B249C /* Icon@2x.png */; };
 		A45009CA191916AA006B249C /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = A45009BA191916AA006B249C /* iTunesArtwork.png */; };
 		A45009CB191916AA006B249C /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A45009BB191916AA006B249C /* iTunesArtwork@2x.png */; };
+		A45009D0191942AB006B249C /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = A45009CF191942AB006B249C /* About.m */; };
 		A497397918C3D4FC008D4D67 /* profDetailViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A497397818C3D4FC008D4D67 /* profDetailViewViewController.m */; };
 		A497397C18C3D7EC008D4D67 /* profSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = A497397B18C3D7EC008D4D67 /* profSearchView.m */; };
 		A497398618C42F41008D4D67 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = A497398518C42F41008D4D67 /* search.png */; };
@@ -166,6 +167,10 @@
 		A45009B9191916AA006B249C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		A45009BA191916AA006B249C /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		A45009BB191916AA006B249C /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		A45009CC19193C14006B249C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "watcher/Default-568h@2x.png"; sourceTree = "<group>"; };
+		A45009CD19193C22006B249C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "watcher/Default-568h@2x.png"; sourceTree = "<group>"; };
+		A45009CE191942AB006B249C /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = About.h; sourceTree = "<group>"; };
+		A45009CF191942AB006B249C /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = About.m; sourceTree = "<group>"; };
 		A497397718C3D4FC008D4D67 /* profDetailViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profDetailViewViewController.h; sourceTree = "<group>"; };
 		A497397818C3D4FC008D4D67 /* profDetailViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profDetailViewViewController.m; sourceTree = "<group>"; };
 		A497397A18C3D7EC008D4D67 /* profSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profSearchView.h; sourceTree = "<group>"; };
@@ -311,6 +316,8 @@
 				A497397818C3D4FC008D4D67 /* profDetailViewViewController.m */,
 				A497399318C4579F008D4D67 /* SettingViewController.h */,
 				A497399418C4579F008D4D67 /* SettingViewController.m */,
+				A45009CE191942AB006B249C /* About.h */,
+				A45009CF191942AB006B249C /* About.m */,
 			);
 			name = "searchProf and setting";
 			sourceTree = "<group>";
@@ -345,6 +352,8 @@
 		E85FCBA6189C26470085F929 = {
 			isa = PBXGroup;
 			children = (
+				A45009CD19193C22006B249C /* Default-568h@2x.png */,
+				A45009CC19193C14006B249C /* Default-568h@2x.png */,
 				A450099119103816006B249C /* Default-568h@2x.png */,
 				A4500955191023B6006B249C /* image2.png */,
 				A450095319102259006B249C /* image.png */,
@@ -637,6 +646,7 @@
 				E85FCBE9189C26C30085F929 /* TableViewController.m in Sources */,
 				E8AB71A218A9F380007F3773 /* SectionDetailsViewController.m in Sources */,
 				E8AB719618A7F4BF007F3773 /* AddNewCourseViewController.m in Sources */,
+				A45009D0191942AB006B249C /* About.m in Sources */,
 				E8AB719918A82904007F3773 /* staticData.m in Sources */,
 				E85FCBBF189C26470085F929 /* main.m in Sources */,
 				E8E2EE6F189C3C970080DDCB /* AddTableViewController.m in Sources */,
