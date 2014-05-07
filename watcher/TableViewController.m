@@ -233,7 +233,7 @@
 
 -(BOOL)isFullForSectionNumber:(NSInteger)number{
     NSDictionary *section=[_watchList objectAtIndex:number];
-    if ([[section objectForKey:@"enrollment_capacity"] isEqualToNumber:[section objectForKey:@"enrollment_total"]]){
+    if ([[section objectForKey:@"enrollment_capacity"] intValue] <=[[section objectForKey:@"enrollment_total"] intValue]){
         return YES;
     }
     return NO;
