@@ -7,13 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Setting.h"
 
 @interface About : UITableViewController
 
 
-@property  Setting* setting;
-@property (strong,nonatomic) NSArray *imageList;
-extern NSString *backgroundSelected;
 
 @end

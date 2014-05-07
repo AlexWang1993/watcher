@@ -28,13 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
-    _setting=[Setting sharedInstance];
 
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
 }
 
 - (void)didReceiveMemoryWarning

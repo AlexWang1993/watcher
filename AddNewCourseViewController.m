@@ -103,6 +103,9 @@
     if (![_subjectList containsObject:[_subjectInput.text uppercaseString]]){
         message = @"Invalid subject entered";
     }
+    if (([_subjectInput.text isEqualToString:@""])||([_subjectInput.text isEqualToString:@" "])){
+        message = @"Empty subject entered";
+    }
     if (([_numberInput.text isEqualToString:@""])||([_numberInput.text isEqualToString:@" "])){
         message = @"Empty course number entered";
     }
