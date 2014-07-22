@@ -37,7 +37,10 @@
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    
+//    if (!viewController.isViewLoaded){
+//        [self presentViewController:viewController animated:NO completion:nil];
+//    }
+    [viewController.navigationController.navigationBar setHidden:NO];
     NSArray *tabViewControllers = tabBarController.viewControllers;
     UIView * fromView = tabBarController.selectedViewController.view;
     UIView * toView = viewController.view;
@@ -45,18 +48,29 @@
         return NO;
     NSUInteger fromIndex = [tabViewControllers indexOfObject:tabBarController.selectedViewController];
     NSUInteger toIndex = [tabViewControllers indexOfObject:viewController];
+    //tabBarController.selectedIndex = toIndex;
+    tabBarController.selectedIndex = fromIndex;
     
-    [UIView transitionFromView:fromView
-                        toView:toView
-                      duration:1.0
-                       options: toIndex > fromIndex ? UIViewAnimationOptionTransitionCrossDissolve : UIViewAnimationOptionTransitionCrossDissolve
-                    completion:^(BOOL finished) {
-                        if (finished) {
-                            tabBarController.selectedIndex = toIndex;
-                        }
-                    }];
+    //fromView.viewForBaselineLayout
+    viewController.view.alpha=0;
+    //viewController.navigationController.navigationBar.translucent=YES;
+    [UIView transitionWithView:toView duration:0.5 options: toIndex > fromIndex ? UIViewAnimationOptionTransitionCrossDissolve : UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        viewController.view.alpha=1;
+    }completion:nil];
+//    //[UIView transitionFromView:fromView
+//                        toView:toView
+//                      duration:0.5
+//                       options: toIndex > fromIndex ? UIViewAnimationOptionTransitionCrossDissolve : UIViewAnimationOptionTransitionCrossDissolve
+//                    completion:^(BOOL finished) {
+//                        if (finished) {
+//                            
+//                        }
+//                    }];
+    NSLog(@"ajsdiofsjdiof");
     return true;
 }
+
+//-(void)tab
 
 /*
 #pragma mark - Navigation

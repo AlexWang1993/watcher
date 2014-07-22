@@ -377,10 +377,10 @@
             </objects>
             <point key="canvasLocation" x="2564" y="-293"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="t7p-Sa-bvh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YK8-Mm-cKE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YK8-Mm-cKE" customClass="NavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="Usm-XI-tF5" userLabel="hehe"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="RMn-Rs-K4q"/>
@@ -662,7 +662,7 @@
             </objects>
             <point key="canvasLocation" x="1221" y="1149"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Setting View Controller - Settings-->
         <scene sceneID="vW8-Eg-hnG">
             <objects>
                 <viewController id="pGq-2w-Oro" customClass="SettingViewController" sceneMemberID="viewController">
@@ -674,13 +674,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AL0-11-3a0" userLabel="Setting">
-                                <rect key="frame" x="130" y="20" width="61" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvX-BE-AKw">
                                 <rect key="frame" x="42" y="197" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -724,7 +717,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="VDC-MN-KwX"/>
-                    <navigationItem key="navigationItem" id="IZ9-PH-Iq8"/>
+                    <navigationItem key="navigationItem" title="Settings" id="IZ9-PH-Iq8"/>
                     <connections>
                         <outlet property="about" destination="TTc-yU-42L" id="hhp-mQ-X94"/>
                         <outlet property="backgroundPicker" destination="k7m-jh-Wdc" id="PKo-0d-Lzo"/>

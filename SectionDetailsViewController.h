@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TableViewController.h"
+#import "CommonViewController.h"
 //#import "staticData.h"
 #import "Setting.h"
 
-@interface SectionDetailsViewController : UIViewController
+@interface SectionDetailsViewController : CommonViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *subjectLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sectionLabel;

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Setting.h"
+#import "CommonViewController.h"
 
-@interface SettingViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource,UIPickerViewAccessibilityDelegate>
+@interface SettingViewController : CommonViewController<UIPickerViewDelegate,UIPickerViewDataSource,UIPickerViewAccessibilityDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *about;
 

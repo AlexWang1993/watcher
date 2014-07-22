@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "profSearchView.h"
+#import "CommonViewController.h"
 #import "Setting.h"
-@interface profDetailViewViewController : UIViewController
+@interface profDetailViewViewController : CommonViewController
 
 
 @property (strong, nonatomic) IBOutlet UILabel *NameLabel;

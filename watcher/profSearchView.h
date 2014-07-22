@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CommonViewController.h"
 #import "Setting.h"
 
-@interface profSearchView : UIViewController
+@interface profSearchView : CommonViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *profLastName;
 @property (strong, nonatomic) IBOutlet UITextField *profFirstName;

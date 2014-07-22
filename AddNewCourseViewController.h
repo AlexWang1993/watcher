@@ -11,8 +11,8 @@
 #import "staticData.h"
 
 #import "TableViewController.h"
-
-@interface AddNewCourseViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
+#import "CommonViewController.h"
+@interface AddNewCourseViewController : CommonViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *subjectInput;
 @property (strong, nonatomic) IBOutlet UITextField *numberInput;
 @property (strong, nonatomic) IBOutlet UIPickerView *sectionPicker;

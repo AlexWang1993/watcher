@@ -41,6 +41,7 @@
     self.navigationItem.rightBarButtonItem=self.addButton;
     self.navigationItem.leftBarButtonItem=self.editButtonItem;
     _setting=[Setting sharedInstance];
+    self.view.backgroundColor=[UIColor clearColor];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -50,7 +51,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
-    self.view.backgroundColor= [UIColor clearColor];
+    //self.view.backgroundColor= [UIColor clearColor];
     //self.view.alpha = 0.2f;
 }
 

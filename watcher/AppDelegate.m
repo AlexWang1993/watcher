@@ -45,6 +45,7 @@
     }
     //self.window.backgroundColor= [UIColor whiteColor];
     self.window.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[[Setting sharedInstance].settings objectForKey:@"backgroundImage"]]];
+
     return YES;
 }
 							

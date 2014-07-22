@@ -10,6 +10,7 @@
 
 #import "staticData.h"
 #import "Setting.h"
+#import "CommonViewController.h"
 
 @interface TableViewController : UITableViewController
 

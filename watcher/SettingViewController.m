@@ -40,12 +40,14 @@
         [_notificationSwitch setOn:NO];
     }
     [_notificationSwitch addTarget:self action:@selector(notificationStateChanged:) forControlEvents:UIControlEventValueChanged];
-    
+    self.view.backgroundColor=[UIColor clearColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
-        self.view.alpha = 0.8f;
+    //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
+       // self.view.alpha = 0.8f;
+    self.navigationController.navigationBar.translucent=NO;
+    
 }
 
 
