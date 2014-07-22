@@ -30,7 +30,7 @@
     [super viewDidLoad];
     _setting=[Setting sharedInstance];
     self.NameLabel.text = _profName;
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
+    //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
     
     NSString *waterlooProf = [[NSBundle mainBundle] pathForResource:@"waterloo_prof" ofType:@"txt"];
     NSLog(waterlooProf);
@@ -99,6 +99,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
+        self.view.alpha = 0.8f;
 }
 
 - (void)didReceiveMemoryWarning

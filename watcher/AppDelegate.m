@@ -43,6 +43,8 @@
     if ([[Setting sharedInstance].settings objectForKey:@"backgroundImage"]==nil){
         [[Setting sharedInstance].settings setObject:@"light blue wallpaper hd.jpg" forKey:@"backgroundImage"];
     }
+    //self.window.backgroundColor= [UIColor whiteColor];
+    self.window.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[[Setting sharedInstance].settings objectForKey:@"backgroundImage"]]];
     return YES;
 }
 							

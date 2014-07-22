@@ -126,7 +126,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
+    //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
     _myLabels=[NSArray arrayWithObjects:self.recommend1,self.recommend2,self.recommend3,self.recommend4,self.recommend5, nil];
     [self loadProfNameList];
     [self changeLabelState:YES Labels:_myLabels];
@@ -139,6 +139,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
+        self.view.alpha = 0.8f;
 }
 
 - (void)didReceiveMemoryWarning

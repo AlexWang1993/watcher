@@ -62,6 +62,7 @@
 		A4F5E27418B5578600147B04 /* ut.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26E18B5578600147B04 /* ut.txt */; };
 		A4F5E27518B5578600147B04 /* utsg.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E26F18B5578600147B04 /* utsg.txt */; };
 		A4F5E27618B5578600147B04 /* utsc.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4F5E27018B5578600147B04 /* utsc.txt */; };
+		E80F6C7F197EDAED0038CB9F /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E80F6C7E197EDAED0038CB9F /* TabBarViewController.m */; };
 		E85FCBB3189C26470085F929 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB2189C26470085F929 /* Foundation.framework */; };
 		E85FCBB5189C26470085F929 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB4189C26470085F929 /* CoreGraphics.framework */; };
 		E85FCBB7189C26470085F929 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB6189C26470085F929 /* UIKit.framework */; };
@@ -191,6 +192,8 @@
 		A4F5E26E18B5578600147B04 /* ut.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ut.txt; sourceTree = "<group>"; };
 		A4F5E26F18B5578600147B04 /* utsg.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utsg.txt; sourceTree = "<group>"; };
 		A4F5E27018B5578600147B04 /* utsc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utsc.txt; sourceTree = "<group>"; };
+		E80F6C7D197EDAED0038CB9F /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		E80F6C7E197EDAED0038CB9F /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		E85FCBAF189C26470085F929 /* watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85FCBB2189C26470085F929 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E85FCBB4189C26470085F929 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -397,6 +400,8 @@
 				E85FCBC1189C26470085F929 /* AppDelegate.h */,
 				E85FCBC2189C26470085F929 /* AppDelegate.m */,
 				E85FCBC4189C26470085F929 /* Main.storyboard */,
+				E80F6C7D197EDAED0038CB9F /* TabBarViewController.h */,
+				E80F6C7E197EDAED0038CB9F /* TabBarViewController.m */,
 				E85FCBCA189C26470085F929 /* Images.xcassets */,
 				E85FCBB9189C26470085F929 /* Supporting Files */,
 				E8AB719718A82904007F3773 /* staticData.h */,
@@ -653,6 +658,7 @@
 				A45009D0191942AB006B249C /* About.m in Sources */,
 				E8AB719918A82904007F3773 /* staticData.m in Sources */,
 				E85FCBBF189C26470085F929 /* main.m in Sources */,
+				E80F6C7F197EDAED0038CB9F /* TabBarViewController.m in Sources */,
 				E8E2EE6F189C3C970080DDCB /* AddTableViewController.m in Sources */,
 				E8AC2EA918DE1E55002E9D5E /* NSString+Levenshtein.m in Sources */,
 				A497399518C4579F008D4D67 /* SettingViewController.m in Sources */,
