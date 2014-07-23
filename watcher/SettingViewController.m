@@ -7,7 +7,7 @@
 //
 
 #import "SettingViewController.h"
-
+#import "AppDelegate.h"
 
 
 @interface SettingViewController ()
@@ -111,6 +111,7 @@
     if ([_backgroundSelected isEqualToString: @"warm pink"]) {
         [_setting.settings setObject:@"background4.jpg" forKey:@"backgroundImage"];
         self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background4.jpg"]];}
+    [(AppDelegate*)[[UIApplication sharedApplication] delegate] refreshBackground];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

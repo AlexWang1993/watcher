@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CommonViewController : UIViewController
+@interface CommonViewController : UIViewController<UINavigationControllerDelegate>
+
 
 @end

@@ -16,4 +16,6 @@
 
 @property (strong,nonatomic) NSArray *shortList;
 
+-(void)refreshBackground;
+
 @end
