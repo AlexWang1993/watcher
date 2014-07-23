@@ -65,7 +65,11 @@
     }
 }
 -(void)handleSingleTap:(UITapGestureRecognizer*) singleTap{
+    //profDetailViewViewController* vc=[self.storyboard instantiateViewControllerWithIdentifier:@"profDetail"];
+    //profDetailViewViewController *vc=NULL;
+    //vc.profName=[_sortedArray objectAtIndex:singleTap.view.tag];
     [self performSegueWithIdentifier:@"goToProf" sender:singleTap.view];
+    //[((NavigationViewController*) self.navigationController) pushViewController:vc animated:NO];
 }
 - (void)giveRecommendation{
     NSString *profName=[NSString stringWithFormat:@"%@,%@",self.profLastName.text,self.profFirstName.text];
@@ -87,6 +91,8 @@
     if ([identifier isEqualToString:@"searchProf"]){
         if ([self containsLastName:self.profLastName.text FirstName:self.profFirstName.text]){
             [self changeLabelState:YES Labels:_myLabels];
+//            [self.navigationController pushViewController:[sender destinationViewController] animated:NO];
+//            return NO;
             return YES;
         } else {
             [self giveRecommendation];
@@ -97,7 +103,9 @@
         if (self.recommend1.hidden){
             return NO;
         }
+//        [self.navigationController pushViewController:[sender destinationViewController] animated:NO];
         return YES;
+        //return NO;
     }
     return NO;
 }
@@ -113,8 +121,6 @@
         dest.profName=name;
     }
 }
-
-
 
 - (IBAction)goButton:(id)sender {
     [_profLastName resignFirstResponder];

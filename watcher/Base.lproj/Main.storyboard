@@ -533,7 +533,7 @@
         <!--Prof Detail View View Controller - Detail-->
         <scene sceneID="aIC-jF-w4P">
             <objects>
-                <viewController id="8Vo-Yz-3X5" customClass="profDetailViewViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profDetail" id="8Vo-Yz-3X5" customClass="profDetailViewViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MZ1-Qo-NIE"/>
                         <viewControllerLayoutGuide type="bottom" id="dlU-N4-uHb"/>
@@ -630,10 +630,10 @@
             </objects>
             <point key="canvasLocation" x="2165" y="418"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="K6o-kj-6y0">
             <objects>
-                <navigationController definesPresentationContext="YES" id="8Bz-Yk-o52" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="8Bz-Yk-o52" customClass="NavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="Wlf-e2-the"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="axi-d8-g8U">
                         <autoresizingMask key="autoresizingMask"/>
@@ -646,10 +646,10 @@
             </objects>
             <point key="canvasLocation" x="1221" y="398"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation View Controller - Item-->
         <scene sceneID="M1h-tO-k89">
             <objects>
-                <navigationController definesPresentationContext="YES" id="9UZ-h6-QMG" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="9UZ-h6-QMG" customClass="NavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="fdO-cj-y6p"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6hj-mG-cr3">
                         <autoresizingMask key="autoresizingMask"/>

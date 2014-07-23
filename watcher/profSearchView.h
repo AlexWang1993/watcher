@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CommonViewController.h"
 #import "Setting.h"
-
+#import "NavigationViewController.h"
 @interface profSearchView : CommonViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *profLastName;
