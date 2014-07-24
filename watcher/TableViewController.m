@@ -19,7 +19,9 @@
 @synthesize fullLabel=_fullLabel;
 @synthesize scrollView;
 @synthesize pageControl;
-
+@synthesize view1;
+@synthesize view2;
+@synthesize pageControlBeingUsed = _pageControlBeingUsed;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -47,6 +49,9 @@
     _setting=[Setting sharedInstance];
     self.view.backgroundColor=[UIColor clearColor];
     self.navigationController.navigationBar.translucent=NO;
+    
+    self.pageControlBeingUsed = NO;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -91,6 +96,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
    
+    
+    //add scroll view and page control on each cell
     scrollView = [[UIScrollView alloc] initWithFrame:cell.bounds];
     [scrollView setPagingEnabled:YES];
     [scrollView setBackgroundColor:NO];
@@ -100,28 +107,25 @@
     [scrollView setScrollEnabled:YES];
     [scrollView setDelegate:self];
     [cell.contentView addSubview:scrollView];
-    //   [scrollView release];
     pageControl = [[UIPageControl alloc] initWithFrame:cell.bounds];
     [pageControl setNumberOfPages:4];
     [pageControl setBackgroundColor:NO];
     [cell.contentView addSubview:pageControl];
-    //   [pageControl release];
+
+    view1 = [[UIView alloc] init];
+    view2 = [[UIView alloc] init];
     
     
     
+    UILabel *label1 = [[UILabel alloc] init];
+    [label1 setTextColor:[UIColor blackColor]];
+    [label1 setBackgroundColor:[UIColor blackColor]];
+    [label1 setFont:[UIFont fontWithName:@"Helen" size:30.0f]];
+    [view1 addSubview:label1];
     
+    [scrollView addSubview:view1];
+    [scrollView addSubview:view2];
     
-    
-    // self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
-    
-    
-//    [self.pageViewController setDataSource:cell];
- //   [self.pageViewController setDelegate:cell];
-  //  [self.pageViewController.view: cell.contentView.bounds];
-    
-    
- //   [cell.contentView addSubview:self.pageViewController];
     
     cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"]];
     if ([self isFullForSectionNumber:indexPath.row]){
@@ -130,11 +134,37 @@
     } else {
         cell.detailTextLabel.text=@"";
     }
-    
-    
-    // Configure the cell...
-    
     return cell;
+}
+
+- (IBAction)changePage {
+    // update the scroll view to the appropriate page
+    CGRect frame;
+    frame.origin.x = self.scrollView.frame.size.width * self.pageControl.currentPage;
+    frame.origin.y = 0;
+    frame.size = self.scrollView.frame.size;
+    [self.scrollView scrollRectToVisible:frame animated:YES];
+    self.pageControlBeingUsed = YES;
+}
+
+//fix flashing
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.pageControlBeingUsed = NO;
+}
+//fix flashing
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    self.pageControlBeingUsed = NO;
+    int page = scrollView.contentOffset.x/scrollView.frame.size.width;
+    pageControl.currentPage=page;
+}
+
+-(IBAction)clickPageControl:(id)sender
+{
+    int page=pageControl.currentPage;
+    CGRect frame=scrollView.frame;
+    frame.origin.x=frame.size.width=page;
+    frame.origin.y=0;
+    [scrollView scrollRectToVisible:frame animated:YES];
 }
 
 

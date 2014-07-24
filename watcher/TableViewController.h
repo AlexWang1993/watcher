@@ -33,8 +33,13 @@
 
 @property (strong,nonatomic)UIScrollView * scrollView;
 
+@property (strong,nonatomic) UIView *view1;
 
+@property (strong,nonatomic) UIView *view2;
 
+- (IBAction) changePage;
+
+@property  BOOL pageControlBeingUsed;
 
 -(BOOL)refreshWatchList;
 
