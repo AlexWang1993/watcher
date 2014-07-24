@@ -12,7 +12,10 @@
 #import "Setting.h"
 #import "CommonViewController.h"
 
-@interface TableViewController : UITableViewController
+
+//@class TableViewCell;
+
+@interface TableViewController : UITableViewController;
 
 @property (strong,nonatomic) NSMutableArray *subjectList;
 
@@ -25,6 +28,13 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @property  Setting* setting;
+
+@property (strong,nonatomic) UIPageControl * pageControl;
+
+@property (strong,nonatomic)UIScrollView * scrollView;
+
+
+
 
 -(BOOL)refreshWatchList;
 

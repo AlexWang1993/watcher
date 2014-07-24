@@ -17,11 +17,15 @@
 @implementation TableViewController
 
 @synthesize fullLabel=_fullLabel;
+@synthesize scrollView;
+@synthesize pageControl;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
+        
         // Custom initialization
     }
     return self;
@@ -81,10 +85,44 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
+    
     static NSString *CellIdentifier = @"Cell";
-
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+   
+    scrollView = [[UIScrollView alloc] initWithFrame:cell.bounds];
+    [scrollView setPagingEnabled:YES];
+    [scrollView setBackgroundColor:NO];
+    [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleDefault];
+    [scrollView setShowsHorizontalScrollIndicator:YES];
+    [scrollView setBounces:YES];
+    [scrollView setScrollEnabled:YES];
+    [scrollView setDelegate:self];
+    [cell.contentView addSubview:scrollView];
+    //   [scrollView release];
+    pageControl = [[UIPageControl alloc] initWithFrame:cell.bounds];
+    [pageControl setNumberOfPages:4];
+    [pageControl setBackgroundColor:NO];
+    [cell.contentView addSubview:pageControl];
+    //   [pageControl release];
+    
+    
+    
+    
+    
+    
+    // self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    
+    
+    
+//    [self.pageViewController setDataSource:cell];
+ //   [self.pageViewController setDelegate:cell];
+  //  [self.pageViewController.view: cell.contentView.bounds];
+    
+    
+ //   [cell.contentView addSubview:self.pageViewController];
+    
     cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"]];
     if ([self isFullForSectionNumber:indexPath.row]){
         cell.detailTextLabel.text=@"FULL";
