@@ -112,29 +112,85 @@
     [pageControl setBackgroundColor:NO];
     [cell.contentView addSubview:pageControl];
 
-    view1 = [[UIView alloc] init];
-    view2 = [[UIView alloc] init];
+    
+    CGRect rectLeft = cell.frame;
+    rectLeft.size.width = cell.bounds.size.width / 2;
+    rectLeft.size.height = cell.bounds.size.height;
+    rectLeft.origin.x = cell.bounds.size.width/8;
+    rectLeft.origin.y = cell.bounds.size.height/200;
+    
+    CGRect rectRight = cell.frame;
+    rectRight.size.width = cell.bounds.size.width / 2;
+    rectRight.size.height = cell.bounds.size.height;
+    rectRight.origin.x = cell.bounds.size.width - cell.bounds.size.width/3;
+    rectRight.origin.y = cell.bounds.size.height/200;
+
+    CGRect rectTime = cell.frame;
+    rectTime.size.width = cell.bounds.size.width / 2;
+    rectTime.size.height = cell.bounds.size.height;
+    rectTime.origin.x = cell.bounds.size.width/8;
+    rectTime.origin.y = cell.bounds.size.height/3;
+
     
     
-    
-    UILabel *label1 = [[UILabel alloc] init];
-    [label1 setTextColor:[UIColor blackColor]];
-    [label1 setBackgroundColor:[UIColor blackColor]];
-    [label1 setFont:[UIFont fontWithName:@"Helen" size:30.0f]];
-    [view1 addSubview:label1];
-    
-    [scrollView addSubview:view1];
-    [scrollView addSubview:view2];
+    CGRect rectLocation = cell.frame;
+    rectLocation.size.width = cell.bounds.size.width / 2;
+    rectLocation.size.height = cell.bounds.size.height;
+    rectLocation.origin.x = cell.bounds.size.width - cell.bounds.size.width/3;
+    rectLocation.origin.y = cell.bounds.size.height/3;
     
     
-    cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"]];
+    UITextField *text1 = [[UITextField alloc] initWithFrame:rectLeft];
+    UITextField *fullBool = [[UITextField alloc] initWithFrame:rectRight];
+    UITextField *textTime = [[UITextField alloc] initWithFrame:rectTime];
+    UITextField *textLocation = [[UITextField alloc] initWithFrame:rectLocation];
+
+    [text1 setTextColor:[UIColor blackColor]];
+    [fullBool setTextColor:[UIColor redColor]];
+    [text1 setBackgroundColor:NO];
+    [fullBool setBackgroundColor:NO];
+    
+    text1.text =[NSString stringWithFormat:@"%@ %@    %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"]];
+    
     if ([self isFullForSectionNumber:indexPath.row]){
+        fullBool.text=@"FULL";
+    } else {
+        fullBool.text=@"";
+    }
+    
+    textTime.text = @"temp time";
+    textLocation.text = @"temp location";
+    
+    
+    
+
+    [scrollView addSubview:text1];
+    [scrollView addSubview:fullBool];
+    [scrollView addSubview:textTime];
+    [scrollView addSubview:textLocation];
+
+    
+   // [scrollView addSubview:view2];
+    
+    
+ //   cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"]];
+/*    if ([self isFullForSectionNumber:indexPath.row]){
         cell.detailTextLabel.text=@"FULL";
         cell.detailTextLabel.textColor=[UIColor redColor];
     } else {
         cell.detailTextLabel.text=@"";
     }
+    
+    [scrollView addSubview:text1];
+*/
     return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)_scrollView
+{
+    if (self.pageControlBeingUsed) {
+        return;
+    }
 }
 
 - (IBAction)changePage {
