@@ -51,7 +51,8 @@
     self.navigationController.navigationBar.translucent=NO;
     
     self.pageControlBeingUsed = NO;
-    
+    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self.spinner startAnimating];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

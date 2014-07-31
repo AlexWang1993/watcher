@@ -29,6 +29,8 @@
 
 @property  Setting* setting;
 
+@property (strong,nonatomic) UIActivityIndicatorView *spinner;
+
 @property (strong,nonatomic) UIPageControl * pageControl;
 
 @property (strong,nonatomic)UIScrollView * scrollView;
@@ -46,5 +48,7 @@
 -(void)addSection:(NSDictionary *)section;
 
 -(NSMutableArray* )generateShortList;
+
+
 
 @end
