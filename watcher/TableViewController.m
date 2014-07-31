@@ -48,9 +48,9 @@
     self.navigationItem.leftBarButtonItem=self.editButtonItem;
     _setting=[Setting sharedInstance];
     self.view.backgroundColor=[UIColor clearColor];
-    self.navigationController.navigationBar.translucent=NO;
     
     self.pageControlBeingUsed = NO;
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:72.0/256 green:72.0/256 blue:0.0/256 alpha:1]];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -88,6 +88,18 @@
     return _watchList.count;
 }
 
+- (UIColor*)randomColor{
+    CGFloat hue;
+    do {
+        hue=arc4random() % 256 / 256.0 ;
+    } while ( !((fabsf(hue-193.0f/256.0f)<0.1f)||(fabsf(hue+1-193.0f/256.0f)<0.1f)));  //  0.0 to 1.0
+    CGFloat saturation = ( arc4random() % 128 / 800.0 ) + 0.25;  //  0.5 to 1.0, away from white
+    CGFloat brightness = ( arc4random() % 128 / 800.0 ) + 0.75;  //  0.5 to 1.0, away from black
+    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+    //return color;
+    return [UIColor colorWithRed:153.0/255 green:204.0/255 blue:(153.0)/255 alpha:1];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
@@ -95,6 +107,7 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    [cell setBackgroundColor:[self randomColor]];
    
     
     //add scroll view and page control on each cell
@@ -110,7 +123,8 @@
     pageControl = [[UIPageControl alloc] initWithFrame:cell.bounds];
     [pageControl setNumberOfPages:4];
     [pageControl setBackgroundColor:NO];
-    [cell.contentView addSubview:pageControl];
+    cell.alpha=0.4f;
+    //[cell.contentView addSubview:pageControl];
 
     
     CGRect rectLeft = cell.frame;
@@ -145,7 +159,7 @@
     UITextField *textTime = [[UITextField alloc] initWithFrame:rectTime];
     UITextField *textLocation = [[UITextField alloc] initWithFrame:rectLocation];
 
-    [text1 setTextColor:[UIColor blackColor]];
+    [text1 setTextColor:[UIColor whiteColor]];
     [fullBool setTextColor:[UIColor redColor]];
     [text1 setBackgroundColor:NO];
     [fullBool setBackgroundColor:NO];
@@ -160,6 +174,8 @@
     
     textTime.text = @"temp time";
     textLocation.text = @"temp location";
+    textTime.textColor=[UIColor whiteColor];
+    textLocation.textColor=[UIColor whiteColor];
     
     
     

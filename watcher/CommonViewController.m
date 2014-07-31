@@ -23,12 +23,24 @@
     return self;
 }
 
+- (UIColor*)randomColor{
+    CGFloat hue;
+    do {
+        hue=arc4random() % 256 / 256.0 ;
+    } while ( !((fabsf(hue-240.0f/256.0f)>0.1f)&&(fabsf(hue+1-240.0f/256.0f)>0.1f)));  //  0.0 to 1.0
+    CGFloat saturation = ( arc4random() % 128 / 800.0 ) + 0.4;  //  0.5 to 1.0, away from white
+    CGFloat brightness = ( arc4random() % 128 / 800.0 ) + 0.75;  //  0.5 to 1.0, away from black
+    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+    return color;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBar.translucent=NO;
+    //self.navigationController.navigationBar.translucent=NO;
     self.view.backgroundColor=[UIColor clearColor];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:72.0/256 green:72.0/256 blue:144.0/256 alpha:1]];
 }
 
 - (void)didReceiveMemoryWarning

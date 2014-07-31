@@ -136,7 +136,11 @@
     return [currOsVersion compare:osVersion options:NSNumericSearch] == NSOrderedDescending;
 }
 
+
 -(void)refreshBackground{
-        self.window.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[[Setting sharedInstance].settings objectForKey:@"backgroundImage"]]];
+//        self.window.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[[Setting sharedInstance].settings objectForKey:@"backgroundImage"]]];
+//    self.window.backgroundColor=[UIColor colorWithRed:164.0/256 green:221.0/256 blue:237.0/256 alpha:1];
+    //self.window.backgroundColor=[UIColor whiteColor];
+    self.window.backgroundColor=[UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1];
 }
 @end
