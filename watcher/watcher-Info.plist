@@ -32,7 +32,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>Quicksand-italic.otf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
