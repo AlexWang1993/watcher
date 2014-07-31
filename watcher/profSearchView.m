@@ -10,6 +10,9 @@
 #import "profDetailViewViewController.h"
 #import "NSString+Levenshtein.h"
 #import "SettingViewController.h"
+#import "UILabel+CustomFont.h"
+#import "UITextField+CustomFont.h"
+//#import "UIButton+CustomFont.h"
 @interface profSearchView ()
 
 @end
@@ -78,6 +81,12 @@
         NSInteger dis2=[(NSString*)obj2 compareWithWord:profName matchGain:3 missingCost:1];
         return (dis1<dis2)?NSOrderedAscending:NSOrderedDescending;
     }];
+    [_recommend1 setCustomFont];
+    [_recommend2 setCustomFont];
+    [_recommend3 setCustomFont];
+    [_recommend4 setCustomFont];
+    [_recommend5 setCustomFont];
+
     _recommend1.text=[_sortedArray objectAtIndex:0];
     _recommend2.text=[_sortedArray objectAtIndex:1];
     _recommend3.text=[_sortedArray objectAtIndex:2];
@@ -134,6 +143,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _searchProfButton.titleLabel.font = [UIFont fontWithName:@"Quicksand" size:16.0f];
+    [_info setCustomFont];
+
     //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
     _myLabels=[NSArray arrayWithObjects:self.recommend1,self.recommend2,self.recommend3,self.recommend4,self.recommend5, nil];
     [self loadProfNameList];

@@ -10,6 +10,8 @@
 
 #import "SectionDetailsViewController.h"
 
+#import "UILabel+CustomFont.h"
+
 @interface AddNewCourseViewController ()
 
 @end
@@ -23,7 +25,8 @@
 @synthesize subjectInput=_subjectInput;
 
 @synthesize sectionPicker=_sectionPicker;
-
+@synthesize subjectInputLabel = _subjectInputLabel;
+@synthesize numberInputLabel = _numberInputLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,10 +52,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [_subjectInputLabel setCustomFont];
+    [_numberInputLabel setCustomFont];
+    _searchButton.titleLabel.font = [UIFont fontWithName:@"Quicksand" size:16.0f];
+    _seeDetails.titleLabel.font = [UIFont fontWithName:@"Quicksand" size:16.0f];
+    _addButton.titleLabel.font = [UIFont fontWithName:@"Quicksand" size:16.0f];
+    
 	// Do any additional setup after loading the view.
     // Custom initialization
     //_sectionPicker=[[UIPickerView alloc] init];
     //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
+  
     _sectionPicker.delegate=self;
     _sectionPicker.dataSource=self;
     //_sectionPicker.hidden=true;
@@ -188,8 +198,26 @@
 
 /*pickerView*/
 
+/*-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 44)];
+    label.font = [UIFont fontWithName:@"Quicksand" size:14.0f];
+    label.textColor = [UIColor blackColor];
+    
+    return label;
+}
+*/
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    UILabel *label = [[UILabel alloc]initWithFrame:pickerView.bounds];
+    label.font =[UIFont fontWithName:@"Quicksand" size:14.0f];
     NSDictionary *section=[_sectionList objectAtIndex:row];
+    
+    UIFont *font = [UIFont fontWithName:@"Quicksand" size:14.0f];
+ //   NSFont *font = [NSFont fontWithName:@"Palatino-Roman" size:14.0];
+
+ /*   NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font forKey:@"CustomFont"];
+    NSAttributedString *attrString = [[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@ %@   %@",[section objectForKey:@"subject"],[section objectForKey:@"catalog_number"],[section objectForKey:@"section"]] attributes:attrsDictionary];
+    
+    return attrString;*/
     return [NSString stringWithFormat:@"%@ %@   %@",[section objectForKey:@"subject"],[section objectForKey:@"catalog_number"],[section objectForKey:@"section"]];
 }
 

@@ -25,7 +25,8 @@
 
 @property (strong,nonatomic) NSArray *sectionList;
 @property  Setting* setting;
+@property (strong,nonatomic) IBOutlet UILabel *subjectInputLabel;
 
-
+@property (strong,nonatomic) IBOutlet UILabel *numberInputLabel;
 @property (weak,nonatomic) TableViewController *parent;
 @end
