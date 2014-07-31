@@ -198,28 +198,24 @@
 
 /*pickerView*/
 
-/*-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 44)];
-    label.font = [UIFont fontWithName:@"Quicksand" size:14.0f];
-    label.textColor = [UIColor blackColor];
-    
+-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    UILabel * label = (UILabel *)view;
+    if (!label) {
+        label = [[UILabel alloc] init];
+        label.minimumFontSize = 8;
+        label.adjustsFontSizeToFitWidth = YES;
+    }
+    [label setTextColor:[UIColor blackColor]];
+    label.font =[UIFont fontWithName:@"Quicksand" size:16];
+    NSDictionary *section=[_sectionList objectAtIndex:row];
+    [label setText:[NSString stringWithFormat:@"%@ %@   %@",[section objectForKey:@"subject"],[section objectForKey:@"catalog_number"],[section objectForKey:@"section"]]];
+    label.textAlignment = NSTextAlignmentCenter;
     return label;
 }
-*/
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    UILabel *label = [[UILabel alloc]initWithFrame:pickerView.bounds];
-    label.font =[UIFont fontWithName:@"Quicksand" size:14.0f];
-    NSDictionary *section=[_sectionList objectAtIndex:row];
-    
-    UIFont *font = [UIFont fontWithName:@"Quicksand" size:14.0f];
- //   NSFont *font = [NSFont fontWithName:@"Palatino-Roman" size:14.0];
 
- /*   NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font forKey:@"CustomFont"];
-    NSAttributedString *attrString = [[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@ %@   %@",[section objectForKey:@"subject"],[section objectForKey:@"catalog_number"],[section objectForKey:@"section"]] attributes:attrsDictionary];
-    
-    return attrString;*/
-    return [NSString stringWithFormat:@"%@ %@   %@",[section objectForKey:@"subject"],[section objectForKey:@"catalog_number"],[section objectForKey:@"section"]];
-}
+
+
+
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
