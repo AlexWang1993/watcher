@@ -33,10 +33,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Quicksand-italic.otf</string>
-	</array>
+		<string>Quicksand_Bold.otf</string>
+		<string>Quicksand_Book.otf</string>
+		<string>Quicksand_Light.otf</string>
 	<key>UIBackgroundModes</key>
-	<array>
-		<string>fetch</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>

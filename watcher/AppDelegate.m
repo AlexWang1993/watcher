@@ -45,6 +45,8 @@
     }
     //self.window.backgroundColor= [UIColor whiteColor];
     [self refreshBackground];
+    
+     [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
 
     return YES;
 }

@@ -12,6 +12,12 @@ static NSString *apiKey=@"e2b51117475b5dd304155b436fe6787b";
 
 static NSString *unlimitedAPIKey=@"884d9c5288743f49ab8e9ea578a50b25";
 
+#define barColor [UIColor colorWithRed:149.0/256 green:196.0/256 blue:219.0/256 alpha:1]
+
+#define barHighlightColor [UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1]
+
+#define customFont [UIFont fontWithName:@"QuicksandBold-Regular" size:16.0f]
+
 @interface staticData : NSObject
 
 @end

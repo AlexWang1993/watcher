@@ -8,7 +8,8 @@
 
 #import "SettingViewController.h"
 #import "AppDelegate.h"
-
+#import "UILabel+CustomFont.h"
+#import "UITextField+CustomFont.h"
 
 @interface SettingViewController ()
 
@@ -41,7 +42,10 @@
     }
     [_notificationSwitch addTarget:self action:@selector(notificationStateChanged:) forControlEvents:UIControlEventValueChanged];
     self.view.backgroundColor=[UIColor clearColor];
+    [self.theme setCustomFont];
+    [self.enable setCustomFont];
 }
+
 
 -(void)viewWillAppear:(BOOL)animated{
     //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
@@ -76,8 +80,23 @@
 }
 
 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return [_imageList objectAtIndex:row];
+//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+//    return [_imageList objectAtIndex:row];
+//}
+
+-(UIView*)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    UILabel* view1=(UILabel*)view;
+    if (!view1){
+        view1=[[UILabel alloc]init];
+        view1.minimumFontSize = 8.;
+        view1.adjustsFontSizeToFitWidth = YES;
+
+    }
+    [view1 setTextColor:[UIColor blackColor]];
+    view1.font = [UIFont fontWithName:@"Quicksand" size:16];
+    [view1 setText:[_imageList objectAtIndex:row]];
+    view1.textAlignment=NSTextAlignmentCenter;
+    return view1;
 }
 
 /*-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{

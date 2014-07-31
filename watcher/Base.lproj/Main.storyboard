@@ -751,8 +751,11 @@
                     <navigationItem key="navigationItem" title="Settings" id="IZ9-PH-Iq8"/>
                     <connections>
                         <outlet property="about" destination="TTc-yU-42L" id="hhp-mQ-X94"/>
+                        <outlet property="aboutThisApp" destination="TTc-yU-42L" id="3as-7f-IIv"/>
                         <outlet property="backgroundPicker" destination="k7m-jh-Wdc" id="PKo-0d-Lzo"/>
+                        <outlet property="enable" destination="FuT-1U-Tvj" id="7tm-AL-Epq"/>
                         <outlet property="notificationSwitch" destination="N8O-y1-xNW" id="jqs-zW-6qs"/>
+                        <outlet property="theme" destination="tvX-BE-AKw" id="TyR-QU-Mdr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edw-Kv-i0s" userLabel="First Responder" sceneMemberID="firstResponder"/>

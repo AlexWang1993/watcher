@@ -9,6 +9,7 @@
 #import "SectionDetailsViewController.h"
 //#include "staticData.h"
 #import "search.h"
+#import "UILabel+CustomFont.h"
 
 @interface SectionDetailsViewController ()
 
@@ -35,7 +36,9 @@
     _setting=[Setting sharedInstance];
     //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
     self.subjectLabel.text=[NSString stringWithFormat:@"%@ %@",[self.info objectForKey:@"subject"],[self.info objectForKey:@"catalog_number"]];
+    [self.subjectLabel setCustomFont];
     self.sectionLabel.text=[self.info objectForKey:@"section"];
+    [self.sectionLabel setCustomFont];
 
     self.professorLabel.text= ([[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] count]>0)?[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0]:NULL;
     
@@ -53,7 +56,17 @@
                          [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],
                          [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
     
-    
+    [self.subjectLabel setCustomFont];
+    [self.sectionLabel setCustomFont];
+    [self.professorLabel setCustomFont];
+    [self.locationLabel setCustomFont];
+    [self.titleLabel setCustomFont];
+    [self.capacityLabel setCustomFont];
+    [self.totalEnrolledLabel setCustomFont];
+    [self.timeLabel setCustomFont];
+    [self.descriptionLabel setCustomFont];
+    [self.avgRateLabel setCustomFont];
+    [self.easinessLabel setCustomFont];
     
     //rate my prof starts
     if (!self.professorLabel.text) {

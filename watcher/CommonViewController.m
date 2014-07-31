@@ -7,6 +7,7 @@
 //
 
 #import "CommonViewController.h"
+#import "staticData.h"
 
 @interface CommonViewController ()
 
@@ -40,7 +41,9 @@
     // Do any additional setup after loading the view.
     //self.navigationController.navigationBar.translucent=NO;
     self.view.backgroundColor=[UIColor clearColor];
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:72.0/256 green:72.0/256 blue:144.0/256 alpha:1]];
+    //[self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:72.0/256 green:72.0/256 blue:144.0/256 alpha:1]];
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:customFont} ];
 }
 
 - (void)didReceiveMemoryWarning
