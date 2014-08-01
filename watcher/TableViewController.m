@@ -24,7 +24,8 @@
 @synthesize view1;
 @synthesize view2;
 @synthesize pageControlBeingUsed = _pageControlBeingUsed;
-
+@synthesize infoDetail;
+@synthesize location;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -60,6 +61,9 @@
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:customFont} forState:UIControlStateNormal];
     
     self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+
+    
     [self.spinner startAnimating];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -118,6 +122,18 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     [cell setBackgroundColor:[self randomColor]];
    
+    
+    
+   // cell.textLabel.text =[[_watchList objectAtIndex:indexPath.row] objectForKey:@"location"];
+    cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"]];
+    if ([self isFullForSectionNumber:indexPath.row]){
+        cell.detailTextLabel.text=@"FULL";
+        cell.detailTextLabel.textColor=[UIColor redColor];
+    } else {
+        cell.detailTextLabel.text=@"";
+    }
+    cell.textLabel.font = [UIFont fontWithName:@"Quicksand" size:14.0f];
+    /*
     
     //add scroll view and page control on each cell
     scrollView = [[UIScrollView alloc] initWithFrame:cell.bounds];
@@ -184,32 +200,21 @@
         fullBool.text=@"";
     }
     
+//    SectionDetailsViewController *controller =[[SectionDetailsViewController alloc]init];
+ //   infoDetail = controller.info;
+    
     textTime.text = @"temp time";
-    textLocation.text = @"temp location";
+    textLocation.text = location;
     textTime.textColor=[UIColor whiteColor];
     textLocation.textColor=[UIColor whiteColor];
     
     
-    
 
+    
     [scrollView addSubview:text1];
     [scrollView addSubview:fullBool];
     [scrollView addSubview:textTime];
     [scrollView addSubview:textLocation];
-
-    
-   // [scrollView addSubview:view2];
-    
-    
- //   cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"]];
-/*    if ([self isFullForSectionNumber:indexPath.row]){
-        cell.detailTextLabel.text=@"FULL";
-        cell.detailTextLabel.textColor=[UIColor redColor];
-    } else {
-        cell.detailTextLabel.text=@"";
-    }
-    
-    [scrollView addSubview:text1];
 */
     return cell;
 }
@@ -314,6 +319,7 @@
     
 }
 
+
 -(BOOL)refreshWatchList{
     BOOL flag=NO;
     _changedList=[[NSMutableArray alloc] init];
@@ -339,6 +345,7 @@
         SectionDetailsViewController *dest=[segue destinationViewController];
         NSIndexPath *path=[self.tableView indexPathForSelectedRow];
         dest.info=[_watchList objectAtIndex:path.row];
+        dest.parent = self;
     }
     
 }
@@ -414,6 +421,8 @@
         [shortDescription setObject:[sec objectForKey:@"subject"] forKey:@"subject"];
         [shortDescription setObject:[sec objectForKey:@"catalog_number"] forKey:@"catalog_number"];
         [shortDescription setObject:[sec objectForKey:@"section"] forKey:@"section"];
+        
+        
         [shortList addObject:[NSDictionary dictionaryWithDictionary:shortDescription]];
     }
     return shortList;

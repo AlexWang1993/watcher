@@ -11,7 +11,6 @@
 #import "CommonViewController.h"
 //#import "staticData.h"
 #import "Setting.h"
-
 @interface SectionDetailsViewController : CommonViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *subjectLabel;
@@ -29,8 +28,5 @@
 @property  Setting* setting;
 
 @property (strong,nonatomic) NSDictionary *info;
-
-//@property(strong,nonatomic) NSArray *descriptionList;
-
-
+@property (weak,nonatomic) TableViewController *parent;
 @end

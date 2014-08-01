@@ -11,9 +11,7 @@
 #import "staticData.h"
 #import "Setting.h"
 #import "CommonViewController.h"
-
-
-//@class TableViewCell;
+//#import "SectionDetailsViewController.h"
 
 @interface TableViewController : UITableViewController;
 
@@ -38,6 +36,13 @@
 @property (strong,nonatomic) UIView *view1;
 
 @property (strong,nonatomic) UIView *view2;
+
+@property (strong,nonatomic) NSDictionary *infoDetail;
+
+@property (strong,nonatomic) NSString *location;
+
+//@property (weak,nonatomic) SectionDetailsViewController *detailView;
+
 
 - (IBAction) changePage;
 

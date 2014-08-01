@@ -29,4 +29,6 @@
 
 @property (strong,nonatomic) IBOutlet UILabel *numberInputLabel;
 @property (weak,nonatomic) TableViewController *parent;
+
+@property (strong,nonatomic) NSString * test;
 @end

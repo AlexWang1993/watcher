@@ -18,7 +18,6 @@
 
 @implementation SectionDetailsViewController
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -46,8 +45,7 @@
                              [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"building"],
                              [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"room"]
                              ];
-    
-    
+    _parent.location = self.locationLabel.text;
     self.titleLabel.text=[self.info objectForKey:@"title"];
     self.capacityLabel.text=[NSString stringWithFormat:@"Enrollment Capacity: %@", [self.info objectForKey:@"enrollment_capacity"]];
     self.totalEnrolledLabel.text=[NSString stringWithFormat:@"Total Enrolled: %@", [self.info objectForKey:@"enrollment_total"]];
@@ -67,7 +65,7 @@
     [self.descriptionLabel setCustomFont];
     [self.avgRateLabel setCustomFont];
     [self.easinessLabel setCustomFont];
-    
+
     //rate my prof starts
     if (!self.professorLabel.text) {
         self.descriptionLabel.hidden=true;
@@ -113,12 +111,12 @@
         self.avgRateLabel.hidden=false;
         self.easinessLabel.hidden=false;
     }
-    
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
-        self.view.alpha = 0.8f;
+//    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
+//        self.view.alpha = 0.8f;
 }
 
 
