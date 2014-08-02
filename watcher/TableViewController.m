@@ -124,8 +124,16 @@
    
     
     
-   // cell.textLabel.text =[[_watchList objectAtIndex:indexPath.row] objectForKey:@"location"];
-    cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"]];
+    /* [NSString stringWithFormat:@"%@ %@ - %@",
+     [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],
+     [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],
+     [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]]   */
+
+    cell.textLabel.lineBreakMode = YES;
+    
+    cell.textLabel.numberOfLines= 0;
+    
+    cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@\n\n%@%@    %@ %@ - %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"building"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"room"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
     if ([self isFullForSectionNumber:indexPath.row]){
         cell.detailTextLabel.text=@"FULL";
         cell.detailTextLabel.textColor=[UIColor redColor];
@@ -133,6 +141,7 @@
         cell.detailTextLabel.text=@"";
     }
     cell.textLabel.font = [UIFont fontWithName:@"Quicksand" size:14.0f];
+
     /*
     
     //add scroll view and page control on each cell
@@ -430,7 +439,8 @@
 -(NSMutableArray* )generateWatchList:(NSArray *)shortList{
     NSMutableArray *watchList=[[NSMutableArray alloc]init];
     for (NSDictionary *sec in shortList){
-        NSDictionary *fullDescription=[self loadSectionForSubject:[sec objectForKey:@"subject"] Number:[sec objectForKey:@"catalog_number"] Section:[sec objectForKey:@"section"]];
+        NSDictionary *fullDescription=[self loadSectionForSubject:[sec objectForKey:@"subject"] Number:[sec objectForKey:@"catalog_number"] Section:[sec objectForKey:@"section"]
+                                       ];
         [watchList addObject:fullDescription];
     }
     return watchList;
