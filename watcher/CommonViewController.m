@@ -8,6 +8,7 @@
 
 #import "CommonViewController.h"
 #import "staticData.h"
+#import "Reachability.h"
 
 @interface CommonViewController ()
 
@@ -51,6 +52,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(BOOL)hasNetwork{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return(networkStatus != NotReachable);
+}
+
 
 
 /*

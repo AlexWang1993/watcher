@@ -12,6 +12,9 @@
 #import "AppDelegate.h"
 #import "UITextField+CustomFont.h"
 #import "staticData.h"
+#import "Reachability.h"
+
+
 
 @interface TableViewController ()
 @end
@@ -45,8 +48,14 @@
     } else {
         _watchList=[[NSMutableArray alloc]init];
     }
-    _subjectList=[[NSMutableArray alloc]init];
-    [self loadSubList];
+    if (appDelegate.subjectList){
+        _subjectList=[NSMutableArray arrayWithArray:appDelegate.subjectList];
+    } else {
+        _subjectList=[[NSMutableArray alloc]init];
+        [self loadSubList];
+    }
+    //[self performSelectorInBackground:@selector(loadSubList) withObject:nil];
+    //[self loadSubList];
     self.navigationItem.rightBarButtonItem=self.addButton;
     self.navigationItem.leftBarButtonItem=self.editButtonItem;
     _setting=[Setting sharedInstance];
@@ -293,13 +302,20 @@
     }
 }
 
-
+-(NSArray*)getSubList{
+    if (_subjectList.count==0){
+        [self loadSubList];
+    }
+    return [NSArray arrayWithArray:_subjectList];
+}
 
 -(void)loadSubList{
+    if (![self hasNetwork]){return;}
     NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=1145", apiKey]];
     NSError *error=nil;
     NSData *JSONData = [NSData dataWithContentsOfURL:url
                                              options:NSDataReadingMappedIfSafe error:&error];
+    NSLog(@"%@",error);
     NSDictionary *results= [NSJSONSerialization
                             JSONObjectWithData:JSONData options: NSJSONReadingAllowFragments error:&error];
     NSArray *data=[results objectForKey:@"data"];
@@ -309,6 +325,7 @@
 }
 
 -(NSDictionary *)loadSectionForSubject:(NSString *)subject Number:(NSString *)number Section:(NSString *)section{
+    
     NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", subject, number, apiKey]];
     //for debugging
     //NSURL *url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Users/alexwang/Documents/ClassWatcher/testjson/%@/%@/schedule.json",subject,number]];
@@ -316,7 +333,7 @@
     NSError *error=nil;
     NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
     NSDictionary *results=[NSJSONSerialization
-                           JSONObjectWithData:JSONData options:NSJSONReadingMutableContainers error:&error];
+                           JSONObjectWithData:JSONData options:0 error:&error];
     NSArray *sectionList=[results objectForKey:@"data"];
     int i;
     for (i=0;i<sectionList.count;i++){
@@ -328,6 +345,25 @@
     
 }
 
+-(void)refreshWatchListAsync{
+    if (![self hasNetwork]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Network" message:@"Please check your network connection and retry." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
+    for (int i=0;i<_watchList.count;i++){
+        BOOL fullBefore=[self isFullForSectionNumber:i];
+        NSDictionary *section=[_watchList objectAtIndex:i];
+        dispatch_queue_t subQueue = dispatch_queue_create([[NSString stringWithFormat:@"subject%d",i] cStringUsingEncoding:NSASCIIStringEncoding], NULL);
+        dispatch_async(subQueue, ^{
+            [_watchList replaceObjectAtIndex:i withObject:[self loadSectionForSubject:[section objectForKey:@"subject"] Number:[section objectForKey:@"catalog_number"] Section:[section objectForKey:@"section"]]];
+         dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.tableView reloadData];
+             });});
+        
+    }
+    [self.tableView reloadData];
+}
 
 -(BOOL)refreshWatchList{
     BOOL flag=NO;
@@ -423,7 +459,7 @@
 }
 
 /*interclass API method*/
--(NSMutableArray* )generateShortList{
+-(NSArray* )generateShortList{
     NSMutableArray *shortList=[[NSMutableArray alloc] init];
     for (NSDictionary *sec in _watchList){
         NSMutableDictionary *shortDescription=[[NSMutableDictionary alloc]init];
@@ -434,18 +470,64 @@
         
         [shortList addObject:[NSDictionary dictionaryWithDictionary:shortDescription]];
     }
-    return shortList;
+    return [NSArray arrayWithArray: shortList];
+//    for (int i=0;i<_watchList.count;i++){
+//        for (int j=0;j<[_watchList[i][@"classes"] count];j++){
+//            [_watchList[i][@"classes"][j][@"date"] removeObjectForKey:@"end_date"];
+//            [_watchList[i][@"classes"][j][@"date"] removeObjectForKey:@"start_date"];
+//        }
+//    }
+//    return [NSArray arrayWithArray:_watchList];
 }
--(NSMutableArray* )generateWatchList:(NSArray *)shortList{
-    NSMutableArray *watchList=[[NSMutableArray alloc]init];
-    for (NSDictionary *sec in shortList){
-        NSDictionary *fullDescription=[self loadSectionForSubject:[sec objectForKey:@"subject"] Number:[sec objectForKey:@"catalog_number"] Section:[sec objectForKey:@"section"]
-                                       ];
-        [watchList addObject:fullDescription];
+
+-(NSArray*)generateJSONs{
+    NSError *error;
+    NSMutableArray* ret=[[NSMutableArray alloc]init];
+    for (int i=0;i<_watchList.count;i++){
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:_watchList[i]
+                                                            options:0
+                                                         error:&error];
+    
+        if (! jsonData) {
+            NSLog(@"Got an error: %@", error);
+        } else {
+            NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+            [ret addObject:jsonString];
+        }
     }
-    return watchList;
+    return [NSArray arrayWithArray:ret];
+}
+
+
+-(NSMutableArray* )generateWatchList:(NSArray *)jsonList{
+//    if (![self hasNetwork]){
+//        return [[NSMutableArray alloc]init];
+//    }
+//    NSMutableArray *watchList=[[NSMutableArray alloc]init];
+//    for (NSDictionary *sec in shortList){
+//        NSDictionary *fullDescription=[self loadSectionForSubject:[sec objectForKey:@"subject"] Number:[sec objectForKey:@"catalog_number"] Section:[sec objectForKey:@"section"]
+//                                       ];
+//        [watchList addObject:fullDescription];
+//    }
+//    return [NSMutableArray arrayWithArray:shortList];
+    NSMutableArray *ret=[[NSMutableArray alloc]init];
+    for (int i=0;i<jsonList.count;i++){
+        NSData *data = [jsonList[i] dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        [ret addObject:dictionary];
+    }
+    return ret;
+        
 }
 /*interclass API method ENDS*/
+
+
+-(BOOL)hasNetwork{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return(networkStatus != NotReachable);
+}
+
 
 @end
 

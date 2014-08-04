@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CommonViewController : UIViewController<UINavigationControllerDelegate>
+@interface CommonViewController : UIViewController<UINavigationControllerDelegate,UIAlertViewDelegate>
 
+
+-(BOOL)hasNetwork;
 
 @end

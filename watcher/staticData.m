@@ -7,7 +7,16 @@
 //
 
 #import "staticData.h"
+#import "Reachability.h"
+
 
 @implementation staticData
 
+
+
+
+
+
 @end
+
+

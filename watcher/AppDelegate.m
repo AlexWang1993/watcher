@@ -30,11 +30,13 @@
 //    self.window.backgroundColor = background;
     // Override point for customization after application launch.
     NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:NULL forKey:@"a"];
     if ([userDefaults objectForKey:@"watcher_watchlist"]){
         _shortList=[userDefaults objectForKey:@"watcher_watchlist"];
-    
-        [Appirater appLaunched];
-    
+    }
+    [Appirater appLaunched];
+    if ([userDefaults objectForKey:@"watcher_subjectlist"]){
+        _subjectList=[userDefaults objectForKey:@"watcher_subjectlist"];
     }
     [Setting sharedInstance].settings=[[NSMutableDictionary alloc] initWithDictionary:[userDefaults objectForKey:@"watcherSettings"]];
     if ([Setting sharedInstance].settings==nil){
@@ -67,7 +69,8 @@
         NSLog(@"%@",NSStringFromClass([obj  class]));
     }
     [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:mainController.watchList] forKey:@"watcher_watchlist"];*/
-    [[NSUserDefaults standardUserDefaults]setObject:[mainController generateShortList] forKey:@"watcher_watchlist"];
+    [[NSUserDefaults standardUserDefaults]setObject:[mainController generateJSONs] forKey:@"watcher_watchlist"];
+    [[NSUserDefaults standardUserDefaults]setObject:[mainController subjectList] forKey:@"watcher_subjectlist"];
     [[NSUserDefaults standardUserDefaults]synchronize];
     Setting *setting1=[Setting sharedInstance];
     NSMutableDictionary* setting=setting1.settings;
@@ -79,13 +82,14 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    TableViewController *mainController=[self getRootViewController];
+    [mainController refreshWatchListAsync];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    TableViewController *mainController=[self getRootViewController];
-    [mainController refreshWatchList];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

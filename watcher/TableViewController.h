@@ -41,6 +41,7 @@
 
 @property (strong,nonatomic) NSString *location;
 
+
 //@property (weak,nonatomic) SectionDetailsViewController *detailView;
 
 
@@ -52,8 +53,10 @@
 
 -(void)addSection:(NSDictionary *)section;
 
--(NSMutableArray* )generateShortList;
+-(NSArray*)generateJSONs;
 
+-(void)refreshWatchListAsync;
 
+-(NSArray*)getSubList;
 
 @end

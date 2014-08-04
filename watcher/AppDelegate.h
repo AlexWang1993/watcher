@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong,nonatomic) NSArray *shortList;
+@property (strong,nonatomic) NSArray *shortList,*subjectList;
 
 -(void)refreshBackground;
 

@@ -109,9 +109,17 @@
 
 
 - (IBAction)buttonPressed:(id)sender {
+    if (![self hasNetwork]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Network" message:@"Please check your network connection and retry." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
     [_numberInput resignFirstResponder];
     [_subjectInput resignFirstResponder];
     NSString *message;
+    if (_subjectList.count==0){
+        _subjectList=[_parent getSubList];
+    }
     if (![_subjectList containsObject:[_subjectInput.text uppercaseString]]){
         message = @"Invalid subject entered";
     }
@@ -170,6 +178,11 @@
 
 /* loadAPI stuff*/
 -(void)loadSectionsSubject:(NSString *)subject Number:(NSString *)number{
+    if (![self hasNetwork]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Network" message:@"Please check your network connection and retry." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
     NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", subject, number, unlimitedAPIKey]];
     NSError *error=nil;
     NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
@@ -181,18 +194,6 @@
 }
 
 
--(void)loadSubList{
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=1145", unlimitedAPIKey]];
-    NSError *error=nil;
-    NSData *JSONData = [NSData dataWithContentsOfURL:url
-                                             options:NSDataReadingMappedIfSafe error:&error];
-    NSDictionary *results= [NSJSONSerialization
-                            JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments  error:&error];
-    NSArray *data=[results objectForKey:@"data"];
-    for ( NSDictionary *sec in data){
-        [_subjectList addObject:[sec objectForKey:@"subject"]];
-    }
-}
 
 /*loadAPI stuff END*/
 
