@@ -18,4 +18,6 @@
 
 -(void)refreshBackground;
 
+@property BOOL didRefresh;
+
 @end

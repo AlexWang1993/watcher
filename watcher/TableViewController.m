@@ -29,6 +29,7 @@
 @synthesize pageControlBeingUsed = _pageControlBeingUsed;
 @synthesize infoDetail;
 @synthesize location;
+@synthesize appDelegate;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -64,7 +65,7 @@
     self.pageControlBeingUsed = NO;
     //[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:72.0/256 green:72.0/256 blue:0.0/256 alpha:1]];
     
-        [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:customFont}];
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:customFont} forState:UIControlStateNormal];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:customFont} forState:UIControlStateNormal];
@@ -124,20 +125,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     [cell setBackgroundColor:[self randomColor]];
    
-    
-    
-    /* [NSString stringWithFormat:@"%@ %@ - %@",
-     [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],
-     [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],
-     [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]]   */
-
     cell.textLabel.lineBreakMode = YES;
     
     cell.textLabel.numberOfLines= 0;
@@ -151,91 +143,33 @@
     }
     cell.textLabel.font = [UIFont fontWithName:@"Quicksand" size:14.0f];
 
-    /*
-    
-    //add scroll view and page control on each cell
-    scrollView = [[UIScrollView alloc] initWithFrame:cell.bounds];
-    [scrollView setPagingEnabled:YES];
-    [scrollView setBackgroundColor:NO];
-    [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleDefault];
-    [scrollView setShowsHorizontalScrollIndicator:YES];
-    [scrollView setBounces:YES];
-    [scrollView setScrollEnabled:YES];
-    [scrollView setDelegate:self];
-    [cell.contentView addSubview:scrollView];
-    pageControl = [[UIPageControl alloc] initWithFrame:cell.bounds];
-    [pageControl setNumberOfPages:4];
-    [pageControl setBackgroundColor:NO];
-    cell.alpha=0.4f;
-    
-    //[cell.contentView addSubview:pageControl];
 
-    
-    CGRect rectLeft = cell.frame;
-    rectLeft.size.width = cell.bounds.size.width / 2;
-    rectLeft.size.height = cell.bounds.size.height;
-    rectLeft.origin.x = cell.bounds.size.width/8;
-    rectLeft.origin.y = cell.bounds.size.height/200;
-    
-    CGRect rectRight = cell.frame;
-    rectRight.size.width = cell.bounds.size.width / 2;
-    rectRight.size.height = cell.bounds.size.height;
-    rectRight.origin.x = cell.bounds.size.width - cell.bounds.size.width/3;
-    rectRight.origin.y = cell.bounds.size.height/200;
-
-    CGRect rectTime = cell.frame;
-    rectTime.size.width = cell.bounds.size.width / 2;
-    rectTime.size.height = cell.bounds.size.height;
-    rectTime.origin.x = cell.bounds.size.width/8;
-    rectTime.origin.y = cell.bounds.size.height/3;
-
-    
-    
-    CGRect rectLocation = cell.frame;
-    rectLocation.size.width = cell.bounds.size.width / 2;
-    rectLocation.size.height = cell.bounds.size.height;
-    rectLocation.origin.x = cell.bounds.size.width - cell.bounds.size.width/3;
-    rectLocation.origin.y = cell.bounds.size.height/3;
-    
-    
-    UITextField *text1 = [[UITextField alloc] initWithFrame:rectLeft];
-    UITextField *fullBool = [[UITextField alloc] initWithFrame:rectRight];
-    UITextField *textTime = [[UITextField alloc] initWithFrame:rectTime];
-    UITextField *textLocation = [[UITextField alloc] initWithFrame:rectLocation];
-
-    [text1 setTextColor:[UIColor whiteColor]];
-    [fullBool setTextColor:[UIColor redColor]];
-    [text1 setBackgroundColor:NO];
-    [fullBool setBackgroundColor:NO];
-    
-    text1.text =[NSString stringWithFormat:@"%@ %@    %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"]];
-    [text1 setCustomFont];
-    [fullBool setCustomFont];
-    
-    if ([self isFullForSectionNumber:indexPath.row]){
-        fullBool.text=@"FULL";
-    } else {
-        fullBool.text=@"";
-    }
-    
-//    SectionDetailsViewController *controller =[[SectionDetailsViewController alloc]init];
- //   infoDetail = controller.info;
-    
-    textTime.text = @"temp time";
-    textLocation.text = location;
-    textTime.textColor=[UIColor whiteColor];
-    textLocation.textColor=[UIColor whiteColor];
-    
-    
-
-    
-    [scrollView addSubview:text1];
-    [scrollView addSubview:fullBool];
-    [scrollView addSubview:textTime];
-    [scrollView addSubview:textLocation];
-*/
     return cell;
 }
+
+
+
+/*-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.frame = CGRectMake(0, 0, 24, 24);
+    spinner.hidesWhenStopped = YES;
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryView = spinner;
+    
+    if (!appDelegate.didRefresh) {
+        [spinner startAnimating];
+    }
+    
+    if (appDelegate.didRefresh) {
+        [spinner stopAnimating];
+    }
+  //  [self performSelectorOnMainThread:@selector(refreshWatchList) withObject:spinner waitUntilDone:YES];
+
+    
+ //   [self performSelector:@selector(refreshWatchList) withObject:spinner afterDelay:1.0];
+   // [self performSelector:@selector(callfunction) withObject:activityindicator1 afterDelay:1.0];
+
+}*/
 
 - (void)scrollViewDidScroll:(UIScrollView *)_scrollView
 {
@@ -243,7 +177,7 @@
         return;
     }
 }
-
+/*
 - (IBAction)changePage {
     // update the scroll view to the appropriate page
     CGRect frame;
@@ -264,7 +198,7 @@
     int page = scrollView.contentOffset.x/scrollView.frame.size.width;
     pageControl.currentPage=page;
 }
-
+*/
 -(IBAction)clickPageControl:(id)sender
 {
     int page=pageControl.currentPage;
@@ -274,8 +208,8 @@
     [scrollView scrollRectToVisible:frame animated:YES];
 }
 
-
--(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+//disable swipe to delete
+/*-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.editing) {
         return UITableViewCellEditingStyleDelete;
     }
@@ -283,6 +217,7 @@
         return UITableViewCellEditingStyleNone;
     }
 }
+ */
 
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -310,6 +245,7 @@
 }
 
 -(void)loadSubList{
+    
     if (![self hasNetwork]){return;}
     NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=1145", apiKey]];
     NSError *error=nil;
@@ -366,6 +302,7 @@
 }
 
 -(BOOL)refreshWatchList{
+    
     BOOL flag=NO;
     _changedList=[[NSMutableArray alloc] init];
     for (int i=0;i<_watchList.count;i++){
@@ -377,7 +314,21 @@
             flag=YES;
         }
     }
-    [self.tableView reloadData];
+    
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.frame = CGRectMake(0, 0, 24, 24);
+    spinner.hidesWhenStopped = YES;
+    for (UITableViewCell *cell in self.tableView.visibleCells){
+        NSIndexPath *cellIndexPath = [self.tableView indexPathForCell:cell];
+        cell.accessoryView = spinner;
+        [spinner startAnimating];
+        
+        [self.tableView reloadData];
+        
+        [spinner stopAnimating];
+    }
+  //  [self.tableView reloadData];
     return flag;
 }
 

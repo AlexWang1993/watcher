@@ -16,6 +16,10 @@
 
 @implementation AppDelegate
 
+
+@synthesize didRefresh;
+
+
 -(Setting *)getSetting{
     return [Setting sharedInstance];
 }
@@ -69,13 +73,17 @@
         NSLog(@"%@",NSStringFromClass([obj  class]));
     }
     [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:mainController.watchList] forKey:@"watcher_watchlist"];*/
+    
+    didRefresh=NO;
     [[NSUserDefaults standardUserDefaults]setObject:[mainController generateJSONs] forKey:@"watcher_watchlist"];
     [[NSUserDefaults standardUserDefaults]setObject:[mainController subjectList] forKey:@"watcher_subjectlist"];
     [[NSUserDefaults standardUserDefaults]synchronize];
+    
+    didRefresh=YES;
+    
     Setting *setting1=[Setting sharedInstance];
     NSMutableDictionary* setting=setting1.settings;
     [[NSUserDefaults standardUserDefaults]setObject:setting forKey:@"watcherSettings"];
-
 }
 
 
@@ -145,8 +153,13 @@
 
 -(void)refreshBackground{
 //        self.window.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[[Setting sharedInstance].settings objectForKey:@"backgroundImage"]]];
-//    self.window.backgroundColor=[UIColor colorWithRed:164.0/256 green:221.0/256 blue:237.0/256 alpha:1];
+  
+    
+    //light blue
+  //  self.window.backgroundColor=[UIColor colorWithRed:164.0/256 green:221.0/256 blue:237.0/256 alpha:1];
     //self.window.backgroundColor=[UIColor whiteColor];
+    
+    //original yellow
     self.window.backgroundColor=[UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1];
 }
 @end
