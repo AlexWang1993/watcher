@@ -30,6 +30,7 @@
     [self setDelegate:self];
     // Do any additional setup after loading the view.
     [[UITabBar appearance] setBarTintColor:barColor];
+    
     [[UITabBar appearance] setSelectedImageTintColor:barHighlightColor];
  //   [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Quicksand" size:8.0f], nil] forState:UIControlStateHighlighted];
 

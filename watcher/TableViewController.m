@@ -65,6 +65,8 @@
     self.pageControlBeingUsed = NO;
     //[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:72.0/256 green:72.0/256 blue:0.0/256 alpha:1]];
     
+    
+    //nav bar color clear white
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:customFont}];
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:customFont} forState:UIControlStateNormal];
@@ -74,7 +76,6 @@
     
 
     
-    [self.spinner startAnimating];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -288,6 +289,7 @@
         return;
     }
     for (int i=0;i<_watchList.count;i++){
+        
         BOOL fullBefore=[self isFullForSectionNumber:i];
         NSDictionary *section=[_watchList objectAtIndex:i];
         dispatch_queue_t subQueue = dispatch_queue_create([[NSString stringWithFormat:@"subject%d",i] cStringUsingEncoding:NSASCIIStringEncoding], NULL);
@@ -298,7 +300,22 @@
              });});
         
     }
-    [self.tableView reloadData];
+    
+  
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.frame = CGRectMake(0, 0, 24, 24);
+    spinner.hidesWhenStopped = YES;
+    for (UITableViewCell *cell in self.tableView.visibleCells){
+        NSIndexPath *cellIndexPath = [self.tableView indexPathForCell:cell];
+        cell.accessoryView = spinner;
+        [spinner startAnimating];
+        
+        [self.tableView reloadData];
+        
+        [spinner stopAnimating];
+        [spinner hidesWhenStopped];
+    }
+ //   [self.tableView reloadData];
 }
 
 -(BOOL)refreshWatchList{
@@ -315,20 +332,7 @@
         }
     }
     
-    
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    spinner.frame = CGRectMake(0, 0, 24, 24);
-    spinner.hidesWhenStopped = YES;
-    for (UITableViewCell *cell in self.tableView.visibleCells){
-        NSIndexPath *cellIndexPath = [self.tableView indexPathForCell:cell];
-        cell.accessoryView = spinner;
-        [spinner startAnimating];
-        
-        [self.tableView reloadData];
-        
-        [spinner stopAnimating];
-    }
-  //  [self.tableView reloadData];
+    [self.tableView reloadData];
     return flag;
 }
 

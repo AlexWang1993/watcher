@@ -52,6 +52,9 @@
     //self.window.backgroundColor= [UIColor whiteColor];
     [self refreshBackground];
     
+   // [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:20.0/256 green:68.0/256 blue:106.0/256 alpha:1]];
+    
+    //tab bar color NOT THIS ONE
      [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
 
     return YES;
@@ -154,9 +157,15 @@
 -(void)refreshBackground{
 //        self.window.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[[Setting sharedInstance].settings objectForKey:@"backgroundImage"]]];
   
+    //green
+   // self.window.backgroundColor=[UIColor colorWithRed:174.0/256 green:221.0/256 blue:129.0/256 alpha:1];
     
-    //light blue
-  //  self.window.backgroundColor=[UIColor colorWithRed:164.0/256 green:221.0/256 blue:237.0/256 alpha:1];
+    //pink
+  //  self.window.backgroundColor=[UIColor colorWithRed:252.0/256 green:157.0/256 blue:154.0/256 alpha:1];
+
+    
+    //light blue theme2
+   // self.window.backgroundColor=[UIColor colorWithRed:164.0/256 green:221.0/256 blue:237.0/256 alpha:1];
     //self.window.backgroundColor=[UIColor whiteColor];
     
     //original yellow

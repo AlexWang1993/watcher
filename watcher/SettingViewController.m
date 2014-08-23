@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _imageList = [[NSArray alloc] initWithObjects:@"default theme",@"dark blue",@"light green",@"warm pink", nil];
+    _imageList = [[NSArray alloc] initWithObjects:@"lemon yellow",@"sky blue",@"warm pink",@"cucumber green", nil];
     _backgroundPicker.delegate = self;
     _backgroundPicker.dataSource  = self;
     _setting=[Setting sharedInstance];
@@ -42,6 +42,7 @@
     }
     [_notificationSwitch addTarget:self action:@selector(notificationStateChanged:) forControlEvents:UIControlEventValueChanged];
     self.view.backgroundColor=[UIColor clearColor];
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
     [self.theme setCustomFont];
     [self.enable setCustomFont];
 }
@@ -116,20 +117,33 @@
   //  [_setting.settings setObject:@YES forKey:@"notificationEnabled"];
 //}
 
+
+//@"lemon yellow",@"sky blue",@"warm pink",@"cucumber green"
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     _backgroundSelected =[_imageList objectAtIndex:row];
-    if ([_backgroundSelected isEqualToString: @"default theme"]) {
-        [_setting.settings setObject:@"light blue wallpaper hd.jpg" forKey:@"backgroundImage"];
-        self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];}
-    if ([_backgroundSelected isEqualToString: @"dark blue"]) {
-        [_setting.settings setObject:@"background2.jpg" forKey:@"backgroundImage"];
-        self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background2.jpg"]];}
-    if ([_backgroundSelected isEqualToString: @"light green"]) {
-        [_setting.settings setObject:@"background3.jpg" forKey:@"backgroundImage"];
-        self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background3.jpg"]];}
+    if ([_backgroundSelected isEqualToString: @"lemon yellow"]) {
+        
+        [_setting.settings setObject:[UIColor colorWithRed:160/256 green:191/256 blue:124/256 alpha:1] forKey:@"color"];
+        
+        self.view.backgroundColor = [UIColor clearColor];
+        self.view.backgroundColor= [UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1];}
+    
+    if ([_backgroundSelected isEqualToString: @"sky blue"]) {
+        [_setting.settings setObject:[UIColor colorWithRed:164.0/256 green:221.0/256 blue:237.0/256 alpha:1] forKey:@"color"];
+        self.view.backgroundColor = [UIColor clearColor];
+        self.view.backgroundColor= [UIColor colorWithRed:164.0/256 green:221.0/256 blue:237.0/256 alpha:1];}
+    
     if ([_backgroundSelected isEqualToString: @"warm pink"]) {
-        [_setting.settings setObject:@"background4.jpg" forKey:@"backgroundImage"];
-        self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background4.jpg"]];}
+        [_setting.settings setObject:[UIColor colorWithRed:252.0/256 green:157.0/256 blue:154.0/256 alpha:1] forKey:@"color"];
+        self.view.backgroundColor = [UIColor clearColor];
+        self.view.backgroundColor= [UIColor colorWithRed:252.0/256 green:157.0/256 blue:154.0/256 alpha:1];}
+    
+    if ([_backgroundSelected isEqualToString: @"cucumber green"]) {
+        [_setting.settings setObject:[UIColor colorWithRed:174.0/256 green:221.0/256 blue:129.0/256 alpha:1] forKey:@"color"];
+        self.view.backgroundColor = [UIColor clearColor];
+        self.view.backgroundColor= [UIColor colorWithRed:174.0/256 green:221.0/256 blue:129.0/256 alpha:1];}
+    
+    
     [(AppDelegate*)[[UIApplication sharedApplication] delegate] refreshBackground];
 }
 
