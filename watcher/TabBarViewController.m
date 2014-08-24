@@ -29,9 +29,19 @@
     [super viewDidLoad];
     [self setDelegate:self];
     // Do any additional setup after loading the view.
-    [[UITabBar appearance] setBarTintColor:barColor];
     
-    [[UITabBar appearance] setSelectedImageTintColor:barHighlightColor];
+    
+    
+ //   [[UITabBar appearance] setBarTintColor:barColor];
+    
+ //   [[UITabBar appearance] setBackgroundColor:[UIColor clearColor]];
+    
+
+  //  [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:100/256 green:67/256 blue:101/256 alpha:1] ];
+ //   [[UITabBar appearance] setBackgroundColor:[UIColor colorWithRed:9/256 green:67/256 blue:101/256 alpha:1]];
+    
+    
+  //  [[UITabBar appearance] setSelectedImageTintColor:barHighlightColor];
  //   [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Quicksand" size:8.0f], nil] forState:UIControlStateHighlighted];
 
 }

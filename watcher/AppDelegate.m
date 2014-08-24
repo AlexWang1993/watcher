@@ -46,16 +46,23 @@
     if ([Setting sharedInstance].settings==nil){
         [Setting sharedInstance].settings=[[NSMutableDictionary alloc]init];
     }
-    if ([[Setting sharedInstance].settings objectForKey:@"backgroundImage"]==nil){
-        [[Setting sharedInstance].settings setObject:@"light blue wallpaper hd.jpg" forKey:@"backgroundImage"];
+    if ([[Setting sharedInstance].settings objectForKey:@"color"]==nil){
+        [[Setting sharedInstance].settings setObject:[UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1] forKey:@"color"];
     }
-    //self.window.backgroundColor= [UIColor whiteColor];
+    if ([[Setting sharedInstance].settings objectForKey:@"tabBarColor"]==nil) {
+        [[Setting sharedInstance].settings setObject:[UIColor colorWithRed:149.0/256 green:196.0/256 blue:219.0/256 alpha:1] forKey:@"tabBarColor"];
+    }
+    if ([[Setting sharedInstance].settings objectForKey:@"tabBarHighLightColor"]==nil) {
+        [[Setting sharedInstance].settings setObject:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1] forKey:@"tabBarHighLightColor"];
+    }
+    
+    
     [self refreshBackground];
     
    // [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:20.0/256 green:68.0/256 blue:106.0/256 alpha:1]];
     
-    //tab bar color NOT THIS ONE
-     [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
+    //tab bar color yellow mode
+   //  [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:149.0/256 green:196.0/256 blue:219.0/256 alpha:1]];
 
     return YES;
 }
@@ -169,6 +176,17 @@
     //self.window.backgroundColor=[UIColor whiteColor];
     
     //original yellow
-    self.window.backgroundColor=[UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1];
+    UIColor *myColor = [[Setting sharedInstance].settings objectForKey:@"color"];
+
+    self.window.backgroundColor = myColor;
+    
+    UIColor *tabBarColor =[[Setting sharedInstance].settings objectForKey:@"tabBarColor"];
+    
+    [[UITabBar appearance] setBarTintColor:tabBarColor];
+    
+        UIColor *tabBarHighLightColor =[[Setting sharedInstance].settings objectForKey:@"tabBarHighLightColor"];
+    
+    [[UITabBar appearance] setSelectedImageTintColor:tabBarHighLightColor];
+//    self.window.backgroundColor=[UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1];
 }
 @end
