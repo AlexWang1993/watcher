@@ -30,6 +30,8 @@
 @synthesize infoDetail;
 @synthesize location;
 @synthesize appDelegate;
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -114,7 +116,7 @@
     // Return the number of rows in the section.
     return _watchList.count;
 }
-
+/*
 - (UIColor*)randomColor{
     CGFloat hue;
     do {
@@ -126,13 +128,39 @@
     //return color;
     return [UIColor colorWithRed:153.0/255 green:204.0/255 blue:(153.0)/255 alpha:1];
 }
+*/
+
+-(void)refreshCellColor:(UITableViewCell *)cell{
+    if ([_setting.settings objectForKey:@"theme"]==nil) {
+        [cell setBackgroundColor:[UIColor colorWithRed:153.0/255 green:204.0/255 blue:(153.0)/255 alpha:1]];
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
+    else if ([[_setting.settings objectForKey:@"theme"] isEqualToString:@"lemon yellow"]){
+        [cell setBackgroundColor:[UIColor colorWithRed:153.0/255 green:204.0/255 blue:(153.0)/255 alpha:1]];
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
+    else if ([[_setting.settings objectForKey:@"theme"] isEqualToString:@"sky blue"]){
+        [cell setBackgroundColor:[UIColor colorWithRed:3.0/256 green:54.0/256 blue:73.0/256 alpha:1]];
+        cell.textLabel.textColor = [UIColor whiteColor];
+    }
+    else if ([[_setting.settings objectForKey:@"theme"] isEqualToString:@"warm pink"]){
+        [cell setBackgroundColor:[UIColor colorWithRed:153.0/256 green:77.0/256 blue:82.0/256 alpha:1]];
+        cell.textLabel.textColor = [UIColor whiteColor];
+    }
+    else if ([[_setting.settings objectForKey:@"theme"] isEqualToString:@"cucumber green"]){
+        [cell setBackgroundColor:[UIColor colorWithRed:64.0/256 green:116.0/256 blue:52.0/256 alpha:1]];
+        cell.textLabel.textColor = [UIColor whiteColor];
+    }
+    
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    [cell setBackgroundColor:[self randomColor]];
+    
+    [self refreshCellColor:cell];
    
     cell.textLabel.lineBreakMode = YES;
     
@@ -150,7 +178,6 @@
 
     return cell;
 }
-
 
 
 /*-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
