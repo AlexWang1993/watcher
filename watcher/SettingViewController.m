@@ -125,7 +125,7 @@
     if ([_backgroundSelected isEqualToString: @"lemon yellow"]) {
         
         [_setting.settings setObject:@"lemon yellow" forKey:@"theme"];
-        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:160/256 green:191/256 blue:124/256 alpha:1]] forKey:@"color"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1]] forKey:@"color"];
         [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:149.0/256 green:196.0/256 blue:219.0/256 alpha:1] ]forKey:@"tabBarColor"];
         [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1]] forKey:@"tabBarHighLightColor"];
         self.view.backgroundColor = [UIColor clearColor];

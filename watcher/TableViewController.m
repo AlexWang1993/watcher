@@ -91,6 +91,7 @@
     //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
     //self.view.backgroundColor= [UIColor clearColor];
     //self.view.alpha = 0.2f;
+    [self.tableView reloadData];
 }
 
 
