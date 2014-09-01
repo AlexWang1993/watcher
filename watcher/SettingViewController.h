@@ -21,5 +21,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *enable;
 @property (strong, nonatomic) IBOutlet UIButton *aboutThisApp;
 @property (strong, nonatomic) IBOutlet UILabel *theme;
+
+
 @property  Setting* setting;
 @end

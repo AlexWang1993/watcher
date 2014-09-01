@@ -9,12 +9,16 @@
 #import "CommonViewController.h"
 #import "staticData.h"
 #import "Reachability.h"
+#import "UILabel+CustomFont.h"
 
 @interface CommonViewController ()
+
 
 @end
 
 @implementation CommonViewController
+
+@synthesize helenEmail,alexEmail,alexPic,helenPic,alexName,helenName,aboutThisApp;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +43,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CALayer *imageLayerAlex = alexPic.layer;
+    [imageLayerAlex setCornerRadius:10];
+    [imageLayerAlex setBorderWidth:1];
+    [imageLayerAlex setMasksToBounds:YES];
+    CALayer *imageLayerHelen = helenPic.layer;
+    [imageLayerHelen setCornerRadius:10];
+    [imageLayerHelen setBorderWidth:1];
+    [imageLayerHelen setMasksToBounds:YES];
+    
+    [alexName setCustomFont];
+    [helenName setCustomFont];
+    [alexEmail setCustomFont];
+    [helenEmail setCustomFont];
+  //  [aboutThisApp setCustomFont];
     // Do any additional setup after loading the view.
     //self.navigationController.navigationBar.translucent=NO;
     self.view.backgroundColor=[UIColor clearColor];
