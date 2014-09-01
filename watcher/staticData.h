@@ -47,6 +47,8 @@ static NSString *unlimitedAPIKey=@"884d9c5288743f49ab8e9ea578a50b25";
 
 #define debug false
 
+#define term @"1149"
+
 
 @interface staticData : NSObject
 

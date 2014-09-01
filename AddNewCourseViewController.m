@@ -12,6 +12,7 @@
 
 #import "UILabel+CustomFont.h"
 
+
 @interface AddNewCourseViewController ()
 
 @end
@@ -185,7 +186,7 @@
     }
     NSURL *url;
     if (!debug){
-        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", subject, number, unlimitedAPIKey]];
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", subject, number, unlimitedAPIKey,term]];
     } else {
         url=[NSURL URLWithString:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"testjson/%@/%@/schedule",subject,number] ofType:@"json"] ];
     }

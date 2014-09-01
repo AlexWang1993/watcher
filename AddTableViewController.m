@@ -25,7 +25,7 @@
 }
 
 -(void)populateSubjectList{
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=1145", apiKey]];
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=%@", apiKey,term]];
     NSError *error=nil;
     NSData *JSONData = [NSData dataWithContentsOfURL:url
                                              options:NSDataReadingMappedIfSafe error:&error];
@@ -62,7 +62,7 @@
     for (int i=0;i<10;i++){
         NSString *cat=[_courseCatList objectAtIndex:i];
         NSString *sub=[_courseSubList objectAtIndex:i];
-        NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", sub, cat, apiKey]];
+        NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", sub, cat, unlimitedAPIKey,term]];
         NSError *error=nil;
         NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
         NSDictionary *results=[NSJSONSerialization

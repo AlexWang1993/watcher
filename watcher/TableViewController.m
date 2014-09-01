@@ -279,7 +279,7 @@
     if (![self hasNetwork]){return;}
     NSURL *url;
     if (!debug) {
-        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=1145", unlimitedAPIKey]];
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=%@", unlimitedAPIKey,term]];
     } else {
         //url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Users/alexwang/Documents/ClassWatcher/testjson/subjects.json"]];
         url=[NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"subjects" ofType:@"json"] ];
@@ -301,7 +301,7 @@
     
     NSURL *url;
     if (!debug){
-        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", subject, number, apiKey]];
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", subject, number, apiKey,term]];
     } else {
         url=[NSURL URLWithString:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"testjson/%@/%@/schedule",subject,number] ofType:@"json"] ];
     }
