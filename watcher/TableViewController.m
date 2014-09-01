@@ -15,7 +15,6 @@
 #import "Reachability.h"
 
 
-
 @interface TableViewController ()
 @end
 
@@ -311,7 +310,14 @@
 
 -(void)loadSubList{
     if (![self hasNetwork]){return;}
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=1145", apiKey]];
+    NSURL *url;
+    if (!debug) {
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=1145", unlimitedAPIKey]];
+    } else {
+        //url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Users/alexwang/Documents/ClassWatcher/testjson/subjects.json"]];
+        url=[NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"subjects" ofType:@"json"] ];
+
+    }
     NSError *error=nil;
     NSData *JSONData = [NSData dataWithContentsOfURL:url
                                              options:NSDataReadingMappedIfSafe error:&error];
@@ -326,10 +332,12 @@
 
 -(NSDictionary *)loadSectionForSubject:(NSString *)subject Number:(NSString *)number Section:(NSString *)section{
     
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", subject, number, apiKey]];
-    //for debugging
-    //NSURL *url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Users/alexwang/Documents/ClassWatcher/testjson/%@/%@/schedule.json",subject,number]];
-    //
+    NSURL *url;
+    if (!debug){
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", subject, number, apiKey]];
+    } else {
+        url=[NSURL URLWithString:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"testjson/%@/%@/schedule",subject,number] ofType:@"json"] ];
+    }
     NSError *error=nil;
     NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
     NSDictionary *results=[NSJSONSerialization
@@ -523,6 +531,7 @@
 
 
 -(BOOL)hasNetwork{
+    if (debug) return true;
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [reachability currentReachabilityStatus];
     return(networkStatus != NotReachable);

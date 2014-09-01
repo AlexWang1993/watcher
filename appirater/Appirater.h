@@ -234,7 +234,7 @@ extern NSString *const kAppiraterReminderRequestDate;
  'YES' will show the Appirater alert everytime. Useful for testing how your message
  looks and making sure the link to your app's review page works.
  */
-+ (void) setDebug:(BOOL)debug;
+//+ (void) setDebug:(BOOL)debug;
 
 /*!
  Set the delegate if you want to know when Appirater does something

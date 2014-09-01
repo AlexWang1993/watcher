@@ -79,6 +79,7 @@
 		E80F6C91198A08860038CB9F /* UITextField+CustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = E80F6C90198A08860038CB9F /* UITextField+CustomFont.m */; };
 		E80F6C94198F28320038CB9F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80F6C93198F28310038CB9F /* SystemConfiguration.framework */; };
 		E80F6C98198F2B690038CB9F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E80F6C95198F29880038CB9F /* Reachability.m */; };
+		E8448FB2199F0AAE0064593D /* subjects.json in Resources */ = {isa = PBXBuildFile; fileRef = E8448FB0199F09E60064593D /* subjects.json */; };
 		E85FCBB3189C26470085F929 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB2189C26470085F929 /* Foundation.framework */; };
 		E85FCBB5189C26470085F929 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB4189C26470085F929 /* CoreGraphics.framework */; };
 		E85FCBB7189C26470085F929 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85FCBB6189C26470085F929 /* UIKit.framework */; };
@@ -233,6 +234,9 @@
 		E80F6C93198F28310038CB9F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E80F6C95198F29880038CB9F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		E80F6C96198F29880038CB9F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E8448FAD199F09E60064593D /* schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schedule.json; sourceTree = "<group>"; };
+		E8448FAF199F09E60064593D /* schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schedule.json; sourceTree = "<group>"; };
+		E8448FB0199F09E60064593D /* subjects.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = subjects.json; sourceTree = "<group>"; };
 		E85FCBAF189C26470085F929 /* watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85FCBB2189C26470085F929 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E85FCBB4189C26470085F929 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -421,9 +425,44 @@
 			name = customfont;
 			sourceTree = "<group>";
 		};
+		E8448FAA199F09E60064593D /* testjson */ = {
+			isa = PBXGroup;
+			children = (
+				E8448FAB199F09E60064593D /* CS */,
+				E8448FB0199F09E60064593D /* subjects.json */,
+			);
+			path = testjson;
+			sourceTree = "<group>";
+		};
+		E8448FAB199F09E60064593D /* CS */ = {
+			isa = PBXGroup;
+			children = (
+				E8448FAC199F09E60064593D /* 136 */,
+				E8448FAE199F09E60064593D /* 138 */,
+			);
+			path = CS;
+			sourceTree = "<group>";
+		};
+		E8448FAC199F09E60064593D /* 136 */ = {
+			isa = PBXGroup;
+			children = (
+				E8448FAD199F09E60064593D /* schedule.json */,
+			);
+			path = 136;
+			sourceTree = "<group>";
+		};
+		E8448FAE199F09E60064593D /* 138 */ = {
+			isa = PBXGroup;
+			children = (
+				E8448FAF199F09E60064593D /* schedule.json */,
+			);
+			path = 138;
+			sourceTree = "<group>";
+		};
 		E85FCBA6189C26470085F929 = {
 			isa = PBXGroup;
 			children = (
+				E8448FAA199F09E60064593D /* testjson */,
 				E80F6C83197EF6A30038CB9F /* UINavigationController+CustomTransition.h */,
 				E80F6C84197EF6A30038CB9F /* UINavigationController+CustomTransition.m */,
 				A45009CD19193C22006B249C /* Default-568h@2x.png */,
@@ -655,6 +694,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8448FB2199F0AAE0064593D /* subjects.json in Resources */,
 				A45009A7191916A3006B249C /* Icon.png in Resources */,
 				A45009CB191916AA006B249C /* iTunesArtwork@2x.png in Resources */,
 				E8AC2EAB18DE28A9002E9D5E /* prof_name.txt in Resources */,

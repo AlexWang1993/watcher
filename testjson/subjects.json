@@ -1,0 +1,16 @@
+{
+  "meta":{
+    "requests":1314,
+    "timestamp":1393718825,
+    "status":200,
+    "message":"Request successful",
+    "method_id":1171,
+    "method":{
+      "disclaimer":"Review the 'No Warranty' section of the University of Waterloo Open Data License before using this data. If building services upon this data, please inform your users of the inherent risks (as a best practice)",
+      "license":"https:\/\/uwaterloo.ca\/open-data\/university-waterloo-open-data-license-agreement-v1"
+    }
+  },
+  "data":[
+      {"subject":"CS"}]}
+
+  

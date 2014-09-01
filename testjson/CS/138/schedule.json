@@ -1,0 +1,159 @@
+{
+  "meta":{
+    "requests":1314,
+    "timestamp":1393718825,
+    "status":200,
+    "message":"Request successful",
+    "method_id":1171,
+    "method":{
+      "disclaimer":"Review the 'No Warranty' section of the University of Waterloo Open Data License before using this data. If building services upon this data, please inform your users of the inherent risks (as a best practice)",
+      "license":"https:\/\/uwaterloo.ca\/open-data\/university-waterloo-open-data-license-agreement-v1"
+    }
+  },
+  "data":[
+    {
+      "subject":"CS",
+      "catalog_number":"138",
+      "units":0.5,
+      "title":"Introduction to Data Abstraction and Implementation",
+      "note":"Choose TUT section for Related 1.",
+      "class_number":5819,
+      "section":"LEC 001",
+      "campus":"UW U",
+      "associated_class":1,
+      "related_component_1":null,
+      "related_component_2":null,
+      "enrollment_capacity":154,
+      "enrollment_total":154,
+      "waiting_capacity":0,
+      "waiting_total":0,
+      "topic":null,
+      "reserves":[
+        
+      ],
+      "classes":[
+        {
+          "date":{
+            "start_time":"10:00",
+            "end_time":"11:20",
+            "weekdays":"TTh",
+            "start_date":null,
+            "end_date":null,
+            "is_tba":false,
+            "is_cancelled":false,
+            "is_closed":false
+          },
+          "location":{
+            "building":"OPT",
+            "room":"347"
+          },
+          "instructors":[
+            "Godfrey,Michael"
+          ]
+        }
+      ],
+      "held_with":[
+        
+      ],
+      "term":1141,
+      "academic_level":"undergraduate",
+      "last_updated":"2014-03-01T19:01:05-05:00"
+    },
+    {
+      "subject":"CS",
+      "catalog_number":"138",
+      "units":0.5,
+      "title":"Introduction to Data Abstraction and Implementation",
+      "note":"Choose TUT section for Related 1.",
+      "class_number":5820,
+      "section":"TUT 101",
+      "campus":"UW U",
+      "associated_class":99,
+      "related_component_1":"99",
+      "related_component_2":null,
+      "enrollment_capacity":77,
+      "enrollment_total":75,
+      "waiting_capacity":0,
+      "waiting_total":0,
+      "topic":null,
+      "reserves":[
+        
+      ],
+      "classes":[
+        {
+          "date":{
+            "start_time":"12:30",
+            "end_time":"13:20",
+            "weekdays":"T",
+            "start_date":null,
+            "end_date":null,
+            "is_tba":false,
+            "is_cancelled":false,
+            "is_closed":false
+          },
+          "location":{
+            "building":"MC",
+            "room":"2035"
+          },
+          "instructors":[
+            
+          ]
+        }
+      ],
+      "held_with":[
+        
+      ],
+      "term":1141,
+      "academic_level":"undergraduate",
+      "last_updated":"2014-03-01T19:01:05-05:00"
+    },
+    {
+      "subject":"CS",
+      "catalog_number":"138",
+      "units":0.5,
+      "title":"Introduction to Data Abstraction and Implementation",
+      "note":"Choose TUT section for Related 1.",
+      "class_number":5872,
+      "section":"TUT 102",
+      "campus":"UW U",
+      "associated_class":99,
+      "related_component_1":"99",
+      "related_component_2":null,
+      "enrollment_capacity":77,
+      "enrollment_total":78,
+      "waiting_capacity":0,
+      "waiting_total":0,
+      "topic":null,
+      "reserves":[
+        
+      ],
+      "classes":[
+        {
+          "date":{
+            "start_time":"12:30",
+            "end_time":"13:20",
+            "weekdays":"W",
+            "start_date":null,
+            "end_date":null,
+            "is_tba":false,
+            "is_cancelled":false,
+            "is_closed":false
+          },
+          "location":{
+            "building":"MC",
+            "room":"1056"
+          },
+          "instructors":[
+            
+          ]
+        }
+      ],
+      "held_with":[
+        
+      ],
+      "term":1141,
+      "academic_level":"undergraduate",
+      "last_updated":"2014-03-01T19:01:05-05:00"
+    }
+  ]
+}

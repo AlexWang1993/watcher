@@ -18,6 +18,19 @@ static NSString *unlimitedAPIKey=@"884d9c5288743f49ab8e9ea578a50b25";
 
 #define customFont [UIFont fontWithName:@"QuicksandBold-Regular" size:16.0f]
 
+#define UWurl @"https://api.uwaterloo.ca/v2/"
+
+#define LocalUrl @"/Users/alexwang/Documents/ClassWatcher/testjson/"
+
+#define ApiUrl LocalUrl
+
+#define coursesApiDir @"courses/"
+
+#define codesApiDir @"codes/"
+
+#define debug false
+
+
 @interface staticData : NSObject
 
 

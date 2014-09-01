@@ -183,7 +183,12 @@
         [alert show];
         return;
     }
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", subject, number, unlimitedAPIKey]];
+    NSURL *url;
+    if (!debug){
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=1145", subject, number, unlimitedAPIKey]];
+    } else {
+        url=[NSURL URLWithString:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"testjson/%@/%@/schedule",subject,number] ofType:@"json"] ];
+    }
     NSError *error=nil;
     NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
     NSDictionary *results=[NSJSONSerialization

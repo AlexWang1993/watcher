@@ -54,6 +54,7 @@
 }
 
 -(BOOL)hasNetwork{
+    if (debug) return true;
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [reachability currentReachabilityStatus];
     return(networkStatus != NotReachable);
