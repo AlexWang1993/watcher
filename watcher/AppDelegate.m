@@ -47,13 +47,13 @@
         [Setting sharedInstance].settings=[[NSMutableDictionary alloc]init];
     }
     if ([[Setting sharedInstance].settings objectForKey:@"color"]==nil){
-        [[Setting sharedInstance].settings setObject:[UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1] forKey:@"color"];
+        [[Setting sharedInstance].settings setObject:[self UIColorToArray:[UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1]] forKey:@"color"];
     }
     if ([[Setting sharedInstance].settings objectForKey:@"tabBarColor"]==nil) {
-        [[Setting sharedInstance].settings setObject:[UIColor colorWithRed:149.0/256 green:196.0/256 blue:219.0/256 alpha:1] forKey:@"tabBarColor"];
+        [[Setting sharedInstance].settings setObject:[self UIColorToArray:[UIColor colorWithRed:149.0/256 green:196.0/256 blue:219.0/256 alpha:1]] forKey:@"tabBarColor"];
     }
     if ([[Setting sharedInstance].settings objectForKey:@"tabBarHighLightColor"]==nil) {
-        [[Setting sharedInstance].settings setObject:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1] forKey:@"tabBarHighLightColor"];
+        [[Setting sharedInstance].settings setObject:[self UIColorToArray:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1]] forKey:@"tabBarHighLightColor"];
     }
     
     
@@ -176,17 +176,31 @@
     //self.window.backgroundColor=[UIColor whiteColor];
     
     //original yellow
-    UIColor *myColor = [[Setting sharedInstance].settings objectForKey:@"color"];
+    UIColor *myColor = [self arrayToUIColor:[[Setting sharedInstance].settings objectForKey:@"color"]];
 
     self.window.backgroundColor = myColor;
     
-    UIColor *tabBarColor =[[Setting sharedInstance].settings objectForKey:@"tabBarColor"];
+    UIColor *tabBarColor =[self arrayToUIColor:[[Setting sharedInstance].settings objectForKey:@"tabBarColor"]];
     
     [[UITabBar appearance] setBarTintColor:tabBarColor];
     
-        UIColor *tabBarHighLightColor =[[Setting sharedInstance].settings objectForKey:@"tabBarHighLightColor"];
+    UIColor *tabBarHighLightColor =[self arrayToUIColor:[[Setting sharedInstance].settings objectForKey:@"tabBarHighLightColor"]];
     
     [[UITabBar appearance] setSelectedImageTintColor:tabBarHighLightColor];
 //    self.window.backgroundColor=[UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1];
 }
+
+-(UIColor*)arrayToUIColor:(NSArray*)arr{
+    return [[UIColor alloc]initWithRed:[arr[0] floatValue] green:[arr[1] floatValue] blue:[arr[2] floatValue] alpha:[arr[3] floatValue]];
+}
+
+-(NSArray *)UIColorToArray:(UIColor*)color{
+    float * arr=CGColorGetComponents(color.CGColor);
+    return [[NSArray alloc]initWithObjects:[NSNumber numberWithFloat:arr[0]],
+            [NSNumber numberWithFloat:arr[1]],
+            [NSNumber numberWithFloat:arr[2]],
+            [NSNumber numberWithFloat:arr[3]],nil];
+}
+
+
 @end

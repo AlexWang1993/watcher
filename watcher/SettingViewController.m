@@ -125,9 +125,9 @@
     if ([_backgroundSelected isEqualToString: @"lemon yellow"]) {
         
         [_setting.settings setObject:@"lemon yellow" forKey:@"theme"];
-        [_setting.settings setObject:[UIColor colorWithRed:160/256 green:191/256 blue:124/256 alpha:1] forKey:@"color"];
-        [_setting.settings setObject:[UIColor colorWithRed:149.0/256 green:196.0/256 blue:219.0/256 alpha:1] forKey:@"tabBarColor"];
-        [_setting.settings setObject:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1] forKey:@"tabBarHighLightColor"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:160/256 green:191/256 blue:124/256 alpha:1]] forKey:@"color"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:149.0/256 green:196.0/256 blue:219.0/256 alpha:1] ]forKey:@"tabBarColor"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1]] forKey:@"tabBarHighLightColor"];
         self.view.backgroundColor = [UIColor clearColor];
         self.view.backgroundColor= [UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1];
         self.tabBarController.tabBar.barTintColor =[UIColor colorWithRed:149.0/256 green:196.0/256 blue:219.0/256 alpha:1];
@@ -138,10 +138,10 @@
     
     if ([_backgroundSelected isEqualToString: @"sky blue"]) {
         [_setting.settings setObject:@"sky blue" forKey:@"theme"];
-        [_setting.settings setObject:[UIColor colorWithRed:164.0/256 green:221.0/256 blue:237.0/256 alpha:1] forKey:@"color"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:164.0/256 green:221.0/256 blue:237.0/256 alpha:1]] forKey:@"color"];
         
-        [_setting.settings setObject:[UIColor colorWithRed:3.0/256 green:54.0/256 blue:73.0/256 alpha:1] forKey:@"tabBarColor"];
-        [_setting.settings setObject:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1] forKey:@"tabBarHighLightColor"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:3.0/256 green:54.0/256 blue:73.0/256 alpha:1]] forKey:@"tabBarColor"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1]] forKey:@"tabBarHighLightColor"];
         self.view.backgroundColor = [UIColor clearColor];
         self.view.backgroundColor= [UIColor colorWithRed:164.0/256 green:221.0/256 blue:237.0/256 alpha:1];
          self.tabBarController.tabBar.barTintColor =[UIColor colorWithRed:3.0/256 green:54.0/256 blue:73.0/256 alpha:1];
@@ -150,9 +150,9 @@
     
     if ([_backgroundSelected isEqualToString: @"warm pink"]) {
         [_setting.settings setObject:@"warm pink" forKey:@"theme"];
-        [_setting.settings setObject:[UIColor colorWithRed:252.0/256 green:157.0/256 blue:154.0/256 alpha:1] forKey:@"color"];
-        [_setting.settings setObject:[UIColor colorWithRed:249.0/256 green:205.0/256 blue:173.0/256 alpha:1] forKey:@"tabBarColor"];
-        [_setting.settings setObject:[UIColor colorWithRed:254.0/256 green:67.0/256 blue:101.0/256 alpha:1] forKey:@"tabBarHighLightColor"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:252.0/256 green:157.0/256 blue:154.0/256 alpha:1]] forKey:@"color"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:249.0/256 green:205.0/256 blue:173.0/256 alpha:1]] forKey:@"tabBarColor"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:254.0/256 green:67.0/256 blue:101.0/256 alpha:1]] forKey:@"tabBarHighLightColor"];
         self.view.backgroundColor = [UIColor clearColor];
         self.view.backgroundColor= [UIColor colorWithRed:252.0/256 green:157.0/256 blue:154.0/256 alpha:1];
         self.tabBarController.tabBar.barTintColor =[UIColor colorWithRed:249.0/256 green:205.0/256 blue:173.0/256 alpha:1];
@@ -161,9 +161,9 @@
     
     if ([_backgroundSelected isEqualToString: @"cucumber green"]) {
         [_setting.settings setObject:@"cucumber green" forKey:@"theme"];
-        [_setting.settings setObject:[UIColor colorWithRed:174.0/256 green:221.0/256 blue:129.0/256 alpha:1] forKey:@"color"];
-        [_setting.settings setObject:[UIColor colorWithRed:18.0/256 green:53.0/256 blue:85.0/256 alpha:1] forKey:@"tabBarColor"];
-        [_setting.settings setObject:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1] forKey:@"tabBarHighLightColor"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:174.0/256 green:221.0/256 blue:129.0/256 alpha:1]] forKey:@"color"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:18.0/256 green:53.0/256 blue:85.0/256 alpha:1]] forKey:@"tabBarColor"];
+        [_setting.settings setObject:[self UIColorToArray:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1] ] forKey:@"tabBarHighLightColor"];
         self.view.backgroundColor = [UIColor clearColor];
         self.view.backgroundColor= [UIColor colorWithRed:174.0/256 green:221.0/256 blue:129.0/256 alpha:1];
         self.tabBarController.tabBar.barTintColor =[UIColor colorWithRed:18.0/256 green:53.0/256 blue:85.0/256 alpha:1];
@@ -173,6 +173,13 @@
     [(AppDelegate*)[[UIApplication sharedApplication] delegate] refreshBackground];
 }
 
+-(NSArray *)UIColorToArray:(UIColor*)color{
+    float * arr=CGColorGetComponents(color.CGColor);
+    return [[NSArray alloc]initWithObjects:[NSNumber numberWithFloat:arr[0]],
+            [NSNumber numberWithFloat:arr[1]],
+            [NSNumber numberWithFloat:arr[2]],
+            [NSNumber numberWithFloat:arr[3]],nil];
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"about"]) {
         UIViewController *about = [segue destinationViewController];
