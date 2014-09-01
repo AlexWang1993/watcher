@@ -17,6 +17,8 @@
 
 @implementation SettingViewController
 
+@synthesize about;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -46,6 +48,7 @@
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
     [self.theme setCustomFont];
     [self.enable setCustomFont];
+    about.titleLabel.font = [UIFont fontWithName:@"Quicksand" size:17];
 }
 
 

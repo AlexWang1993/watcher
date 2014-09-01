@@ -158,6 +158,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     [self refreshCellColor:cell];
@@ -166,10 +167,13 @@
     
     cell.textLabel.numberOfLines= 0;
     
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Quicksand-bold" size:20.0];
+    
     cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@\n\n%@%@    %@ %@ - %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"building"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"room"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
     if ([self isFullForSectionNumber:indexPath.row]){
         cell.detailTextLabel.text=@"FULL";
         cell.detailTextLabel.textColor=[UIColor redColor];
+        
     } else {
         cell.detailTextLabel.text=@"";
     }
