@@ -86,6 +86,14 @@
     return true;
 }
 
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    if ([viewController isKindOfClass:[UINavigationController class]]){
+        if (((UINavigationController*)viewController).topViewController.isViewLoaded){
+            [[(UINavigationController*)viewController topViewController] viewWillAppear:YES];
+        }
+    }
+}
+
 //-(void)tab
 
 /*
