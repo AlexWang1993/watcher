@@ -13,6 +13,7 @@
 /*Keys:                             Type:
 watcherNotificationEnabled          bool
 watcherBackgroundImage              String
+color                               UIColor
 */
 @property (strong,atomic) NSMutableDictionary *settings;
 

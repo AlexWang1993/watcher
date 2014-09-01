@@ -24,7 +24,7 @@
     }
     return self;
 }
-
+/*
 - (UIColor*)randomColor{
     CGFloat hue;
     do {
@@ -35,7 +35,7 @@
     UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
     return color;
 }
-
+*/
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,8 +43,12 @@
     //self.navigationController.navigationBar.translucent=NO;
     self.view.backgroundColor=[UIColor clearColor];
     //[self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:72.0/256 green:72.0/256 blue:144.0/256 alpha:1]];
+    
+  //  [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:20.0/256 green:68.0/256 blue:106.0/256 alpha:1]];
+    
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:customFont} ];
+    
 }
 
 - (void)didReceiveMemoryWarning

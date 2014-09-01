@@ -12,6 +12,7 @@
 #import "Setting.h"
 #import "CommonViewController.h"
 //#import "SectionDetailsViewController.h"
+#import "AppDelegate.h"
 
 @interface TableViewController : UITableViewController;
 
@@ -41,8 +42,7 @@
 
 @property (strong,nonatomic) NSString *location;
 
-
-//@property (weak,nonatomic) SectionDetailsViewController *detailView;
+@property (strong,nonatomic) AppDelegate *appDelegate;
 
 
 - (IBAction) changePage;
