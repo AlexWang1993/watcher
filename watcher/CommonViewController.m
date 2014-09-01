@@ -18,7 +18,7 @@
 
 @implementation CommonViewController
 
-@synthesize helenEmail,alexEmail,alexPic,helenPic,alexName,helenName,aboutThisApp;
+@synthesize helenEmail,alexEmail,alexPic,helenPic,alexName,helenName,aboutTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,7 +56,7 @@
     [helenName setCustomFont];
     [alexEmail setCustomFont];
     [helenEmail setCustomFont];
-  //  [aboutThisApp setCustomFont];
+    [aboutTitle setCustomFont];
     // Do any additional setup after loading the view.
     //self.navigationController.navigationBar.translucent=NO;
     self.view.backgroundColor=[UIColor clearColor];

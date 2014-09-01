@@ -800,8 +800,8 @@
                                 <rect key="frame" x="31" y="132" width="118" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Helen Jiang " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOa-xH-RxU">
-                                <rect key="frame" x="43" y="141" width="95" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helen Jiang " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOa-xH-RxU">
+                                <rect key="frame" x="55" y="141" width="95" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -812,12 +812,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Alex Wang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oF-XY-bko">
-                                <rect key="frame" x="192" y="141" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MP3-Jf-PsQ">
                                 <rect key="frame" x="20" y="330" width="182" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -826,51 +820,52 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copy Right @2014 AlexwangHelenJiang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7D-Go-7P4">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copy Right @2014 AlexwangHelenJiang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7D-Go-7P4">
                                 <rect key="frame" x="0.0" y="524" width="353" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About This App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-50-kAg">
-                                <rect key="frame" x="0.0" y="93" width="320" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="p9G-7T-PdL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alex myo.png" translatesAutoresizingMaskIntoConstraints="NO" id="G0B-eZ-rCv">
-                                <rect key="frame" x="176" y="132" width="118" height="118"/>
+                                <rect key="frame" x="176" y="133" width="118" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="About This App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBs-1d-65J">
+                                <rect key="frame" x="0.0" y="81" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Alex Wang" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfg-sL-o3I">
+                                <rect key="frame" x="194" y="133" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Rfg-sL-o3I" firstAttribute="top" secondItem="XBs-1d-65J" secondAttribute="bottom" constant="39" id="21D-3D-Ith"/>
                             <constraint firstItem="k7D-Go-7P4" firstAttribute="top" secondItem="CPL-Wa-anP" secondAttribute="bottom" constant="5" id="3zk-VN-0Qv"/>
-                            <constraint firstItem="yon-TS-ahf" firstAttribute="leading" secondItem="jOa-xH-RxU" secondAttribute="trailing" constant="-138" id="7BK-Jq-9q8"/>
-                            <constraint firstItem="PfN-50-kAg" firstAttribute="trailing" secondItem="yon-TS-ahf" secondAttribute="trailing" id="AE2-af-d4T"/>
+                            <constraint firstItem="yon-TS-ahf" firstAttribute="leading" secondItem="jOa-xH-RxU" secondAttribute="trailing" constant="-150" id="7BK-Jq-9q8"/>
+                            <constraint firstItem="Rfg-sL-o3I" firstAttribute="leading" secondItem="jOa-xH-RxU" secondAttribute="trailing" constant="44" id="DHZ-pP-NsI"/>
                             <constraint firstAttribute="bottom" secondItem="yon-TS-ahf" secondAttribute="bottom" id="EYP-et-gPw"/>
+                            <constraint firstItem="jOa-xH-RxU" firstAttribute="top" secondItem="XBs-1d-65J" secondAttribute="bottom" constant="39" id="VTc-Xe-cCe"/>
                             <constraint firstItem="yon-TS-ahf" firstAttribute="leading" secondItem="RHi-ba-brC" secondAttribute="leading" id="VUp-9t-28I"/>
                             <constraint firstItem="yon-TS-ahf" firstAttribute="top" secondItem="cIG-Og-zAt" secondAttribute="bottom" id="XI8-2r-deg"/>
-                            <constraint firstItem="k7D-Go-7P4" firstAttribute="leading" secondItem="PfN-50-kAg" secondAttribute="leading" id="cGt-uV-2fB"/>
-                            <constraint firstItem="3oF-XY-bko" firstAttribute="leading" secondItem="jOa-xH-RxU" secondAttribute="trailing" constant="60" id="eqz-FJ-K1p"/>
-                            <constraint firstItem="jOa-xH-RxU" firstAttribute="top" secondItem="PfN-50-kAg" secondAttribute="bottom" constant="19" id="hw1-FG-9hy"/>
-                            <constraint firstItem="PfN-50-kAg" firstAttribute="leading" secondItem="yon-TS-ahf" secondAttribute="leading" id="iqy-rE-tKc"/>
                             <constraint firstAttribute="trailing" secondItem="k7D-Go-7P4" secondAttribute="trailing" constant="-33" id="j4W-bf-7Ey"/>
-                            <constraint firstItem="3oF-XY-bko" firstAttribute="top" secondItem="PfN-50-kAg" secondAttribute="bottom" constant="19" id="mZ7-0g-8CK"/>
+                            <constraint firstItem="yon-TS-ahf" firstAttribute="top" secondItem="XBs-1d-65J" secondAttribute="bottom" constant="-38" id="pKD-Ni-Lzr"/>
                             <constraint firstItem="MP3-Jf-PsQ" firstAttribute="top" secondItem="rFC-B4-0R9" secondAttribute="bottom" constant="8" id="pba-MK-fIB"/>
                             <constraint firstAttribute="trailing" secondItem="yon-TS-ahf" secondAttribute="trailing" id="qGK-lq-034"/>
-                            <constraint firstItem="PfN-50-kAg" firstAttribute="top" secondItem="cIG-Og-zAt" secondAttribute="bottom" constant="29" id="uoQ-C0-02s"/>
                             <constraint firstAttribute="bottom" secondItem="k7D-Go-7P4" secondAttribute="bottom" constant="-22" id="yCS-5I-vxz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DgQ-db-ApR"/>
                     <connections>
-                        <outlet property="aboutThisApp" destination="PfN-50-kAg" id="QRA-r4-cxZ"/>
+                        <outlet property="aboutTitle" destination="XBs-1d-65J" id="lX0-vp-o5a"/>
                         <outlet property="alexEmail" destination="MP3-Jf-PsQ" id="qoT-uh-0bY"/>
-                        <outlet property="alexName" destination="3oF-XY-bko" id="5CO-Zp-jg2"/>
+                        <outlet property="alexName" destination="Rfg-sL-o3I" id="eN7-ZY-uck"/>
                         <outlet property="alexPic" destination="G0B-eZ-rCv" id="Wjz-YP-aSO"/>
                         <outlet property="helenEmail" destination="rFC-B4-0R9" id="lPg-iv-8se"/>
                         <outlet property="helenName" destination="jOa-xH-RxU" id="JUs-9Q-MiS"/>
