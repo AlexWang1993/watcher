@@ -57,7 +57,8 @@
     [self.subjectLabel setCustomFont];
     [self.sectionLabel setCustomFont];
     [self.professorLabel setCustomFont];
-    [self.locationLabel setCustomFont];
+    self.locationLabel.font=[UIFont fontWithName:@"Quicksand" size:17.0];
+    
     [self.titleLabel setCustomFont];
     [self.capacityLabel setCustomFont];
     [self.totalEnrolledLabel setCustomFont];
