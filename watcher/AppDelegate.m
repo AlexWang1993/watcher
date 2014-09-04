@@ -118,6 +118,7 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
     [Setting sharedInstance].settings=[[NSMutableDictionary alloc] initWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"watcherSettings"]];
+    NSLog(@"asdf");
     if ([[[Setting sharedInstance].settings objectForKey:@"notificationEnabled"] isEqualToValue:@NO]){
         return;
     }
