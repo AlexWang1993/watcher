@@ -793,23 +793,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="helen myo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rnb-hF-KCd">
-                                <rect key="frame" x="31" y="132" width="118" height="118"/>
+                                <rect key="frame" x="27" y="164" width="118" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helen Jiang " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOa-xH-RxU">
-                                <rect key="frame" x="55" y="141" width="95" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Helen Jiang " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOa-xH-RxU">
+                                <rect key="frame" x="39" y="135" width="95" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="helenapplication@gmail.com" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="274" translatesAutoresizingMaskIntoConstraints="NO" id="rFC-B4-0R9">
-                                <rect key="frame" x="20" y="264" width="274" height="58"/>
+                                <rect key="frame" x="20" y="296" width="274" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MP3-Jf-PsQ">
-                                <rect key="frame" x="20" y="330" width="182" height="21"/>
+                                <rect key="frame" x="20" y="362" width="182" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">zh7wang@uwaterloo.ca
 </string>
@@ -823,7 +823,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alex myo.png" translatesAutoresizingMaskIntoConstraints="NO" id="G0B-eZ-rCv">
-                                <rect key="frame" x="176" y="133" width="118" height="118"/>
+                                <rect key="frame" x="176" y="164" width="118" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="About This App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBs-1d-65J">
@@ -844,8 +844,8 @@
                         <constraints>
                             <constraint firstItem="Rfg-sL-o3I" firstAttribute="top" secondItem="XBs-1d-65J" secondAttribute="bottom" constant="39" id="21D-3D-Ith"/>
                             <constraint firstItem="k7D-Go-7P4" firstAttribute="top" secondItem="CPL-Wa-anP" secondAttribute="bottom" constant="5" id="3zk-VN-0Qv"/>
-                            <constraint firstItem="yon-TS-ahf" firstAttribute="leading" secondItem="jOa-xH-RxU" secondAttribute="trailing" constant="-150" id="7BK-Jq-9q8"/>
-                            <constraint firstItem="Rfg-sL-o3I" firstAttribute="leading" secondItem="jOa-xH-RxU" secondAttribute="trailing" constant="44" id="DHZ-pP-NsI"/>
+                            <constraint firstItem="yon-TS-ahf" firstAttribute="leading" secondItem="jOa-xH-RxU" secondAttribute="trailing" constant="-143" id="7BK-Jq-9q8"/>
+                            <constraint firstItem="Rfg-sL-o3I" firstAttribute="leading" secondItem="jOa-xH-RxU" secondAttribute="trailing" constant="40" id="DHZ-pP-NsI"/>
                             <constraint firstAttribute="bottom" secondItem="yon-TS-ahf" secondAttribute="bottom" id="EYP-et-gPw"/>
                             <constraint firstItem="jOa-xH-RxU" firstAttribute="top" secondItem="XBs-1d-65J" secondAttribute="bottom" constant="39" id="VTc-Xe-cCe"/>
                             <constraint firstItem="yon-TS-ahf" firstAttribute="leading" secondItem="RHi-ba-brC" secondAttribute="leading" id="VUp-9t-28I"/>
