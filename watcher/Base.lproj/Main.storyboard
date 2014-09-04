@@ -129,17 +129,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ou5-r9-L7T">
-                                <rect key="frame" x="214" y="103" width="71" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ou5-r9-L7T">
+                                <rect key="frame" x="184" y="103" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="71" id="bug-FF-tpc"/>
+                                    <constraint firstAttribute="width" constant="100" id="bug-FF-tpc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="changeCap:" destination="dDV-EK-CRX" eventType="editingChanged" id="dWu-L0-jcm"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-Pr-ZAT">
-                                <rect key="frame" x="214" y="149" width="71" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-Pr-ZAT">
+                                <rect key="frame" x="184" y="149" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
@@ -208,7 +211,7 @@
                             <constraint firstItem="rb0-Pr-ZAT" firstAttribute="top" secondItem="Ou5-r9-L7T" secondAttribute="bottom" constant="16" id="BV9-pt-E9D"/>
                             <constraint firstItem="gWN-3N-b39" firstAttribute="top" secondItem="VsL-Z6-8gZ" secondAttribute="bottom" constant="-43" id="D0U-sT-fur"/>
                             <constraint firstItem="gWN-3N-b39" firstAttribute="top" secondItem="yyt-Ct-bWp" secondAttribute="bottom" constant="195" id="F7Y-iK-48a"/>
-                            <constraint firstItem="Ou5-r9-L7T" firstAttribute="leading" secondItem="d4q-zX-i7G" secondAttribute="trailing" constant="58" id="Fn7-mG-50h"/>
+                            <constraint firstItem="Ou5-r9-L7T" firstAttribute="leading" secondItem="d4q-zX-i7G" secondAttribute="trailing" constant="28" id="Fn7-mG-50h"/>
                             <constraint firstItem="Ou5-r9-L7T" firstAttribute="bottom" secondItem="d4q-zX-i7G" secondAttribute="bottom" constant="5" id="GSi-u4-hhv"/>
                             <constraint firstItem="JIH-0A-HSK" firstAttribute="top" secondItem="yyt-Ct-bWp" secondAttribute="bottom" constant="89" id="Khk-Lg-knZ"/>
                             <constraint firstAttribute="trailing" secondItem="GKb-B4-wL5" secondAttribute="trailing" constant="7" id="Omr-pg-vWm"/>

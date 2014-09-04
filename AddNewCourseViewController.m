@@ -78,7 +78,6 @@
     //_message=[[UILabel alloc]init];
     _setting=[Setting sharedInstance];
 
-    
 }
 -(void)viewWillAppear:(BOOL)animated{
     //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
@@ -107,7 +106,18 @@
 
 
 /*BUTTON ACTIONS BEGIN*/
+/*- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    //Replace the string manually in the textbox
+    _subjectInput.text = [_subjectInput.text stringByReplacingCharactersInRange:range withString:string];
+    //perform any logic here now that you are sure the textbox text has changed
+    [self didChangeTextInTextField:_subjectInput];
+    return NO; //this make iOS not to perform any action
+}*/
 
+- (IBAction)changeCap:(id)sender {
+    NSString *tmp = [_subjectInput.text uppercaseString];
+     [_subjectInput setText:tmp];
+}
 
 - (IBAction)buttonPressed:(id)sender {
     if (![self hasNetwork]){
