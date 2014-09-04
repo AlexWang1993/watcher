@@ -18,6 +18,8 @@
 
 @implementation SectionDetailsViewController
 
+@synthesize allTextLabel;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -106,13 +108,34 @@
             easiness =@"N/A";
         }
         self.descriptionLabel.text =[NSString stringWithFormat:@"Information from RateMyProf:"];
-        self.avgRateLabel.text = [NSString stringWithFormat:@"Average Rating:%@",avgRate];
-        self.easinessLabel.text=[NSString stringWithFormat:@"Easiness:%@",easiness];
+        self.avgRateLabel.text = [NSString stringWithFormat:@"Prof Average Rating:%@",avgRate];
+        self.easinessLabel.text=[NSString stringWithFormat:@"Prof Easiness:%@",easiness];
         self.descriptionLabel.hidden=false;
         self.avgRateLabel.hidden=false;
         self.easinessLabel.hidden=false;
-    }
+        self.descriptionLabel.hidden = true;
 
+       /*
+        self.subjectLabel.hidden = true;
+        self.sectionLabel.hidden = true;
+        self.professorLabel.hidden = true;
+        self.timeLabel.hidden = true;
+        self.locationLabel.hidden = true;
+        self.totalEnrolledLabel.hidden = true;
+        self.descriptionLabel.hidden = true;
+        self.avgRateLabel.hidden = true;
+        self.easinessLabel.hidden = true;*/
+    }
+  /*  allTextLabel.lineBreakMode = YES;
+    
+    allTextLabel.numberOfLines= 0;
+
+    allTextLabel.text = [NSString stringWithFormat:@"%@",_subjectLabel.text];
+   // allTextLabel.text = [NSString stringWithFormat:@"%@\n%@       %@\n%@\n%@\n%@\n%@\n%@\n%@\n%@",_subjectLabel.text,_sectionLabel.text,_professorLabel.text,_timeLabel.text,_locationLabel.text,_capacityLabel.text,_totalEnrolledLabel.text,_descriptionLabel,_avgRateLabel.text,_easinessLabel.text];
+    [allTextLabel setCustomFont];
+    
+   */
+    allTextLabel.hidden = true;
 }
 
 -(void)viewWillAppear:(BOOL)animated{

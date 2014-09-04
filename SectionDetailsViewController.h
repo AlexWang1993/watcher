@@ -27,6 +27,8 @@
 
 @property  Setting* setting;
 
+@property (strong,nonatomic)IBOutlet UILabel *allTextLabel;
+
 @property (strong,nonatomic) NSDictionary *info;
 @property (weak,nonatomic) TableViewController *parent;
 @end
