@@ -43,7 +43,7 @@
 
     self.professorLabel.text= ([[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] count]>0)?[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0]:NULL;
     
-    self.locationLabel.text=[NSString stringWithFormat:@"Location:%@%@",
+    self.locationLabel.text=[NSString stringWithFormat:@"Location: %@%@",
                              [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"building"],
                              [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"room"]
                              ];
@@ -108,8 +108,8 @@
             easiness =@"N/A";
         }
         self.descriptionLabel.text =[NSString stringWithFormat:@"Information from RateMyProf:"];
-        self.avgRateLabel.text = [NSString stringWithFormat:@"Prof Average Rating:%@",avgRate];
-        self.easinessLabel.text=[NSString stringWithFormat:@"Prof Easiness:%@",easiness];
+        self.avgRateLabel.text = [NSString stringWithFormat:@"Prof Average Rating: %@",avgRate];
+        self.easinessLabel.text=[NSString stringWithFormat:@"Prof Easiness: %@",easiness];
         self.descriptionLabel.hidden=false;
         self.avgRateLabel.hidden=false;
         self.easinessLabel.hidden=false;

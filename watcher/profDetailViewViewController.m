@@ -7,6 +7,7 @@
 //
 
 #import "profDetailViewViewController.h"
+#import "UILabel+CustomFont.h"
 
 @interface profDetailViewViewController ()
 
@@ -74,7 +75,7 @@
         NSRange qualityRange = [line rangeOfString:@"Aver" options:NSLiteralSearch];
         departmentRange.length = qualityRange.location - departmentRange.location - 2;
         NSString *department = [line substringWithRange:departmentRange];
-        self.departmentLabel.text =[NSString stringWithFormat:@"Department:%@", department];
+        self.departmentLabel.text =[NSString stringWithFormat:@"Department: %@", department];
         
         NSRange RatorRange = [line rangeOfString:@"Rate" options:NSLiteralSearch];
         qualityRange.location = qualityRange.location+5;
@@ -93,10 +94,15 @@
         if ([easiness isEqualToString:@"&nb"]){
             easiness =@"N/A";
         }
-        self.ratingLabel.text = [NSString stringWithFormat:@"Rating:%@",avgRate];
-        self.easinessLabel.text=[NSString stringWithFormat:@"Easiness:%@",easiness];
+        self.ratingLabel.text = [NSString stringWithFormat:@"Rating: %@",avgRate];
+        self.easinessLabel.text=[NSString stringWithFormat:@"Easiness: %@",easiness];
     }
-
+    [self.NameLabel setCustomFont];
+    [self.departmentLabel setCustomFont];
+    [self.qualityLabel setCustomFont];
+    [self.ratingLabel setCustomFont];
+    [self.easinessLabel setCustomFont];
+    [self.hotnessLabel setCustomFont];
 }
 -(void)viewWillAppear:(BOOL)animated{
   //  self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
