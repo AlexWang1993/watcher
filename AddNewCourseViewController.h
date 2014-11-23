@@ -31,4 +31,8 @@
 @property (weak,nonatomic) TableViewController *parent;
 
 @property (strong,nonatomic) NSString * test;
+@property(strong,nonatomic)IBOutlet UISegmentedControl *chooseTerm;
+
+//-(IBAction)segmentbutton:(id)sender;
+
 @end

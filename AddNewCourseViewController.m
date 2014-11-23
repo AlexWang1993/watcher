@@ -121,6 +121,7 @@
      [_subjectInput setText:tmp];
 }
 
+
 - (IBAction)buttonPressed:(id)sender {
     if (![self hasNetwork]){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Network" message:@"Please check your network connection and retry." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -221,6 +222,10 @@
     NSArray* arr = [[section objectForKey:@"section"] componentsSeparatedByString:@" "];
     NSString* type = arr[0];
     NSString* section_num = arr[1];
+    NSInteger termNumber = 0;
+    if (_chooseTerm.selectedSegmentIndex!=0) {
+        termNumber = 4;
+    }
     [DBManager submitWatchForSubject:subject Number:number Type:type Section:section_num];
     
     
