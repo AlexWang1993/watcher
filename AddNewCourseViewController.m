@@ -79,8 +79,22 @@
     //_subjectList=[[NSMutableArray alloc]init];
     //_message=[[UILabel alloc]init];
     _setting=[Setting sharedInstance];
+    
+#pragma get term name&number, populate seg ctrl
+    NSError *getTermError = nil;
+    NSURL *getTermUrl =[NSURL URLWithString:@"http://watcher-waterlooapp.rhcloud.com/get_terms"];
+    NSData *JSONData= [NSData dataWithContentsOfURL:getTermUrl options:NSDataReadingMappedIfSafe error:&getTermError];
+    NSDictionary *terms=[NSJSONSerialization
+                           JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&getTermError];
+    NSString *currName = [[terms objectForKey:@"current"] objectForKey:@"name"];
+    NSString *nextName = [[terms objectForKey:@"next"] objectForKey:@"name"];
+    _currCode = [[terms objectForKey:@"current"] objectForKey:@"code"];
+    _nextCode = [[terms objectForKey:@"next"] objectForKey:@"code"];
+    [_chooseTerm setTitle:currName forSegmentAtIndex:0];
+    [_chooseTerm setTitle:nextName forSegmentAtIndex:1];
 
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
     self.view.backgroundColor= [UIColor clearColor];
@@ -115,6 +129,17 @@
     [self didChangeTextInTextField:_subjectInput];
     return NO; //this make iOS not to perform any action
 }*/
+
+-(IBAction)segmentbutton:(id)sender {
+    
+    if (_chooseTerm.selectedSegmentIndex == 0) {
+
+        
+    } else {
+
+    }
+}
+
 
 - (IBAction)changeCap:(id)sender {
     NSString *tmp = [_subjectInput.text uppercaseString];
@@ -199,8 +224,15 @@
         return;
     }
     NSURL *url;
+    NSString * choseTerm;
+    if ([_chooseTerm selectedSegmentIndex]) { // 1
+        choseTerm = _nextCode;
+    } else {
+        choseTerm = _currCode;
+    }
+
     if (!debug){
-        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", subject, number, unlimitedAPIKey,term]];
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", subject, number, unlimitedAPIKey,choseTerm]];
     } else {
         //url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"schedule",subject,number] ofType:@"json" inDirectory:[NSString stringWithFormat:@"testjson/%@/%@",subject,number]] ];
         url=[NSURL URLWithString:[NSString stringWithFormat:@"file://localhost/Users/alexwang/Documents/tests/watcherhelen/watcher/testjson/%@/%@/schedule.json",subject,number]];

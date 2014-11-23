@@ -32,7 +32,8 @@
 
 @property (strong,nonatomic) NSString * test;
 @property(strong,nonatomic)IBOutlet UISegmentedControl *chooseTerm;
-
-//-(IBAction)segmentbutton:(id)sender;
+-(IBAction)segmentbutton:(id)sender;
+@property (strong,atomic)NSString *currCode;
+@property (strong,atomic)NSString *nextCode;
 
 @end
