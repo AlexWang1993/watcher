@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *easinessLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hotnessLabel;
 
+@property(weak,nonatomic) IBOutlet UILabel *termLabel;
 @property  Setting* setting;
 
 @property (strong,nonatomic)IBOutlet UILabel *allTextLabel;

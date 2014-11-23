@@ -42,7 +42,9 @@
     [self.subjectLabel setCustomFont];
     self.sectionLabel.text=[self.info objectForKey:@"section"];
     [self.sectionLabel setCustomFont];
-
+    
+    self.termLabel.text = [NSString stringWithFormat:@"Term %@",[self.info objectForKey:@"term"]];
+    [self.termLabel setCustomFont];
     self.professorLabel.text= ([[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] count]>0)?[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0]:NULL;
     
     self.locationLabel.text=[NSString stringWithFormat:@"%@%@",
