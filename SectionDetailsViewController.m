@@ -10,6 +10,7 @@
 //#include "staticData.h"
 #import "search.h"
 #import "UILabel+CustomFont.h"
+#import "DBManager.h"
 
 @interface SectionDetailsViewController ()
 
@@ -33,6 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self performSelectorInBackground:@selector(loadHotness) withObject:nil];
     [self.locationLabel setFont:[UIFont fontWithName:@"Quicksand" size:14.0f]];
     _setting=[Setting sharedInstance];
     //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
@@ -43,14 +45,14 @@
 
     self.professorLabel.text= ([[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] count]>0)?[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0]:NULL;
     
-    self.locationLabel.text=[NSString stringWithFormat:@"Location:%@%@",
+    self.locationLabel.text=[NSString stringWithFormat:@"%@%@",
                              [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"building"],
                              [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"room"]
                              ];
     _parent.location = self.locationLabel.text;
     self.titleLabel.text=[self.info objectForKey:@"title"];
-    self.capacityLabel.text=[NSString stringWithFormat:@"Enrollment Capacity: %@", [self.info objectForKey:@"enrollment_capacity"]];
-    self.totalEnrolledLabel.text=[NSString stringWithFormat:@"Total Enrolled: %@", [self.info objectForKey:@"enrollment_total"]];
+    self.capacityLabel.text=[NSString stringWithFormat:@"%@", [self.info objectForKey:@"enrollment_capacity"]];
+    self.totalEnrolledLabel.text=[NSString stringWithFormat:@"%@", [self.info objectForKey:@"enrollment_total"]];
     self.timeLabel.text=[NSString stringWithFormat:@"%@ %@ - %@",
                          [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],
                          [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],
@@ -148,6 +150,32 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadHotness{
+    NSArray* arr = [[_info objectForKey:@"section"] componentsSeparatedByString:@" "];
+    NSString* type = arr[0];
+    NSString* section = arr[1];
+    NSNumber* hotness = [DBManager getHotnessForSubject:[_info objectForKey:@"subject"] Number:[_info objectForKey:@"catalog_number"] Type:type Section:section];
+    NSString* rating;
+    switch ([hotness integerValue]) {
+        case 2:
+        case 3:
+        rating = @"popular";
+        break;
+        case 4:
+        case 5:
+        rating = @"very popular";
+        break;
+        case 6:
+        case 7:
+        case 8:
+        rating = @"extremely hot";
+        break;
+        default:
+        rating = @"Not popular";
+    }
+    self.hotnessLabel.text = rating;
 }
 
 @end

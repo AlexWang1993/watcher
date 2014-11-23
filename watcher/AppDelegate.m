@@ -46,6 +46,7 @@
     if ([Setting sharedInstance].settings==nil){
         [Setting sharedInstance].settings=[[NSMutableDictionary alloc]init];
     }
+    UIColor* uicolor = [UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1];
     if ([[Setting sharedInstance].settings objectForKey:@"color"]==nil){
         [[Setting sharedInstance].settings setObject:[self UIColorToArray:[UIColor colorWithRed:255.0/255 green:1.0f blue:(9*16+9.0f)/255 alpha:1]] forKey:@"color"];
     }
@@ -196,7 +197,7 @@
 }
 
 -(NSArray *)UIColorToArray:(UIColor*)color{
-    float * arr=CGColorGetComponents(color.CGColor);
+    CGFloat * arr=CGColorGetComponents(color.CGColor);
     return [[NSArray alloc]initWithObjects:[NSNumber numberWithFloat:arr[0]],
             [NSNumber numberWithFloat:arr[1]],
             [NSNumber numberWithFloat:arr[2]],

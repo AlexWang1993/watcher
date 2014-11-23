@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *totalEnrolledLabel;
 @property (strong, nonatomic) IBOutlet UILabel *avgRateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *easinessLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hotnessLabel;
 
 @property  Setting* setting;
 

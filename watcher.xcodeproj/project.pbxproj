@@ -103,6 +103,7 @@
 		E8AC2EA918DE1E55002E9D5E /* NSString+Levenshtein.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AC2EA818DE1E55002E9D5E /* NSString+Levenshtein.m */; };
 		E8AC2EAB18DE28A9002E9D5E /* prof_name.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8AC2EAA18DE28A9002E9D5E /* prof_name.txt */; };
 		E8E2EE6F189C3C970080DDCB /* AddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E2EE6E189C3C970080DDCB /* AddTableViewController.m */; };
+		FAAD1ABA1A21786E003674B0 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAD1AB91A21786E003674B0 /* DBManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +272,8 @@
 		E8AC2EAA18DE28A9002E9D5E /* prof_name.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = prof_name.txt; sourceTree = "<group>"; };
 		E8E2EE6D189C3C970080DDCB /* AddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddTableViewController.h; path = ../AddTableViewController.h; sourceTree = "<group>"; };
 		E8E2EE6E189C3C970080DDCB /* AddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddTableViewController.m; path = ../AddTableViewController.m; sourceTree = "<group>"; };
+		FAAD1AB91A21786E003674B0 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		FAAD1ABB1A217891003674B0 /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -482,6 +485,7 @@
 		E85FCBB8189C26470085F929 /* watcher */ = {
 			isa = PBXGroup;
 			children = (
+				FAAD1AB81A21783F003674B0 /* DBManager */,
 				A42EBB701989FC7B0080C588 /* QuicksandFamily */,
 				A497398C18C43458008D4D67 /* searchProf and setting */,
 				A415D35818B5B1790046682F /* appirater */,
@@ -556,6 +560,15 @@
 				E85FCBE8189C26C30085F929 /* TableViewController.m */,
 			);
 			name = "watcher views";
+			sourceTree = "<group>";
+		};
+		FAAD1AB81A21783F003674B0 /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				FAAD1AB91A21786E003674B0 /* DBManager.m */,
+				FAAD1ABB1A217891003674B0 /* DBManager.h */,
+			);
+			name = DBManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -764,6 +777,7 @@
 				E80F6C91198A08860038CB9F /* UITextField+CustomFont.m in Sources */,
 				E85FCBC3189C26470085F929 /* AppDelegate.m in Sources */,
 				E80F6C82197EE8C20038CB9F /* NavigationViewController.m in Sources */,
+				FAAD1ABA1A21786E003674B0 /* DBManager.m in Sources */,
 				E85FCBE9189C26C30085F929 /* TableViewController.m in Sources */,
 				E8AB71A218A9F380007F3773 /* SectionDetailsViewController.m in Sources */,
 				E8AB719618A7F4BF007F3773 /* AddNewCourseViewController.m in Sources */,

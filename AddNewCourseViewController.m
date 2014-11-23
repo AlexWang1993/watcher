@@ -12,6 +12,8 @@
 
 #import "UILabel+CustomFont.h"
 
+#import "DBManager.h"
+
 
 @interface AddNewCourseViewController ()
 
@@ -161,6 +163,7 @@
         return;
     }
     [_parent addSection:[_sectionList objectAtIndex:[_sectionPicker selectedRowInComponent:0]]];
+    [self performSelectorInBackground:@selector(postNewWatch:) withObject:[_sectionList objectAtIndex:[_sectionPicker selectedRowInComponent:0]]];
     message = @"Done";
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"Back" otherButtonTitles:nil];
     [alert show];
@@ -206,8 +209,21 @@
     NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
     NSDictionary *results=[NSJSONSerialization
                            JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&error];
+    JSONData = 
     _sectionList=[results objectForKey:@"data"];
     [_sectionPicker reloadAllComponents];
+    
+}
+
+-(void)postNewWatch:(NSDictionary*)section{
+    NSString* subject = [section objectForKey:@"subject"];
+    NSString* number = [section objectForKey:@"catalog_number"];
+    NSArray* arr = [[section objectForKey:@"section"] componentsSeparatedByString:@" "];
+    NSString* type = arr[0];
+    NSString* section_num = arr[1];
+    [DBManager submitWatchForSubject:subject Number:number Type:type Section:section_num];
+    
+    
     
 }
 
