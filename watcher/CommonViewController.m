@@ -43,6 +43,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+ //   alexPic.frame = CGRectMake(27, 164, 124, 124);
+  //  [alexPic sizeToFit];
     CALayer *imageLayerAlex = alexPic.layer;
     [imageLayerAlex setCornerRadius:10];
     [imageLayerAlex setBorderWidth:1];

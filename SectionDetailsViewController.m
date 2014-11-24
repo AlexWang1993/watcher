@@ -43,7 +43,7 @@
     self.sectionLabel.text=[self.info objectForKey:@"section"];
     [self.sectionLabel setCustomFont];
     
-    self.termLabel.text = [NSString stringWithFormat:@"Term %@",[self.info objectForKey:@"term"]];
+    self.termLabel.text = [NSString stringWithFormat:@"Term %@",[_info objectForKey:@"term"]];
     [self.termLabel setCustomFont];
     self.professorLabel.text= ([[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] count]>0)?[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0]:NULL;
     
@@ -158,7 +158,7 @@
     NSArray* arr = [[_info objectForKey:@"section"] componentsSeparatedByString:@" "];
     NSString* type = arr[0];
     NSString* section = arr[1];
-    NSNumber* hotness = [DBManager getHotnessForSubject:[_info objectForKey:@"subject"] Number:[_info objectForKey:@"catalog_number"] Type:type Section:section];
+    NSNumber* hotness = [DBManager getHotnessForSubject:[_info objectForKey:@"subject"] Number:[_info objectForKey:@"catalog_number"] Type:type Section:section Term:[_info objectForKey:@"term"]];
     NSString* rating;
     switch ([hotness integerValue]) {
         case 2:
@@ -178,6 +178,7 @@
         rating = @"Not popular";
     }
     self.hotnessLabel.text = rating;
+    [self.hotnessLabel setCustomFont];
 }
 
 @end

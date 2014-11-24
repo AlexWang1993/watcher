@@ -14,11 +14,11 @@
 @interface DBManager : NSObject
 
 
-+(NSString*)getHotnessForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section;
++(NSString*)getHotnessForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section Term:(NSString*) myTerm;
 
-+(void)submitWatchForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section;
++(void)submitWatchForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section Term:(NSString*) myTerm;
 
-+(NSString*)submitNotificationForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section;
++(NSString*)submitNotificationForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section Term:(NSString*) myTerm;
 
 @end
 

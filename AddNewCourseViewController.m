@@ -224,15 +224,14 @@
         return;
     }
     NSURL *url;
-    NSString * choseTerm;
     if ([_chooseTerm selectedSegmentIndex]) { // 1
-        choseTerm = _nextCode;
+        _choseTerm = _nextCode;
     } else {
-        choseTerm = _currCode;
+        _choseTerm = _currCode;
     }
 
     if (!debug){
-        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", subject, number, unlimitedAPIKey,choseTerm]];
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", subject, number, unlimitedAPIKey,_choseTerm]];
     } else {
         //url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"schedule",subject,number] ofType:@"json" inDirectory:[NSString stringWithFormat:@"testjson/%@/%@",subject,number]] ];
         url=[NSURL URLWithString:[NSString stringWithFormat:@"file://localhost/Users/alexwang/Documents/tests/watcherhelen/watcher/testjson/%@/%@/schedule.json",subject,number]];
@@ -258,7 +257,7 @@
     if (_chooseTerm.selectedSegmentIndex!=0) {
         termNumber = 4;
     }
-    [DBManager submitWatchForSubject:subject Number:number Type:type Section:section_num];
+    [DBManager submitWatchForSubject:subject Number:number Type:type Section:section_num Term:_choseTerm];
     
     
     

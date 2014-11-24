@@ -35,5 +35,5 @@
 -(IBAction)segmentbutton:(id)sender;
 @property (strong,atomic)NSString *currCode;
 @property (strong,atomic)NSString *nextCode;
-
+@property (strong,atomic)NSString *choseTerm;
 @end

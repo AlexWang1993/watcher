@@ -19,17 +19,17 @@
 
 NSString *const serverURL = @"http://watcher-waterlooapp.rhcloud.com";
 
-+(NSNumber*)getHotnessForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section{
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"%@/get_hotness?subject=%@&number=%@&type=%@&section=%@", serverURL, subject, number, type, section]];
++(NSNumber*)getHotnessForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section Term:(NSString *)myTerm{
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"%@/get_hotness?subject=%@&number=%@&type=%@&section=%@&term=%@", serverURL, subject, number, type, section,myTerm]];
     NSData* JSONData = [NSData dataWithContentsOfURL:url];
     NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
     NSLog(@"%@", dic);
     return [dic objectForKey:@"hotness"];
 }
 
-+(void)submitWatchForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section{
++(void)submitWatchForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section Term:(NSString *)myTerm{
     NSString *uuid = [self getUUID];
-    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"%@/newwatch?uuid=%@&subject=%@&number=%@&type=%@&section=%@", serverURL, uuid, subject, number, type, section]];
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"%@/newwatch?uuid=%@&subject=%@&number=%@&type=%@&section=%@&term=%@", serverURL, uuid, subject, number, type, section, myTerm]];
     NSData* JSONData = [NSData dataWithContentsOfURL:url];
     
 }
