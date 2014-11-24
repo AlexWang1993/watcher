@@ -287,7 +287,7 @@
     if (![self hasNetwork]){return;}
     NSURL *url;
     if (!debug) {
-        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=%@", unlimitedAPIKey,term]];
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"http://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=%@", unlimitedAPIKey,term]];
     } else {
         //url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Users/alexwang/Documents/ClassWatcher/testjson/subjects.json"]];
        // url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"subjects" ofType:@"json" inDirectory:@"testjson"] ];

@@ -177,7 +177,7 @@
 }
 
 -(NSArray *)UIColorToArray:(UIColor*)color{
-    float * arr=CGColorGetComponents(color.CGColor);
+    CGFloat * arr=CGColorGetComponents(color.CGColor);
     return [[NSArray alloc]initWithObjects:[NSNumber numberWithFloat:arr[0]],
             [NSNumber numberWithFloat:arr[1]],
             [NSNumber numberWithFloat:arr[2]],
