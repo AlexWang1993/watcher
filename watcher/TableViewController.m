@@ -70,6 +70,8 @@
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:customFont} forState:UIControlStateNormal];
     
     self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    [self refreshWatchListAsync];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -215,11 +217,11 @@
     if (![self hasNetwork]){return;}
     NSURL *url;
     if (!debug) {
-        url=[NSURL URLWithString:[NSString stringWithFormat:@"http://api.uwaterloo.ca/v2/codes/subjects.json?key=%@&term=%@", unlimitedAPIKey,term]];
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"http://api.uwaterloo.ca/v2/codes/subjects.json?key=%@", unlimitedAPIKey]];
     } else {
         //url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Users/alexwang/Documents/ClassWatcher/testjson/subjects.json"]];
        // url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"subjects" ofType:@"json" inDirectory:@"testjson"] ];
-                url=[NSURL URLWithString:@"file://localhost/Users/alexwang/Documents/tests/watcherhelen/watcher/testjson/subjects.json"];
+                url=[NSURL URLWithString:@"file://localhost/Users/alex/watcher/test_json/subjects.json"];
 
     }
     NSError *error=nil;
@@ -241,7 +243,7 @@
         url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", subject, number, apiKey,myTerm]];
     } else {
         //url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"schedule",subject,number] ofType:@"json" inDirectory:[NSString stringWithFormat:@"testjson/%@/%@",subject,number]] ];
-        url=[NSURL URLWithString:[NSString stringWithFormat:@"file://localhost/Users/alexwang/Documents/tests/watcherhelen/watcher/testjson/%@/%@/schedule.json",subject,number]];
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"file://localhost/Users/alex/watcher/test_json/%@/%@/%@/schedule.json",myTerm,subject,number]];
     }
     NSError *error=nil;
     NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];

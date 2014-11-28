@@ -195,7 +195,7 @@
         url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", subject, number, unlimitedAPIKey,_choseTerm]];
     } else {
         //url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"schedule",subject,number] ofType:@"json" inDirectory:[NSString stringWithFormat:@"testjson/%@/%@",subject,number]] ];
-        url=[NSURL URLWithString:[NSString stringWithFormat:@"file://localhost/Users/alexwang/Documents/tests/watcherhelen/watcher/testjson/%@/%@/schedule.json",subject,number]];
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"file://localhost/Users/alex/watcher/test_json/%@/%@/%@/schedule.json",_choseTerm,subject,number]];
 
     }
     NSError *error=nil;

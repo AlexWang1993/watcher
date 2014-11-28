@@ -54,6 +54,10 @@
         [[Setting sharedInstance].settings setObject:[self UIColorToArray:[UIColor colorWithRed:206.0/256 green:232.0/256 blue:245.0/256 alpha:1]] forKey:@"tabBarHighLightColor"];
     }
     
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
+    }
+    
     
     [self refreshBackground];
     
@@ -98,8 +102,8 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    TableViewController *mainController=[self getRootViewController];
-    [mainController refreshWatchListAsync];
+//    TableViewController *mainController=[self getRootViewController];
+//    [mainController refreshWatchListAsync];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
