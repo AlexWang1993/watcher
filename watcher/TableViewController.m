@@ -36,7 +36,6 @@
     self = [super initWithStyle:style];
     if (self) {
         
-        // Custom initialization
     }
     return self;
 }
@@ -56,8 +55,6 @@
         _subjectList=[[NSMutableArray alloc]init];
         [self loadSubList];
     }
-    //[self performSelectorInBackground:@selector(loadSubList) withObject:nil];
-    //[self loadSubList];
     self.navigationItem.rightBarButtonItem=self.addButton;
     self.navigationItem.leftBarButtonItem=self.editButtonItem;
     _setting=[Setting sharedInstance];
@@ -73,24 +70,9 @@
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:customFont} forState:UIControlStateNormal];
     
     self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    
-
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-  //  UIColor *myColor = [_setting.settings objectForKey:@"color"];
- //   self.view.backgroundColor = myColor;
-    
-    
-    //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
-    //self.view.backgroundColor= [UIColor clearColor];
-    //self.view.alpha = 0.2f;
     [self.tableView reloadData];
 }
 
@@ -116,19 +98,7 @@
     // Return the number of rows in the section.
     return _watchList.count;
 }
-/*
-- (UIColor*)randomColor{
-    CGFloat hue;
-    do {
-        hue=arc4random() % 256 / 256.0 ;
-    } while ( !((fabsf(hue-193.0f/256.0f)<0.1f)||(fabsf(hue+1-193.0f/256.0f)<0.1f)));  //  0.0 to 1.0
-    CGFloat saturation = ( arc4random() % 128 / 800.0 ) + 0.25;  //  0.5 to 1.0, away from white
-    CGFloat brightness = ( arc4random() % 128 / 800.0 ) + 0.75;  //  0.5 to 1.0, away from black
-    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-    //return color;
-    return [UIColor colorWithRed:153.0/255 green:204.0/255 blue:(153.0)/255 alpha:1];
-}
-*/
+
 
 -(void)refreshCellColor:(UITableViewCell *)cell{
     if ([_setting.settings objectForKey:@"theme"]==nil) {
@@ -187,27 +157,6 @@
     [self refreshCellColor:cell];
 }
 
-/*-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    spinner.frame = CGRectMake(0, 0, 24, 24);
-    spinner.hidesWhenStopped = YES;
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryView = spinner;
-    
-    if (!appDelegate.didRefresh) {
-        [spinner startAnimating];
-    }
-    
-    if (appDelegate.didRefresh) {
-        [spinner stopAnimating];
-    }
-  //  [self performSelectorOnMainThread:@selector(refreshWatchList) withObject:spinner waitUntilDone:YES];
-
-    
- //   [self performSelector:@selector(refreshWatchList) withObject:spinner afterDelay:1.0];
-   // [self performSelector:@selector(callfunction) withObject:activityindicator1 afterDelay:1.0];
-
-}*/
 
 - (void)scrollViewDidScroll:(UIScrollView *)_scrollView
 {
@@ -215,28 +164,7 @@
         return;
     }
 }
-/*
-- (IBAction)changePage {
-    // update the scroll view to the appropriate page
-    CGRect frame;
-    frame.origin.x = self.scrollView.frame.size.width * self.pageControl.currentPage;
-    frame.origin.y = 0;
-    frame.size = self.scrollView.frame.size;
-    [self.scrollView scrollRectToVisible:frame animated:YES];
-    self.pageControlBeingUsed = YES;
-}
 
-//fix flashing
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    self.pageControlBeingUsed = NO;
-}
-//fix flashing
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    self.pageControlBeingUsed = NO;
-    int page = scrollView.contentOffset.x/scrollView.frame.size.width;
-    pageControl.currentPage=page;
-}
-*/
 -(IBAction)clickPageControl:(id)sender
 {
     int page=pageControl.currentPage;
@@ -306,11 +234,11 @@
     }
 }
 
--(NSDictionary *)loadSectionForSubject:(NSString *)subject Number:(NSString *)number Section:(NSString *)section{
+-(NSDictionary *)loadSectionForSubject:(NSString *)subject Number:(NSString *)number Section:(NSString *)section Term:(NSString *)myTerm{
     
     NSURL *url;
     if (!debug){
-        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", subject, number, apiKey,term]];
+        url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@/%@/schedule.json?key=%@&term=%@", subject, number, apiKey,myTerm]];
     } else {
         //url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"schedule",subject,number] ofType:@"json" inDirectory:[NSString stringWithFormat:@"testjson/%@/%@",subject,number]] ];
         url=[NSURL URLWithString:[NSString stringWithFormat:@"file://localhost/Users/alexwang/Documents/tests/watcherhelen/watcher/testjson/%@/%@/schedule.json",subject,number]];
@@ -342,27 +270,14 @@
         NSDictionary *section=[_watchList objectAtIndex:i];
         dispatch_queue_t subQueue = dispatch_queue_create([[NSString stringWithFormat:@"subject%d",i] cStringUsingEncoding:NSASCIIStringEncoding], NULL);
         dispatch_async(subQueue, ^{
-            [_watchList replaceObjectAtIndex:i withObject:[self loadSectionForSubject:[section objectForKey:@"subject"] Number:[section objectForKey:@"catalog_number"] Section:[section objectForKey:@"section"]]];
+            [_watchList replaceObjectAtIndex:i withObject:[self loadSectionForSubject:[section objectForKey:@"subject"] Number:[section objectForKey:@"catalog_number"] Section:[section objectForKey:@"section"] Term:[section objectForKey:@"term"]]];
          dispatch_async(dispatch_get_main_queue(), ^{
                  [self.tableView reloadData];
              });});
         
     }
     
-  
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    spinner.frame = CGRectMake(0, 0, 24, 24);
-    spinner.hidesWhenStopped = YES;
-    for (UITableViewCell *cell in self.tableView.visibleCells){
-        NSIndexPath *cellIndexPath = [self.tableView indexPathForCell:cell];
-        cell.accessoryView = spinner;
-        [spinner startAnimating];
-        
-        [self.tableView reloadData];
-        
-        [spinner stopAnimating];
-        [spinner hidesWhenStopped];
-    }
+
  //   [self.tableView reloadData];
 }
 
@@ -373,9 +288,9 @@
     for (int i=0;i<_watchList.count;i++){
         BOOL fullBefore=[self isFullForSectionNumber:i];
         NSDictionary *section=[_watchList objectAtIndex:i];
-        [_watchList replaceObjectAtIndex:i withObject:[self loadSectionForSubject:[section objectForKey:@"subject"] Number:[section objectForKey:@"catalog_number"] Section:[section objectForKey:@"section"]]];
+        [_watchList replaceObjectAtIndex:i withObject:[self loadSectionForSubject:[section objectForKey:@"subject"] Number:[section objectForKey:@"catalog_number"] Section:[section objectForKey:@"section"] Term:[section objectForKey:@"term"]]];
         if ((fullBefore)&&(![self isFullForSectionNumber:i])){
-            [_changedList addObject:[NSString stringWithFormat:@"%@ %@  %@",[section objectForKey:@"subject"],[section objectForKey:@"catalog_number"],[section objectForKey:@"section"]]];
+            [_changedList addObject:[NSString stringWithFormat:@"%@ %@  %@",[section objectForKey:@"subject"],[section objectForKey:@"catalog_number"],[section objectForKey:@"section"],[section objectForKey:@"term"]]];
             flag=YES;
         }
     }
@@ -461,27 +376,27 @@
     return NO;
 }
 
-/*interclass API method*/
--(NSArray* )generateShortList{
-    NSMutableArray *shortList=[[NSMutableArray alloc] init];
-    for (NSDictionary *sec in _watchList){
-        NSMutableDictionary *shortDescription=[[NSMutableDictionary alloc]init];
-        [shortDescription setObject:[sec objectForKey:@"subject"] forKey:@"subject"];
-        [shortDescription setObject:[sec objectForKey:@"catalog_number"] forKey:@"catalog_number"];
-        [shortDescription setObject:[sec objectForKey:@"section"] forKey:@"section"];
-        
-        
-        [shortList addObject:[NSDictionary dictionaryWithDictionary:shortDescription]];
-    }
-    return [NSArray arrayWithArray: shortList];
-//    for (int i=0;i<_watchList.count;i++){
-//        for (int j=0;j<[_watchList[i][@"classes"] count];j++){
-//            [_watchList[i][@"classes"][j][@"date"] removeObjectForKey:@"end_date"];
-//            [_watchList[i][@"classes"][j][@"date"] removeObjectForKey:@"start_date"];
-//        }
+///*interclass API method*/
+//-(NSArray* )generateShortList{
+//    NSMutableArray *shortList=[[NSMutableArray alloc] init];
+//    for (NSDictionary *sec in _watchList){
+//        NSMutableDictionary *shortDescription=[[NSMutableDictionary alloc]init];
+//        [shortDescription setObject:[sec objectForKey:@"subject"] forKey:@"subject"];
+//        [shortDescription setObject:[sec objectForKey:@"catalog_number"] forKey:@"catalog_number"];
+//        [shortDescription setObject:[sec objectForKey:@"section"] forKey:@"section"];
+//        
+//        
+//        [shortList addObject:[NSDictionary dictionaryWithDictionary:shortDescription]];
 //    }
-//    return [NSArray arrayWithArray:_watchList];
-}
+//    return [NSArray arrayWithArray: shortList];
+////    for (int i=0;i<_watchList.count;i++){
+////        for (int j=0;j<[_watchList[i][@"classes"] count];j++){
+////            [_watchList[i][@"classes"][j][@"date"] removeObjectForKey:@"end_date"];
+////            [_watchList[i][@"classes"][j][@"date"] removeObjectForKey:@"start_date"];
+////        }
+////    }
+////    return [NSArray arrayWithArray:_watchList];
+//}
 
 -(NSArray*)generateJSONs{
     NSError *error;
@@ -503,16 +418,6 @@
 
 
 -(NSMutableArray* )generateWatchList:(NSArray *)jsonList{
-//    if (![self hasNetwork]){
-//        return [[NSMutableArray alloc]init];
-//    }
-//    NSMutableArray *watchList=[[NSMutableArray alloc]init];
-//    for (NSDictionary *sec in shortList){
-//        NSDictionary *fullDescription=[self loadSectionForSubject:[sec objectForKey:@"subject"] Number:[sec objectForKey:@"catalog_number"] Section:[sec objectForKey:@"section"]
-//                                       ];
-//        [watchList addObject:fullDescription];
-//    }
-//    return [NSMutableArray arrayWithArray:shortList];
     NSMutableArray *ret=[[NSMutableArray alloc]init];
     for (int i=0;i<jsonList.count;i++){
         NSData *data = [jsonList[i] dataUsingEncoding:NSUTF8StringEncoding];

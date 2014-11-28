@@ -29,10 +29,7 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-   // UIImage *image =
- //   UIColor *background = [[UIColor alloc] initWithPatternImage:imageNamed:@"<#string#>"];
-//    self.window.backgroundColor = background;
-    // Override point for customization after application launch.
+
     NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
     [userDefaults setObject:NULL forKey:@"a"];
     if ([userDefaults objectForKey:@"watcher_watchlist"]){

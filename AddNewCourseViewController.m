@@ -60,24 +60,13 @@
     _searchButton.titleLabel.font = [UIFont fontWithName:@"Quicksand" size:16.0f];
     _seeDetails.titleLabel.font = [UIFont fontWithName:@"Quicksand" size:16.0f];
     _addButton.titleLabel.font = [UIFont fontWithName:@"Quicksand" size:16.0f];
-    
-	// Do any additional setup after loading the view.
-    // Custom initialization
-    //_sectionPicker=[[UIPickerView alloc] init];
-    //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
-  
     _sectionPicker.delegate=self;
     _sectionPicker.dataSource=self;
-    //_sectionPicker.hidden=true;
-    //_subjectInput=[[UITextField alloc] init];
     _subjectInput.delegate=self;
-    //_numberInput=[[UITextField alloc]init];
     _numberInput.delegate=self;
     _subjectInput.tag=1;
     _numberInput.tag=2;
     _sectionList=[[NSArray alloc] init];
-    //_subjectList=[[NSMutableArray alloc]init];
-    //_message=[[UILabel alloc]init];
     _setting=[Setting sharedInstance];
     
 #pragma get term name&number, populate seg ctrl
@@ -96,9 +85,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[_setting.settings objectForKey:@"backgroundImage"]]];
     self.view.backgroundColor= [UIColor clearColor];
-    //self.view.alpha = 0.2f;
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,36 +94,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*- (void)textFieldDidEndEditing:(UITextField *)textField{
-    if (textField.tag==1){
-        if ([_subjectList containsObject:[textField.text uppercaseString]]){
-            _message.text=[textField.text uppercaseString];
-            _numberInput.text=@"";
-        } else {
-            _message.text=@"Invalid subject entered";
-        }
-    } else {
-        
-    }
-}*/
-
-
-/*BUTTON ACTIONS BEGIN*/
-/*- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    //Replace the string manually in the textbox
-    _subjectInput.text = [_subjectInput.text stringByReplacingCharactersInRange:range withString:string];
-    //perform any logic here now that you are sure the textbox text has changed
-    [self didChangeTextInTextField:_subjectInput];
-    return NO; //this make iOS not to perform any action
-}*/
-
 -(IBAction)segmentbutton:(id)sender {
     
     if (_chooseTerm.selectedSegmentIndex == 0) {
-
-        
     } else {
-
     }
 }
 

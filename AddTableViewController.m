@@ -44,7 +44,7 @@
         if (i==10){
             break;
         }
-        NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@.json?key=%@&term=1145", sub, apiKey]];
+        NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"https://api.uwaterloo.ca/v2/courses/%@.json?key=%@&term=%@", sub, apiKey, term]];
         NSError *error=nil;
         NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
         NSDictionary *results=[NSJSONSerialization
@@ -69,7 +69,7 @@
                                JSONObjectWithData:JSONData options:NSJSONReadingMutableContainers error:&error];
         NSArray *data=[results objectForKey:@"data"];
         for (NSMutableDictionary *cour in data){
-            [cour setObject:[NSString stringWithFormat:@"%@ %@   %@",[cour objectForKey:@"subject"],[cour objectForKey:@"catalog_number"],[cour objectForKey:@"section"]] forKey:@"short_name"];
+            [cour setObject:[NSString stringWithFormat:@"%@ %@   %@",[cour objectForKey:@"subject"],[cour objectForKey:@"catalog_number"],[cour objectForKey:@"section"],[cour objectForKey:@"term"]] forKey:@"short_name"];
             [_sectionList addObject:cour];
         }
         
@@ -140,8 +140,6 @@
     }
     cell.textLabel.text=[section objectForKey:@"short_name"];
     
-    // Configure the cell...
-    
     return cell;
 }
 
@@ -155,55 +153,5 @@
     [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
      return YES;
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end
