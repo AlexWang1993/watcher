@@ -221,7 +221,7 @@
     } else {
         //url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Users/alexwang/Documents/ClassWatcher/testjson/subjects.json"]];
        // url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"subjects" ofType:@"json" inDirectory:@"testjson"] ];
-                url=[NSURL URLWithString:@"file://localhost/Users/alex/watcher/test_json/subjects.json"];
+                url=[NSURL URLWithString:@"file://localhost/Users/alex/watcher/testjson/subjects.json"];
 
     }
     NSError *error=nil;

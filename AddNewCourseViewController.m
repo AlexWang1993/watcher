@@ -69,16 +69,10 @@
     _sectionList=[[NSArray alloc] init];
     _setting=[Setting sharedInstance];
     
-#pragma get term name&number, populate seg ctrl
-    NSError *getTermError = nil;
-    NSURL *getTermUrl =[NSURL URLWithString:@"http://watcher-waterlooapp.rhcloud.com/get_terms"];
-    NSData *JSONData= [NSData dataWithContentsOfURL:getTermUrl options:NSDataReadingMappedIfSafe error:&getTermError];
-    NSDictionary *terms=[NSJSONSerialization
-                           JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&getTermError];
-    NSString *currName = [[terms objectForKey:@"current"] objectForKey:@"name"];
-    NSString *nextName = [[terms objectForKey:@"next"] objectForKey:@"name"];
-    _currCode = [[terms objectForKey:@"current"] objectForKey:@"code"];
-    _nextCode = [[terms objectForKey:@"next"] objectForKey:@"code"];
+    NSString *currName = [_setting.settings objectForKey:@"currentTermName"];
+    NSString *nextName = [_setting.settings objectForKey:@"nextTermName"];
+    _currCode = [_setting.settings objectForKey:@"currTermCode"];
+    _nextCode = [_setting.settings objectForKey:@"nextTermCode"];
     [_chooseTerm setTitle:currName forSegmentAtIndex:0];
     [_chooseTerm setTitle:nextName forSegmentAtIndex:1];
 

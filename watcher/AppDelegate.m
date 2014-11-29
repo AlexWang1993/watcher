@@ -61,6 +61,7 @@
     
     [self refreshBackground];
     
+    [self performSelectorInBackground:@selector(refreshTerms) withObject:nil];
    // [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:20.0/256 green:68.0/256 blue:106.0/256 alpha:1]];
     
     //tab bar color yellow mode
@@ -101,6 +102,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    [self performSelectorInBackground:@selector(refreshTerms) withObject:nil];
+    
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 //    TableViewController *mainController=[self getRootViewController];
 //    [mainController refreshWatchListAsync];
@@ -203,6 +206,24 @@
             [NSNumber numberWithFloat:arr[1]],
             [NSNumber numberWithFloat:arr[2]],
             [NSNumber numberWithFloat:arr[3]],nil];
+}
+
+-(void)refreshTerms{
+    NSError *getTermError = nil;
+    NSURL *getTermUrl =[NSURL URLWithString:@"http://watcher-waterlooapp.rhcloud.com/get_terms"];
+    NSData *JSONData= [NSData dataWithContentsOfURL:getTermUrl options:NSDataReadingMappedIfSafe error:&getTermError];
+    NSDictionary *terms=[NSJSONSerialization
+                         JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&getTermError];
+    Setting *setting=[Setting sharedInstance];
+    NSMutableDictionary* settingDic=setting.settings;
+    NSString *currName = [[terms objectForKey:@"current"] objectForKey:@"name"];
+    NSString *nextName = [[terms objectForKey:@"next"] objectForKey:@"name"];
+    NSString *currCode = [[terms objectForKey:@"current"] objectForKey:@"code"];
+    NSString *nextCode = [[terms objectForKey:@"next"] objectForKey:@"code"];
+    [settingDic setObject:currName forKey:@"currentTermName"];
+    [settingDic setObject:nextName forKey:@"nextTermName"];
+    [settingDic setObject:currCode forKey:@"currentTermCode"];
+    [settingDic setObject:nextCode forKey:@"nextTermCode"];
 }
 
 

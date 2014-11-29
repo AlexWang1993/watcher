@@ -45,7 +45,7 @@ static NSString *unlimitedAPIKey=@"884d9c5288743f49ab8e9ea578a50b25";
 
 #define codesApiDir @"codes/"
 
-#define debug true
+#define debug false
 
 #define term @"1149"
 
