@@ -166,19 +166,19 @@
     switch ([hotness integerValue]) {
         case 2:
         case 3:
-        rating = @"popular";
+        rating = @"Popular";
         break;
         case 4:
         case 5:
-        rating = @"very popular";
+        rating = @"Very Popular";
         break;
         case 6:
         case 7:
         case 8:
-        rating = @"extremely hot";
+        rating = @"Extremely Popular";
         break;
         default:
-        rating = @"Not popular";
+        rating = @"Not Popular";
     }
     self.hotnessLabel.text = rating;
     UIColor *glowing = [UIColor colorWithRed:176.0/256.0 green:23.0/256.0 blue:31.0/256.0 alpha:1.0f];
