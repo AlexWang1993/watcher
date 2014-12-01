@@ -89,6 +89,9 @@
         self.descriptionLabel.text=@"Error reading file";
     }
     NSRange result = [fileContentsString rangeOfString:profName options:NSLiteralSearch];
+    [(UIScrollView*)self.view setContentSize:CGSizeMake(320, 500)];
+//    [(UIScrollView*)self.view setContentSize:self.view.bounds.size];
+//    contentSize = self.view.bounds.size;
     if (result.location == NSNotFound) {
         self.descriptionLabel.text = @"Not on rate my prof";
     }
