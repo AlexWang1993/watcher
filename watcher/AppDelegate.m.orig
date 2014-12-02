@@ -113,41 +113,37 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    
-    BOOL enabled = NO;
-    
-    NSString *iOSversion = [[UIDevice currentDevice] systemVersion];
-    NSString *prefix = [[iOSversion componentsSeparatedByString:@"."] firstObject];
-    float versionVal = [prefix floatValue];
-    
-    
-    if (versionVal >= 8)
-    {
-        
-        NSLog(@"%@", [[UIApplication sharedApplication]  currentUserNotificationSettings]);
-        //The output of this log shows that the app is registered for PUSH so should receive them
-        
-        if ([[UIApplication sharedApplication] currentUserNotificationSettings].types != UIUserNotificationTypeNone) {
-            
-            enabled = YES;
-            
-        }
-        
-    } else {
-        enabled = YES;
+<<<<<<< HEAD
+    UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
+    if (types == UIRemoteNotificationTypeNone) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notifications Off" message:@"Please enable notifications in Settings -> Notification Center" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        // optional - add more buttons:
+        [alert show];
     }
     
-    if (!enabled) {
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+=======
+    UIUserNotificationSettings *grantedSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
+    
+    if (grantedSettings.types == UIUserNotificationTypeNone) {
         UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Notification Not Enabled"
-                                  message:@"Please enable notifications at Settings-> Notification"
+                                  initWithTitle:@"Enable Notification"
+                                  message:@"Please enable notification at Settings-> Notification"
                                   delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
+                                  cancelButtonTitle:@"Not Now"
+                                  otherButtonTitles:@"OK", nil];
         
         [alertView show];
         NSLog(@"No permiossion granted");
     }
+    else if (grantedSettings.types & UIUserNotificationTypeSound & UIUserNotificationTypeAlert ){
+        NSLog(@"Sound and alert permissions ");
+    }
+    else if (grantedSettings.types  & UIUserNotificationTypeAlert){
+        NSLog(@"Alert Permission Granted");
+    }
+>>>>>>> 95779d07c6e0b8df6f1d983d12678c0d2abb3e07
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

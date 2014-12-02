@@ -46,19 +46,30 @@
     self.termLabel.text = [NSString stringWithFormat:@"Term %@",[_info objectForKey:@"term"]];
     [self.termLabel setCustomFont];
     self.professorLabel.text= ([[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] count]>0)?[[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"instructors"] objectAtIndex:0]:NULL;
-    
-    self.locationLabel.text=[NSString stringWithFormat:@"%@%@",
-                             [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"building"],
-                             [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"room"]
-                             ];
+    if ([[self.info objectForKey:@"campus"] rangeOfString:@"ONLINE"].location !=NSNotFound ) {
+        self.locationLabel.text=@"Online";
+
+    }
+    else{
+        self.locationLabel.text=[NSString stringWithFormat:@"%@%@",
+                                 [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"building"],
+                                 [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"]   objectForKey:@"room"]
+                                 ];    }
+
     _parent.location = self.locationLabel.text;
     self.titleLabel.text=[self.info objectForKey:@"title"];
     self.capacityLabel.text=[NSString stringWithFormat:@"%@", [self.info objectForKey:@"enrollment_capacity"]];
     self.totalEnrolledLabel.text=[NSString stringWithFormat:@"%@", [self.info objectForKey:@"enrollment_total"]];
-    self.timeLabel.text=[NSString stringWithFormat:@"%@ %@ - %@",
-                         [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],
-                         [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],
-                         [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
+    if ([[self.info objectForKey:@"campus"] rangeOfString:@"ONLINE"].location != NSNotFound) {
+        self.timeLabel.text=@"Online";
+    }
+    else{
+        self.timeLabel.text=[NSString stringWithFormat:@"%@ %@ - %@",
+                             [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],
+                             [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],
+                             [[[[self.info objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
+    }
+    
     
     [self.subjectLabel setCustomFont];
     [self.sectionLabel setCustomFont];
@@ -115,8 +126,8 @@
             easiness =@"N/A";
         }
         self.descriptionLabel.text =[NSString stringWithFormat:@"Information from RateMyProf:"];
-        self.avgRateLabel.text = [NSString stringWithFormat:@"Prof Average Rating: %@",avgRate];
-        self.easinessLabel.text=[NSString stringWithFormat:@"Prof Easiness: %@",easiness];
+        self.avgRateLabel.text = [NSString stringWithFormat:@"%@",avgRate];
+        self.easinessLabel.text=[NSString stringWithFormat:@"%@",easiness];
         self.descriptionLabel.hidden=false;
         self.avgRateLabel.hidden=false;
         self.easinessLabel.hidden=false;

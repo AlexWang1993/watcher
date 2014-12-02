@@ -62,7 +62,6 @@
     self.view.backgroundColor=[UIColor clearColor];
     
     self.pageControlBeingUsed = NO;
-    //[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:72.0/256 green:72.0/256 blue:0.0/256 alpha:1]];
     
     
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
@@ -141,16 +140,22 @@
     cell.textLabel.numberOfLines= 0;
     
     cell.detailTextLabel.font = [UIFont fontWithName:@"Quicksand-bold" size:20.0];
+    NSDictionary* dic = [_watchList objectAtIndex:indexPath.row];
     
-    cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@\n\n%@%@    %@ %@ - %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"building"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"room"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
+    if ([[[_watchList objectAtIndex:indexPath.row]objectForKey:@"campus"] rangeOfString:@"ONLINE"].location != NSNotFound) {
+        cell.textLabel.text =[NSString stringWithFormat:@"%@ %@    %@\n\nOnline Course",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"]];
+    }
+    else{
+            cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@\n\n%@%@    %@ %@ - %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"building"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"room"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
+    }
     cell.detailTextLabel.font = [UIFont fontWithName:@"Quicksand" size:14.0f];
     if ([self isFullForSectionNumber:indexPath.row]){
-        int overflow = [self getOverflowForSectionNumber:indexPath.row];
-        if (overflow > 0){
-            cell.detailTextLabel.text=[NSString stringWithFormat:@"FULL +%d",overflow];
-        } else {
+      //  int overflow = [self getOverflowForSectionNumber:indexPath.row];
+      //  if (overflow > 0){
+      //      cell.detailTextLabel.text=[NSString stringWithFormat:@"FULL +%d",overflow];
+      //  } else {
            cell.detailTextLabel.text=@"FULL";
-        }
+      //  }
         cell.detailTextLabel.textColor=[UIColor redColor];
         
     } else {
@@ -390,29 +395,6 @@
     NSDictionary *section=[_watchList objectAtIndex:number];
     return [[section objectForKey:@"enrollment_total"] intValue] - [[section objectForKey:@"enrollment_capacity"] intValue];
 }
-
-
-///*interclass API method*/
-//-(NSArray* )generateShortList{
-//    NSMutableArray *shortList=[[NSMutableArray alloc] init];
-//    for (NSDictionary *sec in _watchList){
-//        NSMutableDictionary *shortDescription=[[NSMutableDictionary alloc]init];
-//        [shortDescription setObject:[sec objectForKey:@"subject"] forKey:@"subject"];
-//        [shortDescription setObject:[sec objectForKey:@"catalog_number"] forKey:@"catalog_number"];
-//        [shortDescription setObject:[sec objectForKey:@"section"] forKey:@"section"];
-//        
-//        
-//        [shortList addObject:[NSDictionary dictionaryWithDictionary:shortDescription]];
-//    }
-//    return [NSArray arrayWithArray: shortList];
-////    for (int i=0;i<_watchList.count;i++){
-////        for (int j=0;j<[_watchList[i][@"classes"] count];j++){
-////            [_watchList[i][@"classes"][j][@"date"] removeObjectForKey:@"end_date"];
-////            [_watchList[i][@"classes"][j][@"date"] removeObjectForKey:@"start_date"];
-////        }
-////    }
-////    return [NSArray arrayWithArray:_watchList];
-//}
 
 -(NSArray*)generateJSONs{
     NSError *error;
