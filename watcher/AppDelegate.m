@@ -104,6 +104,8 @@
 {
     [self performSelectorInBackground:@selector(refreshTerms) withObject:nil];
     
+
+    
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 //    TableViewController *mainController=[self getRootViewController];
 //    [mainController refreshWatchListAsync];
@@ -111,6 +113,13 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
+    if (types == UIRemoteNotificationTypeNone) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notifications Off" message:@"Please enable notifications in Settings -> Notification Center" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        // optional - add more buttons:
+        [alert show];
+    }
+    
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
 }
