@@ -111,8 +111,25 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-
+    UIUserNotificationSettings *grantedSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
+    
+    if (grantedSettings.types == UIUserNotificationTypeNone) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Enable Notification"
+                                  message:@"Please enable notification at Settings-> Notification"
+                                  delegate:self
+                                  cancelButtonTitle:@"Not Now"
+                                  otherButtonTitles:@"OK", nil];
+        
+        [alertView show];
+        NSLog(@"No permiossion granted");
+    }
+    else if (grantedSettings.types & UIUserNotificationTypeSound & UIUserNotificationTypeAlert ){
+        NSLog(@"Sound and alert permissions ");
+    }
+    else if (grantedSettings.types  & UIUserNotificationTypeAlert){
+        NSLog(@"Alert Permission Granted");
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
