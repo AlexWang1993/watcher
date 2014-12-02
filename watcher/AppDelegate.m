@@ -226,5 +226,9 @@
     [settingDic setObject:nextCode forKey:@"nextTermCode"];
 }
 
+-(void)submitNotification{
+    
+}
+
 
 @end

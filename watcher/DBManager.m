@@ -31,7 +31,13 @@ NSString *const serverURL = @"http://watcher-waterlooapp.rhcloud.com";
     NSString *uuid = [self getUUID];
     NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"%@/newwatch?uuid=%@&subject=%@&number=%@&type=%@&section=%@&term=%@", serverURL, uuid, subject, number, type, section, myTerm]];
     NSData* JSONData = [NSData dataWithContentsOfURL:url];
-    
+}
+
+
++(void)submitNotificationForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section{
+    NSString *uuid = [self getUUID];
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"%@/newnotification?uuid=%@&subject=%@&number=%@&type=%@&section=%@", serverURL, uuid, subject, number, type, section]];
+    NSData* JSONData = [NSData dataWithContentsOfURL:url];
 }
 
 +(NSString *)getUUID

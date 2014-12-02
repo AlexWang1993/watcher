@@ -13,6 +13,7 @@
 #import "UITextField+CustomFont.h"
 #import "staticData.h"
 #import "Reachability.h"
+#import "DBManager.h"
 
 
 @interface TableViewController ()
@@ -143,7 +144,12 @@
     
     cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@\n\n%@%@    %@ %@ - %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"building"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"room"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
     if ([self isFullForSectionNumber:indexPath.row]){
-        cell.detailTextLabel.text=@"FULL";
+        int overflow = [self getOverflowForSectionNumber:indexPath.row];
+        if (overflow > 0){
+            cell.detailTextLabel.text=[NSString stringWithFormat:@"FULL +%d",overflow];
+        } else {
+           cell.detailTextLabel.text=@"FULL";
+        }
         cell.detailTextLabel.textColor=[UIColor redColor];
         
     } else {
@@ -294,6 +300,7 @@
         if ((fullBefore)&&(![self isFullForSectionNumber:i])){
             [_changedList addObject:[NSString stringWithFormat:@"%@ %@  %@",[section objectForKey:@"subject"],[section objectForKey:@"catalog_number"],[section objectForKey:@"section"],[section objectForKey:@"term"]]];
             flag=YES;
+            [self performSelectorInBackground:@selector(postNewNotification:) withObject:([_watchList objectAtIndex:i])];
         }
     }
     
@@ -378,6 +385,12 @@
     return NO;
 }
 
+-(int)getOverflowForSectionNumber:(NSInteger)number{
+    NSDictionary *section=[_watchList objectAtIndex:number];
+    return [[section objectForKey:@"enrollment_total"] intValue] - [[section objectForKey:@"enrollment_capacity"] intValue];
+}
+
+
 ///*interclass API method*/
 //-(NSArray* )generateShortList{
 //    NSMutableArray *shortList=[[NSMutableArray alloc] init];
@@ -437,6 +450,19 @@
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [reachability currentReachabilityStatus];
     return(networkStatus != NotReachable);
+}
+
+-(void)postNewNotification:(NSDictionary*)section{
+    NSString* subject = [section objectForKey:@"subject"];
+    NSString* number = [section objectForKey:@"catalog_number"];
+    NSArray* arr = [[section objectForKey:@"section"] componentsSeparatedByString:@" "];
+    NSString* type = arr[0];
+    NSString* section_num = arr[1];
+
+    [DBManager submitNotificationForSubject:subject Number:number Type:type Section:section_num];
+    
+    
+    
 }
 
 

@@ -28,7 +28,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="396-xA-ycO">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="396-xA-ycO">
                                             <rect key="frame" x="241" y="35" width="44" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -915,7 +915,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="L8Y-PV-Tke"/>
-        <segue reference="49S-wQ-5tP"/>
+        <segue reference="nsy-oG-s1W"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1398393007" green="0.1396123923" blue="0.14357591710000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

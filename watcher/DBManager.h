@@ -18,7 +18,7 @@
 
 +(void)submitWatchForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section Term:(NSString*) myTerm;
 
-+(NSString*)submitNotificationForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section Term:(NSString*) myTerm;
++(void)submitNotificationForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section;
 
 @end
 

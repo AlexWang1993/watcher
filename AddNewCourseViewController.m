@@ -71,7 +71,7 @@
     
     NSString *currName = [_setting.settings objectForKey:@"currentTermName"];
     NSString *nextName = [_setting.settings objectForKey:@"nextTermName"];
-    _currCode = [_setting.settings objectForKey:@"currTermCode"];
+    _currCode = [_setting.settings objectForKey:@"currentTermCode"];
     _nextCode = [_setting.settings objectForKey:@"nextTermCode"];
     [_chooseTerm setTitle:currName forSegmentAtIndex:0];
     [_chooseTerm setTitle:nextName forSegmentAtIndex:1];
@@ -196,7 +196,6 @@
     NSData *JSONData= [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
     NSDictionary *results=[NSJSONSerialization
                            JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&error];
-    JSONData = 
     _sectionList=[results objectForKey:@"data"];
     [_sectionPicker reloadAllComponents];
     
