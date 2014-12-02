@@ -115,8 +115,8 @@
             easiness =@"N/A";
         }
         self.descriptionLabel.text =[NSString stringWithFormat:@"Information from RateMyProf:"];
-        self.avgRateLabel.text = [NSString stringWithFormat:@"Prof Average Rating: %@",avgRate];
-        self.easinessLabel.text=[NSString stringWithFormat:@"Prof Easiness: %@",easiness];
+        self.avgRateLabel.text = [NSString stringWithFormat:@"%@",avgRate];
+        self.easinessLabel.text=[NSString stringWithFormat:@"%@",easiness];
         self.descriptionLabel.hidden=false;
         self.avgRateLabel.hidden=false;
         self.easinessLabel.hidden=false;

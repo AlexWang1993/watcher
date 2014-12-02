@@ -62,7 +62,6 @@
     self.view.backgroundColor=[UIColor clearColor];
     
     self.pageControlBeingUsed = NO;
-    //[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:72.0/256 green:72.0/256 blue:0.0/256 alpha:1]];
     
     
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:98.0/256 green:221.0/256 blue:240.0/256 alpha:1]];
@@ -145,12 +144,12 @@
     cell.textLabel.text=[NSString stringWithFormat:@"%@ %@    %@\n\n%@%@    %@ %@ - %@",[[_watchList objectAtIndex:indexPath.row] objectForKey:@"subject"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"catalog_number"],[[_watchList objectAtIndex:indexPath.row] objectForKey:@"section"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"building"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"location"] objectForKey:@"room"],[[[[[_watchList objectAtIndex:indexPath.row]objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"weekdays"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"start_time"],[[[[[_watchList objectAtIndex:indexPath.row] objectForKey:@"classes"] objectAtIndex:0] objectForKey:@"date"] objectForKey:@"end_time"]];
     cell.detailTextLabel.font = [UIFont fontWithName:@"Quicksand" size:14.0f];
     if ([self isFullForSectionNumber:indexPath.row]){
-        int overflow = [self getOverflowForSectionNumber:indexPath.row];
-        if (overflow > 0){
-            cell.detailTextLabel.text=[NSString stringWithFormat:@"FULL +%d",overflow];
-        } else {
+      //  int overflow = [self getOverflowForSectionNumber:indexPath.row];
+      //  if (overflow > 0){
+      //      cell.detailTextLabel.text=[NSString stringWithFormat:@"FULL +%d",overflow];
+      //  } else {
            cell.detailTextLabel.text=@"FULL";
-        }
+      //  }
         cell.detailTextLabel.textColor=[UIColor redColor];
         
     } else {
