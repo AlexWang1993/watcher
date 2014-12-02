@@ -115,7 +115,7 @@
 {
     UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
     if (types == UIRemoteNotificationTypeNone) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notifications Off" message:@"Please enable notifications in Settings -> Notification Center" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notifications Off" message:@"Please enable notifications in Settings -> Notification Center" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         // optional - add more buttons:
         [alert show];
     }
