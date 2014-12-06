@@ -21,10 +21,15 @@ NSString *const serverURL = @"http://watcher-waterlooapp.rhcloud.com";
 
 +(NSNumber*)getHotnessForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section Term:(NSString *)myTerm{
     NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"%@/get_hotness?subject=%@&number=%@&type=%@&section=%@&term=%@", serverURL, subject, number, type, section,myTerm]];
-    NSData* JSONData = [NSData dataWithContentsOfURL:url];
+    NSError *error;
+    NSData* JSONData = [NSData dataWithContentsOfURL:url options:NSDataReadingMapped error:&error];
+    if (error == nil){
     NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
     NSLog(@"%@", dic);
     return [dic objectForKey:@"hotness"];
+    } else {
+        return [NSNumber numberWithInt:-1];
+    }
 }
 
 +(void)submitWatchForSubject:(NSString*)subject Number:(NSString*)number Type:(NSString*)type Section:(NSString*)section Term:(NSString *)myTerm{

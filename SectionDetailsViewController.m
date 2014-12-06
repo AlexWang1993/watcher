@@ -188,10 +188,11 @@
         case 8:
         rating = @"Extremely Popular";
         break;
-        default:
+        case 0:
+        case 1:
         rating = @"Not Popular";
     }
-    self.hotnessLabel.text = rating;
+    if ([rating isEqualToString:@""]) self.hotnessLabel.text = rating;
     UIColor *glowing = [UIColor colorWithRed:176.0/256.0 green:23.0/256.0 blue:31.0/256.0 alpha:1.0f];
     self.hotnessLabel.layer.shadowColor = [glowing CGColor];
     self.hotnessLabel.layer.shadowRadius = 8.0f;

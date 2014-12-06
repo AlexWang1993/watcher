@@ -29,6 +29,7 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]);
 
     NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
     [userDefaults setObject:NULL forKey:@"a"];
@@ -62,6 +63,8 @@
     [self refreshBackground];
     
     [self performSelectorInBackground:@selector(refreshTerms) withObject:nil];
+    [self performSelectorInBackground:@selector(checkVersion) withObject:nil];
+    
    // [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:20.0/256 green:68.0/256 blue:106.0/256 alpha:1]];
     
     //tab bar color yellow mode
@@ -247,23 +250,54 @@
     NSError *getTermError = nil;
     NSURL *getTermUrl =[NSURL URLWithString:@"http://watcher-waterlooapp.rhcloud.com/get_terms"];
     NSData *JSONData= [NSData dataWithContentsOfURL:getTermUrl options:NSDataReadingMappedIfSafe error:&getTermError];
-    NSDictionary *terms=[NSJSONSerialization
+    if (getTermError==nil){
+        NSDictionary *terms=[NSJSONSerialization
                          JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&getTermError];
-    Setting *setting=[Setting sharedInstance];
-    NSMutableDictionary* settingDic=setting.settings;
-    NSString *currName = [[terms objectForKey:@"current"] objectForKey:@"name"];
-    NSString *nextName = [[terms objectForKey:@"next"] objectForKey:@"name"];
-    NSString *currCode = [[terms objectForKey:@"current"] objectForKey:@"code"];
-    NSString *nextCode = [[terms objectForKey:@"next"] objectForKey:@"code"];
-    [settingDic setObject:currName forKey:@"currentTermName"];
-    [settingDic setObject:nextName forKey:@"nextTermName"];
-    [settingDic setObject:currCode forKey:@"currentTermCode"];
-    [settingDic setObject:nextCode forKey:@"nextTermCode"];
+        Setting *setting=[Setting sharedInstance];
+        NSMutableDictionary* settingDic=setting.settings;
+        NSString *currName = [[terms objectForKey:@"current"] objectForKey:@"name"];
+        NSString *nextName = [[terms objectForKey:@"next"] objectForKey:@"name"];
+        NSString *currCode = [[terms objectForKey:@"current"] objectForKey:@"code"];
+        NSString *nextCode = [[terms objectForKey:@"next"] objectForKey:@"code"];
+        [settingDic setObject:currName forKey:@"currentTermName"];
+        [settingDic setObject:nextName forKey:@"nextTermName"];
+        [settingDic setObject:currCode forKey:@"currentTermCode"];
+        [settingDic setObject:nextCode forKey:@"nextTermCode"];
+    } else {
+        NSLog(@"Get term error:%@", getTermError);
+    }
 }
 
--(void)submitNotification{
-    
+-(void)checkVersion{
+    NSError *getVersionError = nil;
+    NSURL *getTermUrl =[NSURL URLWithString:@"http://watcher-waterlooapp.rhcloud.com/version.json"];
+    NSData *JSONData= [NSData dataWithContentsOfURL:getTermUrl options:NSDataReadingMappedIfSafe error:&getVersionError];
+    if (getVersionError==nil){
+        NSDictionary *terms=[NSJSONSerialization
+                             JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&getVersionError];
+        NSString *newVersion = [terms objectForKey:@"version"];
+        NSString *currVersion =[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+        if (![newVersion isEqualToString:currVersion]){
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:@"New version available"
+                                      message:@"Please download the latest version to get the best experience"
+                                      delegate:self
+                                      cancelButtonTitle:@"Cancel"
+                                      otherButtonTitles:@"Download",nil];
+            
+            [alertView show];
+        }
+    } else {
+        NSLog(@"Get version error:%@", getVersionError);
+    }
 }
+
+- (void) alertView:(UIAlertView *) alertView clickedButtonAtIndex:(NSInteger) index {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/ca/app/courseswatcher/id874130258?mt=8"]];
+}
+
+
+
 
 
 @end
