@@ -40,6 +40,7 @@
     //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"light blue wallpaper hd.jpg"]];
     self.subjectLabel.text=[NSString stringWithFormat:@"%@ %@",[self.info objectForKey:@"subject"],[self.info objectForKey:@"catalog_number"]];
     [self.subjectLabel setCustomFont];
+    [self.hotnessLabel setCustomFont];
     self.sectionLabel.text=[self.info objectForKey:@"section"];
     [self.sectionLabel setCustomFont];
     
@@ -192,14 +193,13 @@
         case 1:
         rating = @"Not Popular";
     }
-    if ([rating isEqualToString:@""]) self.hotnessLabel.text = rating;
+    if (![rating isEqualToString:@""]) self.hotnessLabel.text = rating;
     UIColor *glowing = [UIColor colorWithRed:176.0/256.0 green:23.0/256.0 blue:31.0/256.0 alpha:1.0f];
     self.hotnessLabel.layer.shadowColor = [glowing CGColor];
     self.hotnessLabel.layer.shadowRadius = 8.0f;
     self.hotnessLabel.layer.shadowOpacity = 0.9;
     self.hotnessLabel.shadowOffset = CGSizeZero;
     self.hotnessLabel.layer.masksToBounds = NO;
-    [self.hotnessLabel setCustomFont];
 }
 
 @end
