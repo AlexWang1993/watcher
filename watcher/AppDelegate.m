@@ -282,8 +282,9 @@
                                       initWithTitle:@"New version available"
                                       message:@"Please download the latest version to get the best experience"
                                       delegate:self
-                                      cancelButtonTitle:@"Cancel"
-                                      otherButtonTitles:@"Download",nil];
+                                      cancelButtonTitle:nil
+                                      otherButtonTitles:@"Download",@"Cancel",nil];
+            alertView.cancelButtonIndex = 1;
             
             [alertView show];
         }
@@ -293,7 +294,10 @@
 }
 
 - (void) alertView:(UIAlertView *) alertView clickedButtonAtIndex:(NSInteger) index {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/ca/app/courseswatcher/id874130258?mt=8"]];
+    if (index != alertView.cancelButtonIndex) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/ca/app/courseswatcher/id874130258?mt=8"]];
+        
+    }
 }
 
 
